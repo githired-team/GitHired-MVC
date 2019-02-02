@@ -2,7 +2,7 @@
 C# MVC web application that allows users to manage the job search process
 
 ## Database Schema
-![DB schema](assets/schema.png)
+![Database Schema](assets/db_schema.png)
 
 ## Wire Frames
 ### Landing View
