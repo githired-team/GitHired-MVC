@@ -1,17 +1,16 @@
 # Software Requirements
 
 ## Vision
-This product will tackle the problem of find jobs and managing the process of finding a job for software developers. Developers are talent and talent needs a manager. Our 
-target audience are junior software developers who are breaking into a new career market, becoming a developer unconventionally is hard enough, why stress about the job application proccess too?
+This product will tackle the problem of find jobs and managing the process of finding a job for software developers. Developers are talent and talent needs a manager. Our target audience are junior software developers who are breaking into a new career market, becoming a developer unconventionally is hard enough, why stress about the job application proccess too?
 
 
 ## Scope (In/Out)
 ~ IN
     Our product will allow users to become members.
     Members will be able to fill out forms to search for jobs.
-    Members will be able to add jobs they are interested in to the Canban Board.
-    Members will be able to add their Github repos to the Job Cards on their Canban Board.
-    Members will be able to add and move columns on their Canban Board.
+    Members will be able to add jobs they are interested in to the Kanban Board.
+    Members will be able to add their Github repos to the Job Cards on their Kanban Board.
+    Members will be able to add and move columns on their Kanban Board.
     Our API will act as a melting pot for job listing APIs 
     Our API will send a single json object of all job listings relevant to the request fields
     
@@ -22,19 +21,19 @@ target audience are junior software developers who are breaking into a new caree
     Our product will not let members get in contact contact with companies.
     
 ### MVP
-Our MVP will be to allow a user to create a new profile or log into their already created profile. Members will be able to search for jobs relevant to their stack, location, and other searchables. The results will populate a view page where the member will be able to select which job listings they want to add to their Canban Board. When the user navigates to the Board View they will see Cards of job listings they have selected through the search form. Members will be able to move Cards from one column to another inside the Canban Board.
+Our MVP will be to allow a user to create a new profile or log into their already created profile. Members will be able to search for jobs relevant to their stack, location, and other searchables. The results will populate a view page where the member will be able to select which job listings they want to add to their Kanban Board. When the user navigates to the Board View they will see Cards of job listings they have selected through the search form. Members will be able to move Cards from one column to another inside the Kanban Board.
 
 ### Stretch
-Canban Board for technical skills. File upload and retrieval using Azure. Seed our API with actual jobs from Indeed, Monster , LinkedIn, etc APIs. Reminders about deadlines or long time between communications.
+Kanban Board for technical skills. File upload and retrieval using Azure. Seed our API with actual jobs from Indeed, Monster , LinkedIn, etc APIs. Reminders about deadlines or long time between communications.
 
 ## Functional Requirements
 - A user edit their profile
 - A user can search jobs
-- A user can add jobs to a canban board
-- A user can add Github repos to cards on the canban board
-- A user can move cards to different columns on the canban board
-- A user can create new columns on the canban board
-- A user can move columns on the canban board
+- A user can add jobs to a Kanban board
+- A user can add Github repos to cards on the Kanban board
+- A user can move cards to different columns on the Kanban board
+- A user can create new columns on the Kanban board
+- A user can move columns on the Kanban board
 
 ## Non-Functional Requirements
 - Deployablility
