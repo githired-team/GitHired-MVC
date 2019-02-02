@@ -1,7 +1,7 @@
 # GitHired-MVC
 C# MVC web application that allows users to manage the job search process
 
-## <center>Database Schema</center>
+## Database Schema
 ![Database Schema](assets/db_schema.png)
 
 ## Wire Frames
