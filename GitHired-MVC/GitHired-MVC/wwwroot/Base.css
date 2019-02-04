@@ -1,0 +1,100 @@
+﻿/*Import fonts from Google Fonts API*/
+@import url('https://fonts.googleapis.com/css?family=Dosis|Hind+Madurai|Neucha');
+@import url('https://fonts.googleapis.com/css?family=Hind+Madurai');
+
+body {
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 2vw;
+    display: flex;
+}
+
+a {
+    font-variant-caps: all-petite-caps;
+    text-decoration: none;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.container-xs {
+    min-width: 6vw;
+    max-width: 8vw;
+}
+
+.container-s {
+    min-width: 10vw;
+    max-width: 20vw;
+}
+
+.container-m {
+    min-width: 20vw;
+    max-width: 30vw;
+}
+
+.container-l {
+    min-width: 50vw;
+    max-width: 60vw;
+}
+
+.container-xl {
+    min-width: 80vw;
+    max-width: 90vw;
+}
+
+.pad-top-xs {
+    padding-top: 1vw;
+}
+
+.pad-top-s {
+    padding-top: 2.5vw;
+}
+
+.pad-top-m {
+    padding-top: 5vw;
+}
+
+.pad-top-l {
+    padding-top: 10vw;
+}
+
+.pad-top-xl {
+    padding-top: 15vw;
+}
+
+.pad-bottom-xs {
+    padding-bottom: 1vw;
+}
+
+.pad-bottom-s {
+    padding-bottom: 2.5vw;
+}
+
+.pad-bottom-m {
+    padding-bottom: 5vw;
+}
+
+.pad-bottom-l {
+    padding-bottom: 10vw;
+}
+
+.pad-bottom-xl {
+    padding-bottom: 15vw;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
