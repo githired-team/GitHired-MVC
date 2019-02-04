@@ -1,5 +1,6 @@
 ﻿using GitHired_MVC.Data;
 using GitHired_MVC.Models.Interfaces;
+using GitHired_MVC.Models.Services;
 //using GitHired_MVC.Models.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AsyncInn
+namespace GitHired_MVC
 {
     public class Startup
     {
@@ -23,12 +24,12 @@ namespace AsyncInn
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<GitHiredDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:AzureDeployment"]));
+            services.AddDbContext<GitHiredDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
             services.AddMvc();
 
             // register dependancy injection
             // Example:
-            //      services.AddScoped<IBoardManeger, BoardManageService>();
+            services.AddScoped<IBoardManager, BoardManagementService>();
 
         }
 
