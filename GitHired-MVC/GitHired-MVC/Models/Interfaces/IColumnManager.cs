@@ -9,7 +9,7 @@ namespace GitHired_MVC.Models.Interfaces
     {
         Task CreateColumn(Column column);
 
-        Task<Column> GetAmenities(int id);
+        Task<Column> GetColumn(int id);
 
         Task UpdateColumn(Column column);
 

@@ -12,7 +12,7 @@ namespace GitHired_MVC.Models
         public int FocusID { get; set; }
         public string Name { get; set; }
 
-        ICollection<Column> Column { get; set; }
-        Focus Focus { get; set; }
+        public ICollection<Column> Column { get; set; }
+        public Focus Focus { get; set; }
     }
 }

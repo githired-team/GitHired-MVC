@@ -9,7 +9,7 @@ namespace GitHired_MVC.Models.Interfaces
     {
         Task CreateBoard(Board board);
 
-        Task<Board> GetBoard(int id);
+        Task<Board> GetBoardAsync(int id);
 
         Task UpdateBoard(Board board);
 
