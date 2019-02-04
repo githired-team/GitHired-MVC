@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitHired-MVC", "GitHired-MVC\GitHired-MVC.csproj", "{51DF8742-B446-486F-B70E-D10ABC8AE9C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHiredTesting", "GitHiredTesting\GitHiredTesting.csproj", "{A306AACE-B4C5-4DC1-B726-2F5AB396C2FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GitHiredTesting", "GitHiredTesting\GitHiredTesting.csproj", "{A306AACE-B4C5-4DC1-B726-2F5AB396C2FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
