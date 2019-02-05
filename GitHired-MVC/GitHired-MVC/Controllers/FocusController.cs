@@ -23,13 +23,13 @@ namespace GitHired_MVC.Controllers
             _focus = focus;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int specificUserID)
         {
             return View();
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public IActionResult Create(int specificUserID)
         {
             return View();
         }
@@ -38,9 +38,29 @@ namespace GitHired_MVC.Controllers
         public async Task<IActionResult> Create([Bind("ID, UserID, Name, DesiredPosition, Location, Skill,ResumeLink, CoverLetter")] Focus focus)
         {
             Focus newFocus = focus;
+            Board newBoard = new Board();
+            newBoard.FocusID = newFocus.ID;
+            newBoard.Name = newFocus.Name;
+            Column newDefaultColInterested = new Column();
+            newDefaultColInterested.BoardID = newBoard.ID;
+            newDefaultColInterested.Name = "Interested";
+            newDefaultColInterested.Order = 1;
+            Column newDefaultColWIP = new Column();
+            newDefaultColWIP.BoardID = newBoard.ID;
+            newDefaultColWIP.Name = "In Prcess";
+            newDefaultColWIP.Order = 2;
+            Column newDefaultColComplete = new Column();
+            newDefaultColComplete.BoardID = newBoard.ID;
+            newDefaultColComplete.Name = "Done";
+            newDefaultColComplete.Order = 3;
+
             if (ModelState.IsValid)
             {
                 await _focus.CreateFocus(newFocus);
+                await _board.CreateBoard(newBoard);
+                await _column.CreateColumn(newDefaultColInterested);
+                await _column.CreateColumn(newDefaultColWIP);
+                await _column.CreateColumn(newDefaultColComplete);
                 return RedirectToAction(nameof(Index));
             }
             return View(focus);
