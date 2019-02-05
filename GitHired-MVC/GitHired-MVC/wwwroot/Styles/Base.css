@@ -74,6 +74,10 @@ footer {
     text-align: center;
 }
 
+.CRUD {
+    font-size: 4vw;
+}
+
 .center {
     margin: auto;
     text-align: center;

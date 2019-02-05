@@ -14,7 +14,7 @@ namespace GitHired_MVC.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.1-servicing-10028")
+                .HasAnnotation("ProductVersion", "2.2.0-rtm-35687")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -34,6 +34,14 @@ namespace GitHired_MVC.Migrations
                         .IsUnique();
 
                     b.ToTable("Board");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            FocusID = 1,
+                            Name = "Default Board"
+                        });
                 });
 
             modelBuilder.Entity("GitHired_MVC.Models.Card", b =>
@@ -80,6 +88,29 @@ namespace GitHired_MVC.Migrations
                     b.HasIndex("BoardID");
 
                     b.ToTable("Column");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            BoardID = 1,
+                            Name = "Default Column 1",
+                            Order = 1
+                        },
+                        new
+                        {
+                            ID = 2,
+                            BoardID = 1,
+                            Name = "Default Column 2",
+                            Order = 2
+                        },
+                        new
+                        {
+                            ID = 3,
+                            BoardID = 1,
+                            Name = "Default Column 3",
+                            Order = 3
+                        });
                 });
 
             modelBuilder.Entity("GitHired_MVC.Models.Focus", b =>
@@ -107,6 +138,19 @@ namespace GitHired_MVC.Migrations
                     b.HasIndex("UserID");
 
                     b.ToTable("Focus");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            CoverLetter = "Test Cover Letter",
+                            DesiredPosition = "Test Position",
+                            Location = "Testville, USA",
+                            Name = "Test Focus",
+                            ResumeLink = "Test Resume Link",
+                            Skill = "ASP.NET Core",
+                            UserID = 1
+                        });
                 });
 
             modelBuilder.Entity("GitHired_MVC.Models.User", b =>
@@ -114,6 +158,8 @@ namespace GitHired_MVC.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Avatar");
 
                     b.Property<string>("Email");
 
@@ -124,6 +170,16 @@ namespace GitHired_MVC.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            ID = 1,
+                            Avatar = "Test Avatar",
+                            Email = "test@test.com",
+                            GitHubLink = "http://www.github.com/testuser",
+                            Name = "Test User"
+                        });
                 });
 
             modelBuilder.Entity("GitHired_MVC.Models.Board", b =>
