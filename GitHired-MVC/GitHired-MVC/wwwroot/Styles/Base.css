@@ -7,13 +7,70 @@ body {
     font-size: 1rem;
     /*display: flex;*/
     /*justify-content: center;*/
-    background-color: #c4c4c4;
+    /*background-color: #c4c4c4;*/
     min-width: 680px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 6vw;
+    background: -webkit-linear-gradient(#333, #777);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h4 {
+    font-size: 3vw;
 }
 
 a {
     font-variant-caps: all-petite-caps;
+    background: -webkit-linear-gradient(#388238, #94de94);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-decoration: none;
+}
+
+a:hover {
+    background: -webkit-linear-gradient(#999, #444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+
+footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: 3vw;
+    padding: 1rem;
+    background-color: rgba(194, 194, 194, 0.5);
+    text-align: center;
+}
+
+.green {
+    border: 3px solid #57cc57;
+    border-radius: 1vw;
+}
+
+.gradient {
+    background-image: linear-gradient(#94de94, #ffffff);
+}
+
+.button {
+    font-size: 1.4rem;
+    margin: 1vw;
+    padding: 0.25vw 1vw 0.25vw 1vw;
+    border: 1px solid white;
+    border-radius: 0.5vw;
+    background-image: linear-gradient(#57cc57, #388238);
+    font-family: 'Hind Madurai', sans-serif;
+    font-variant-caps: all-petite-caps;
+    color: white;
+    text-align: center;
 }
 
 .center {
@@ -22,27 +79,27 @@ a {
 }
 
 .container-xs {
-    min-width: 6vw;
+    min-width: 100px;
     max-width: 8vw;
 }
 
 .container-s {
-    min-width: 10vw;
+    min-width: 200px;
     max-width: 20vw;
 }
 
 .container-m {
-    min-width: 20vw;
+    min-width: 400px;
     max-width: 30vw;
 }
 
 .container-l {
-    min-width: 50vw;
+    min-width: 600px;
     max-width: 60vw;
 }
 
 .container-xl {
-    min-width: 80vw;
+    min-width: 800px;
     max-width: 90vw;
 }
 
@@ -84,6 +141,46 @@ a {
 
 .pad-bottom-xl {
     padding-bottom: 15vw;
+}
+
+.pad-left-xs {
+    padding-left: 1vw;
+}
+
+.pad-left-s {
+    padding-left: 2.5vw;
+}
+
+.pad-left-m {
+    padding-left: 5vw;
+}
+
+.pad-left-l {
+    padding-left: 10vw;
+}
+
+.pad-left-xl {
+    padding-left: 15vw;
+}
+
+.pad-right-xs {
+    padding-right: 1vw;
+}
+
+.pad-right-s {
+    padding-right: 2.5vw;
+}
+
+.pad-right-m {
+    padding-right: 5vw;
+}
+
+.pad-right-l {
+    padding-right: 10vw;
+}
+
+.pad-right-xl {
+    padding-right: 15vw;
 }
 
 .float-left {
