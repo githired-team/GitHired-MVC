@@ -23,34 +23,6 @@
     order: 2;
 }
 
-/*-----SIGN-UP-TOGGLE-----*/
-/*.toggle-signup{
-    display: none;
-}
-
-input[type=checkbox] {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-}
-
-input[type=checkbox] label:checked {
-    display: none;
-}
-
-input[type=checkbox]:checked ~ div.toggle-signup {
-    display: block;
-}
-
-.toggle-label {
-    -webkit-appearance: push-button;
-    -moz-appearance: button;
-    cursor: pointer;
-    background-color: #57cc57;
-    border: 1px solid white;
-    border-radius: 0.5vw;
-}*/
-
 /*-----COLLAPSING-MENU-----*/
 #toggleMenu {
     display: block;

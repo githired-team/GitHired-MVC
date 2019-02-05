@@ -38,5 +38,10 @@ namespace GitHired_MVC.Models.Services
             _context.Focus.Update(focus);
             await _context.SaveChangesAsync();
         }
+
+        Task<Focus> IFocusManager.DeleteFocus(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
