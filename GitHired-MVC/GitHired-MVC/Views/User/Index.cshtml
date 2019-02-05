@@ -1,0 +1,29 @@
+﻿@model GitHired_MVC.Models.User
+
+@{
+    Layout = "_Layout";
+}
+
+<body>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.GitHubLink)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GitHubLink)
+        </dd>
+    </dl>
+
+</body>

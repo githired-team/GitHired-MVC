@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
-using Microsoft.EntityFrameworkCore;
+//using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using GitHired_MVC.Models;
 
@@ -48,8 +48,6 @@ namespace GitHiredTesting
 
             Assert.Equal("newName", testBoard4.Name);
         }
-
-        //setter
 
         //create board
 

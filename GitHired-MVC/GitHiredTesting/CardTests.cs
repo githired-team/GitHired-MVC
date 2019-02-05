@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
-using Microsoft.EntityFrameworkCore;
+//using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using GitHired_MVC.Models;
 
@@ -92,7 +92,7 @@ namespace GitHiredTesting
         {
             Card testCard9 = new Card();
             testCard9.CompanyName = "aCompanyName";
-            Assert.Equal("aCompanyName", testCard9.JobTitle);
+            Assert.Equal("aCompanyName", testCard9.CompanyName);
         }
 
         //setter company name
@@ -110,8 +110,8 @@ namespace GitHiredTesting
         public void TestGetCardWage()
         {
             Card testCard11 = new Card();
-            testCard11.Wage = 10;
-            Assert.Equal(10, testCard11.Wage);
+            testCard11.Wage = "10";
+            Assert.Equal("10", testCard11.Wage);
         }
 
         //setter wage
@@ -119,9 +119,9 @@ namespace GitHiredTesting
         public void TestSetCardWage()
         {
             Card testCard12 = new Card();
-            testCard12.Wage = 10;
-            testCard12.Wage = 100;
-            Assert.Equal(100, testCard12.Wage);
+            testCard12.Wage = "10";
+            testCard12.Wage = "100";
+            Assert.Equal("100", testCard12.Wage);
         }
 
         //getter description
