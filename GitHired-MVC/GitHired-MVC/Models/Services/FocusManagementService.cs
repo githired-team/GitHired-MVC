@@ -17,13 +17,13 @@ namespace GitHired_MVC.Models.Services
             _context = context;
         }
 
-        public async Task CreateFocus(Focus foucs)
+        public async Task CreateFocus(Focus focus)
         {
-            _context.Focus.Add(foucs);
+            _context.Focus.Add(focus);
             await _context.SaveChangesAsync();
         }
 
-        public Task DeleteFocus(int id)
+        public Task<Focus> DeleteFocus(int id)
         {
             throw new NotImplementedException();
         }
