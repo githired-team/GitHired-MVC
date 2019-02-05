@@ -1,45 +1,77 @@
-
-﻿@*Sign in page*@
-
-@{
-    Layout = "_Layout";
-}
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHired</title>
+    <link href="~/Styles/Reset.css" rel="stylesheet" />
+    <link href="~/Styles/Base.css" rel="stylesheet" />
+    <link href="~/Styles/Modules.css" rel="stylesheet" />
+</head>
 <body>
-
-    <button id="OpenCurrUserLogInModal">Log In</button>
-    <div id="CurrUserLogInModal" class="modal">
-        <div class="CurrUserLogInModal-content">
-            <form>
-                Username:
-                <input type="text" name="CurrUserUsername"><br>
-                <input type="submit" value="Log In">
-            </form>
+    <header class="header">
+        <div class="logo">
+            <a href="~/"><img class="logo-img" src="~/Assets/GitHired_vector_logo2.png"></a>
+        </div>
+    </header>
+    <div class="">
+        <div class="green gradient container-m center">
+            <h4 class="pad-top-xs">Get Started!</h4>
+            <div class="pad-top-s">
+                <div class="login-toggle">
+                    <form>
+                        Username:
+                        <input type="text" name="CurrUserUsername"><br>
+                        <input type="submit" value="Log In" class="button">
+                    </form>
+                </div>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $("#signup").ready(function () {
+                        $(".signup-toggle").hide();
+                    });
+                    $("#signup").click(function () {
+                        $("#signup").hide();
+                        $(".login-toggle").hide();
+                        $(".signup-toggle").show();
+                    });
+                });
+            </script>
+            <button id="signup" class="button container-s">Sign Up Today!</button>
+            <div class="signup-toggle">
+                <form>
+                    <table class="center pad-bottom-xs">
+                        <tr class="align-left">
+                            <td>Username: </td>
+                            <td><input type="text" name="NewUserUsername"></td>
+                        </tr>
+                        <tr class="align-left">
+                            <td>Email: </td>
+                            <td><input type="text" name="NewUserEmail"></td>
+                        </tr>
+                        <tr class="align-left">
+                            <td class="pad-right-xs">GitHub Username: </td>
+                            <td><input type="text" name="NewUserGHUsername"></td>
+                        </tr>
+                    </table>
+                    <input type="submit" value="Sign Up" class="button">
+                </form>
+            </div>
         </div>
     </div>
-
-    <button id="OpenNewUserLogInModal">Sign Up</button>
-    <div id="NewUserLogInModal" class="modal">
-        <div class="NewUserLogInModal-content">
-            <form>
-                Username:
-                <input type="text" name="NewUserUsername"><br>
-                Email:
-                <input type="text" name="NewUserEmail"><br>
-                Github User Name:
-                <input type="text" name="NewUserGHUsername"><br>
-                <input type="submit" value="Sign Up">
-            </form>
-        </div>
+    <div class="center pad-top-m pad-bottom-m">
+        <h1>
+            Welcome to GitHired
+        </h1>
+        <h4>Helps you stay in the know for your applying process</h4>
     </div>
-
-    <h1>
-        Welcome to GitHired
-    </h1>
-
-    <h4>Helps you stay in the know for your applying process</h4>
-
 </body>
+    <footer class="center">
+        <p>&#169; GitHired 2019</p>
+    </footer>
+    @section scripts {
 
-<a asp-action="Api"> Call</a>
-
+    }
+</html>
