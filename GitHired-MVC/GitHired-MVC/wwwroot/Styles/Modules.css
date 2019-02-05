@@ -137,6 +137,7 @@ input[type=checkbox]:checked ~ div.toggle-signup {
   transform: none;
 }
 
+/*-----MEDIA-QUERIES-----*/
 @media (max-width: 780px) {
     body {
         overflow: auto;
@@ -154,5 +155,6 @@ input[type=checkbox]:checked ~ div.toggle-signup {
 @media (max-width: 1000px) {
     #menu {
         margin: -82px 0 0 -430px;
+        min-height: 100px;
     }
 }
