@@ -46,6 +46,8 @@ namespace GitHired_MVC.Data
                     ID = 1,
                     FocusID = 1,
                     Name = "Default Board"
+
+                    
                 }
                 );
 

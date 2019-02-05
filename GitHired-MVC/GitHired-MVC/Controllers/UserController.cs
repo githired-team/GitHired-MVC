@@ -25,9 +25,9 @@ namespace GitHired_MVC.Controllers
             _user = user;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(User user)
         {
-            return View();
+            return View(user);
         }
 
         [HttpPost]
@@ -43,13 +43,13 @@ namespace GitHired_MVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("ID,Name,Email,GitHubLink")] User user)
+        public async Task<IActionResult> Create([Bind("Name,Email,GitHubLink")] User user)
         {
-        User newUser = user;
+        //User newUser = user;
         if (ModelState.IsValid)
         {
-            await _user.CreateUser(newUser);
-            return RedirectToAction(nameof(Index));
+            await _user.CreateUser(user);
+            return RedirectToAction(nameof(Index), user);
         }
         return View(user);
         }

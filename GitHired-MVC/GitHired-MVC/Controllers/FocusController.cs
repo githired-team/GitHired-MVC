@@ -38,21 +38,29 @@ namespace GitHired_MVC.Controllers
         public async Task<IActionResult> Create([Bind("ID, UserID, Name, DesiredPosition, Location, Skill,ResumeLink, CoverLetter")] Focus focus)
         {
             Focus newFocus = focus;
+
             Board newBoard = new Board();
             newBoard.FocusID = newFocus.ID;
             newBoard.Name = newFocus.Name;
+
             Column newDefaultColInterested = new Column();
             newDefaultColInterested.BoardID = newBoard.ID;
             newDefaultColInterested.Name = "Interested";
             newDefaultColInterested.Order = 1;
+
             Column newDefaultColWIP = new Column();
             newDefaultColWIP.BoardID = newBoard.ID;
             newDefaultColWIP.Name = "In Prcess";
             newDefaultColWIP.Order = 2;
+
             Column newDefaultColComplete = new Column();
             newDefaultColComplete.BoardID = newBoard.ID;
             newDefaultColComplete.Name = "Done";
             newDefaultColComplete.Order = 3;
+
+            newBoard.Column.Add(newDefaultColInterested);
+            newBoard.Column.Add(newDefaultColInterested);
+            newBoard.Column.Add(newDefaultColInterested);
 
             if (ModelState.IsValid)
             {
