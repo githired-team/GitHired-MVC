@@ -12,6 +12,6 @@ namespace GitHired_MVC.Models
         public string Email { get; set; }
         public string GitHubLink { get; set; }
 
-        ICollection<Focus> Focus { get; set; }
+        public ICollection<Focus> Focus { get; set; }
     }
 }

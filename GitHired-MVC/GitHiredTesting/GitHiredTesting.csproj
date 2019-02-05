@@ -12,4 +12,13 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GitHired-MVC\GitHired-MVC.csproj" />
+    <Folder Include="BoardTests\" />
+    <Folder Include="CardTests\" />
+    <Folder Include="ColumnTests\" />
+    <Folder Include="FocusTest\" />
+    <Folder Include="UserTests\" />
+  </ItemGroup>
+
 </Project>

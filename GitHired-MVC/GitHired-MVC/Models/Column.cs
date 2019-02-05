@@ -12,7 +12,7 @@ namespace GitHired_MVC.Models
         public string Name { get; set; }
         public int Order { get; set; }
 
-        ICollection<Card> Card { get; set; }
-        Board Board { get; set; }
+        public ICollection<Card> Card { get; set; }
+        public Board Board { get; set; }
     }
 }
