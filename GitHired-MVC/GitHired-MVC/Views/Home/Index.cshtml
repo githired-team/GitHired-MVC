@@ -1,3 +1,5 @@
+﻿@model GitHired_MVC.Models.User;
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,9 +21,9 @@
             <h4 class="pad-top-xs">Get Started!</h4>
             <div class="pad-top-s">
                 <div class="login-toggle">
-                    <form>
+                    <form asp-controller="User" asp-action="Index">
                         Username:
-                        <input type="text" name="CurrUserUsername"><br>
+                        <input type="text" name="CurrUserUsername" asp-for="Name"><br>
                         <input type="submit" value="Log In" class="button">
                     </form>
                 </div>
@@ -41,19 +43,19 @@
             </script>
             <button id="signup" class="button container-s">Sign Up Today!</button>
             <div class="signup-toggle">
-                <form>
+                <form asp-controller="Bib" asp-action="Create">
                     <table class="center pad-bottom-xs">
                         <tr class="align-left">
                             <td>Username: </td>
-                            <td><input type="text" name="NewUserUsername"></td>
+                            <td><input type="text" name="NewUserUsername"  asp-for="Name"></td>
                         </tr>
                         <tr class="align-left">
                             <td>Email: </td>
-                            <td><input type="text" name="NewUserEmail"></td>
+                            <td><input type="text" name="NewUserEmail"  asp-for="Email"></td>
                         </tr>
                         <tr class="align-left">
                             <td class="pad-right-xs">GitHub Username: </td>
-                            <td><input type="text" name="NewUserGHUsername"></td>
+                            <td><input type="text" name="NewUserGHUsername"  asp-for="GitHubLink"></td>
                         </tr>
                     </table>
                     <input type="submit" value="Sign Up" class="button">
@@ -68,10 +70,9 @@
         <h4>Helps you stay in the know for your applying process</h4>
     </div>
 </body>
-    <footer class="center">
-        <p>&#169; GitHired 2019</p>
-    </footer>
-    @section scripts {
-
-    }
+<footer class="center">
+    <p>&#169; GitHired 2019</p>
+</footer>
+@section scripts {
+}
 </html>
