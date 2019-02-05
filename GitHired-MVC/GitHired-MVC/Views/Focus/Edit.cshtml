@@ -1,0 +1,14 @@
+﻿@model GitHired_MVC.Models.Focus
+@{
+    Layout = "_Layout";
+}
+<form asp-action="Edit">
+    <input type="hidden" asp-for="ID" />
+    <input placeholder="Focus Name" type="text" asp-for="Name">
+    <input placeholder="Desired Position" type="text" asp-for="DesiredPosition">
+    <input placeholder="Location" type="text" asp-for="Location">
+    <input placeholder="Skills" type="text" asp-for="Skill">
+    <input placeholder="Resume Letter Link" type="text" asp-for="ResumeLink">
+    <input placeholder="Cover Letter Link" type="text" asp-for="CoverLetter">
+    <input type="submit" value="Sign Up" class="button">
+</form>
