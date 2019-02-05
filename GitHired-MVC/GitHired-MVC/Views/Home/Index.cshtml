@@ -1,4 +1,45 @@
-﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-Hello!
+﻿@*Sign in page*@
+
+@{
+    Layout = "_Layout";
+}
+
+<body>
+
+    <button id="OpenCurrUserLogInModal">Log In</button>
+    <div id="CurrUserLogInModal" class="modal">
+        <div class="CurrUserLogInModal-content">
+            <form>
+                Username:
+                <input type="text" name="CurrUserUsername"><br>
+                <input type="submit" value="Log In">
+            </form>
+        </div>
+    </div>
+
+    <button id="OpenNewUserLogInModal">Sign Up</button>
+    <div id="NewUserLogInModal" class="modal">
+        <div class="NewUserLogInModal-content">
+            <form>
+                Username:
+                <input type="text" name="NewUserUsername"><br>
+                Email:
+                <input type="text" name="NewUserEmail"><br>
+                Github User Name:
+                <input type="text" name="NewUserGHUsername"><br>
+                <input type="submit" value="Sign Up">
+            </form>
+        </div>
+    </div>
+
+    <h1>
+        Welcome to GitHired
+    </h1>
+
+    <h4>Helps you stay in the know for your applying process</h4>
+
+</body>
+
 <a asp-action="Api"> Call</a>
+
