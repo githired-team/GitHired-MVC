@@ -1,16 +1,26 @@
-
-﻿@*Sign in page*@
-
-@{
-    Layout = "_Layout";
-}
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHired</title>
+    <link href="~/Styles/Reset.css" rel="stylesheet" />
+    <link href="~/Styles/Base.css" rel="stylesheet" />
+    <link href="~/Styles/Modules.css" rel="stylesheet" />
+</head>
 <body>
+    <header class="header">
+        <div class="logo">
+            <a href="~/"><img class="logo-img" src="~/Assets/GitHired_vector_logo2.png"></a>
+        </div>
+    </header>
     <div class="">
-        <div class="green gradient container-m center"><h4 class="pad-top-xs">Get Started!</h4>
+        <div class="green gradient container-m center">
+            <h4 class="pad-top-xs">Get Started!</h4>
             <div class="pad-top-s">
                 <div class="login-toggle">
-                    <form>Username:
+                    <form>
+                        Username:
                         <input type="text" name="CurrUserUsername"><br>
                         <input type="submit" value="Log In" class="button">
                     </form>
@@ -51,10 +61,17 @@
             </div>
         </div>
     </div>
-    <div class="center pad-top-m">
+    <div class="center pad-top-m pad-bottom-m">
         <h1>
             Welcome to GitHired
         </h1>
         <h4>Helps you stay in the know for your applying process</h4>
     </div>
 </body>
+    <footer class="center">
+        <p>&#169; GitHired 2019</p>
+    </footer>
+    @section scripts {
+
+    }
+</html>
