@@ -9,7 +9,7 @@ namespace GitHired_MVC.Models.Interfaces
     {
         Task CreateUser(User user);
 
-        Task<User> GetUser(int id);
+        Task<User> GetUser(string userName);
 
         Task UpdateUser(User user);
 
