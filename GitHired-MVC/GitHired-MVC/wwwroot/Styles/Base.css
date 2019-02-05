@@ -10,8 +10,9 @@ body {
     /*background-color: #c4c4c4;*/
     min-width: 680px;
     width: 100%;
+    min-height: 480px;
     height: 100%;
-    overflow-x: hidden;
+    overflow: auto;
 }
 
 h1 {
