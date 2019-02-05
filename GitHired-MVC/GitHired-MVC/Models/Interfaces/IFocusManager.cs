@@ -13,6 +13,6 @@ namespace GitHired_MVC.Models.Interfaces
 
         Task UpdateFocus(Focus focus);
 
-        Task DeleteFocus(int id);
+        Task<Focus> DeleteFocus(int id);
     }
 }
