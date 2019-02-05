@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHired</title>
+    <link href="~/Styles/Reset.css" rel="stylesheet" />
+    <link href="~/Styles/Base.css" rel="stylesheet" />
+    <link href="~/Styles/Modules.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="~/"><img class="" src="~/Assets/GitHired_vector_logo.png"></a>
+        </div>
+        <nav role="navigation" class="nav-bar">
+            <div id="toggleMenu">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <a href="~/"><li>Home</li></a>
+                    <a href="" target="_blank"><li>User</li></a>
+                    <a href="" target="_blank"><li>Profiles</li></a>
+                    <a href="" target="_blank"><li>Board</li></a>
+                    <a href="" target="_blank"><li>Search</li></a>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="center">
+        <p>&#169; GitHired 2019</p>
+    </footer>
+    @section scripts {
+
+    }
+</body>
+</html>
