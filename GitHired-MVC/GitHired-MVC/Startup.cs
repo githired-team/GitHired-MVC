@@ -24,7 +24,7 @@ namespace GitHired_MVC
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<GitHiredDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
+            services.AddDbContext<GitHiredDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:AzureDeployment"]));
             services.AddMvc();
             
             // Example:

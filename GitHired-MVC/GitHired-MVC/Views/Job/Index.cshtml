@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<body>
+    <h1>Your Jobs</h1>
+    <form asp-controller="Job" asp-action="Index">
+        <p>
+            Search: <input type="text" name="SearchString" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Desired Position
+                </th>
+                <th>
+                    Location
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.DesiredPosition
+                    </td>
+                    <td>
+                        @item.Location
+                    </td>
+                    <td>
+                        @*this is where the links would go for edit, delete and board*@
+                        <a asp-controller="Board" asp-action="Index" asp-route-id="@item.ID"> View Board</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
