@@ -59,10 +59,10 @@ namespace GitHired_MVC.Controllers
             newBoard.FocusID = focus.ID;
             newBoard.Name = focus.Name;
 
-            Column newDefaultColInterested = new Column();
-            newDefaultColInterested.BoardID = newBoard.ID;
-            newDefaultColInterested.Name = "Interested";
-            newDefaultColInterested.Order = 1;
+            //Column newDefaultColInterested = new Column();
+            //newDefaultColInterested.BoardID = newBoard.ID;
+            //newDefaultColInterested.Name = "Interested";
+            //newDefaultColInterested.Order = 1;
 
             //Column newDefaultColWIP = new Column();
             //newDefaultColWIP.BoardID = newBoard.ID;
