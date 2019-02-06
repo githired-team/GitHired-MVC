@@ -23,6 +23,15 @@ namespace GitHired_MVC.Models.Services
             await _context.SaveChangesAsync();
         }
 
+        public async Task<IEnumerable<Board>> SearchBoard(string name)
+        {
+            var boards = from b in _context.Board
+                        .Where(n => n.Name.Equals(name))
+                        select b;
+
+            return await boards.ToListAsync();
+        }
+
         public async Task DeleteBoard(int id)
         {
             Board board = _context.Board.FirstOrDefault(x => x.ID == id);

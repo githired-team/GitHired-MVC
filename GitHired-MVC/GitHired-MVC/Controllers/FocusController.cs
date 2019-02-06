@@ -36,6 +36,14 @@ namespace GitHired_MVC.Controllers
             //return View();
         }
 
+        //this is because the system didn't like two indexes even though they had diff params
+        public async Task<IActionResult> ExisitingUserIndex(int id)
+        {
+            //var returnInfo = _context.Focus.Include(fu => fu.UserID);
+            return View(await _focus.GetFocus(id));
+            //return View();
+        }
+
         [HttpGet]
         public IActionResult Create()
         {

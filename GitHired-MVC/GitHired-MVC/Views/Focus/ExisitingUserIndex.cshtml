@@ -1,9 +1,7 @@
 ﻿@model IEnumerable<GitHired_MVC.Models.Focus>
-
 @{
     Layout = "_Layout";
 }
-
 <body>
     <h1>Your Focuses</h1>
     <p>
@@ -27,23 +25,22 @@
         <tbody>
             @foreach (var item in Model)
             {
-            <tr>
-                <td>
-                    @item.Name
-                </td>
-                <td>
-                    @item.DesiredPosition
-                </td>
-                <td>
-                    @item.Location
-                </td>
-                <td>
-                    @*this is where the links would go for edit, delete and board*@
-                    <a asp-controller="Board" asp-action="Index" asp-route-id="@item.Name"> View Board</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.DesiredPosition
+                    </td>
+                    <td>
+                        @item.Location
+                    </td>
+                    <td>
+                        <a asp-controller="Board" asp-action="Index" asp-route-id="@item.Name"> View Board</a>
+                        @*this is where the links would go for edit, delete and board*@
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
 </body>
-

@@ -29,10 +29,6 @@ namespace GitHired_MVC.Models.Services
                         .Where(n => n.Name.Equals(name))
                        select u;
 
-            //if (!String.IsNullOrEmpty(name))
-            //{
-            //    users = users.Where(n => n.Name.Contains(name));
-            //}
             return await users.ToListAsync();
         }
 
