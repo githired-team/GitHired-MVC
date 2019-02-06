@@ -1,7 +1,7 @@
-﻿@model GitHired_MVC.Models.Board
+﻿@model IEnumerable<GitHired_MVC.Models.Board>
 @{
-    Layout = "_Layout";
-}
+            Layout = "_Layout";
+        }
 <body>
     <h1 class="center black-gradient">Board Focus: @*@Model.Focus.Name*@</h1>
     <p class="center">
@@ -9,11 +9,11 @@
     </p>
     <div class="board-container center">
         @*@foreach (var item in Model.Column)
-            {
-                <div class="board-label green light-green">
-                    <h3 class="black-gradient">@item.Column.Name</h3>
-                </div>
-            }*@
+        {
+            <div class="board-label green light-green">
+                <h3 class="black-gradient">@item.Column.Name</h3>
+            </div>
+        }*@
     </div>
     <div class="board-container">
         @foreach (var item in Model.Column)
