@@ -1,38 +1,24 @@
-﻿@model GitHired_MVC.Models.Board
+﻿@model IEnumerable<GitHired_MVC.Models.Board>
 @{
-    Layout = "_Layout";
-}
+            Layout = "_Layout";
+        }
 <body>
     <h1 class="center black-gradient">Board Focus: @*@Model.Focus.Name*@</h1>
     <p class="center">
         <a asp-action="Create" class="CRUD pad-top-xs">Create A New Column</a>
     </p>
     <div class="board-container center">
-        @*@foreach (var item in Model.Column.Name)
+        @*@foreach (var item in Model.Column)
         {
-            <div class="column gradient"></div>
+            <div class="board-label green light-green">
+                <h3 class="black-gradient">@item.Column.Name</h3>
+            </div>
         }*@
-        <div class="board-label green light-green">
-            <h3 class="black-gradient">INTERESTED</h3>
-        </div>
-        <div class="board-label green light-green">
-            <h3 class=" black-gradient">APPLICATION</h3>
-        </div>
-        <div class="board-label green light-green">
-            <h3 class=" black-gradient">SUBMITTED</h3>
-        </div>
-        <div class="board-label green light-green">
-            <h3 class=" black-gradient">INTERVIEWING</h3>
-        </div>
     </div>
     <div class="board-container">
-        @*@foreach (var item in Model.Column)
+        @foreach (var item in Model.Column)
         {
             <div class="column green"></div>
         }*@
-        <div class="column green"></div>
-        <div class="column green"></div>
-        <div class="column green"></div>
-        <div class="column green"></div>
     </div>
 </body>

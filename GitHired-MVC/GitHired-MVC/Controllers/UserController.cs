@@ -30,10 +30,10 @@ namespace GitHired_MVC.Controllers
             return View(user);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Index(string specificUser)
+        //this was for exisiting user log in also didn't like having 2 indexes even if it had diff params
+        public async Task<IActionResult> ExistingUserIndex(string name)
         {
-            return View(await _user.GetUser(specificUser));
+            return View(await _user.SearchUserName(name));
         }
 
         [HttpGet]
