@@ -55,7 +55,7 @@ footer {
 a.link-emphasis {
     display: inline-block;
     border-bottom: 0px solid transparent;
-    transition: 0.36s ease;
+    transition: 0.3s ease;
     background-position: 100% center;
 }
 
@@ -66,6 +66,10 @@ a.link-emphasis:hover {
 
 .bold {
     font-weight: bold;
+}
+
+.wide-input {
+    width: 20vw;
 }
 
 .green {
