@@ -28,9 +28,14 @@ namespace GitHired_MVC.Models.Services
             throw new NotImplementedException();
         }
 
-        public async Task<Focus> GetFocus(int id)
+        public async Task<IEnumerable<Focus>> GetFocus(int id)
         {
-            return await _context.Focus.FirstOrDefaultAsync(x => x.ID == id);
+            //return await _context.Focus.FirstOrDefaultAsync(x => x.ID == id);
+            var foc = from f in _context.Focus
+                      .Where(ui => ui.UserID == id)
+                       select f;
+            return await foc.ToListAsync();
+
         }
 
         public async Task UpdateFocus(Focus focus)

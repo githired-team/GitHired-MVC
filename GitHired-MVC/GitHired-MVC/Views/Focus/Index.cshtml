@@ -5,23 +5,44 @@
 }
 
 <body>
-    <h1>Create your focus</h1>
-    <form>
-        Username:
-        Focus name:
-        <input type="text" name="FocusName"><br>
-        Desired position:
-        <input type="text" name="FocusPosition"><br>
-        Desired Location:
-        <input type="text" name="FocusLocation"><br>
-        Your skills:
-        <input type="text" name="FocusSkill"><br>
-        Your resume:
-        <input type="text" name="FocusResume"><br>
-        Your coverletter:
-        <input type="text" name="FocusCoverL"><br>
-        <input type="submit" value="Create Focus">
-    </form>
-
+    <h1>Your Focuses</h1>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Desired Position
+                </th>
+                <th>
+                    Location
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.DesiredPosition
+                </td>
+                <td>
+                    @item.Location
+                </td>
+                <td>
+                   @*this is where the links would go for edit, delete and board*@
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
 </body>
 

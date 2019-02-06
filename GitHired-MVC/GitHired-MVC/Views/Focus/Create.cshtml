@@ -4,12 +4,13 @@
     Layout = "_Layout";
 }
 <body>
-    <form asp-controller="Focus" asp-action="Create">
-        <input type="hidden" asp-for="UserID" />
+    <form asp-action="Create">
         <table class="center pad-bottom-xs">
             <tr class="align-left">
                 <td>Username: </td>
-                <td><input type="text" asp-for="Name"></td>
+                @*<td><input type="text" asp-for="Name"></td>*@
+                <label asp-for="UserID" class="control-label"></label>
+                <select type="hidden" asp-for="UserID" asp-items="ViewBag.UserID"></select>
             </tr>
             <tr class="align-left">
                 <td>Desired Position: </td>
