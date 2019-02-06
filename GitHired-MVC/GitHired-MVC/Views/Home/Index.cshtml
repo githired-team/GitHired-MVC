@@ -13,12 +13,12 @@
 <body>
     <header class="header">
         <div class="logo">
-            <a href="~/"><img class="logo-img" src="~/Assets/GitHired_vector_logo2.png"></a>
+            <a href="~/"><img class="logo-img" src="~/Assets/GitHired_vector_logo.png"></a>
         </div>
     </header>
     <div class="">
         <div class="green gradient container-m center">
-            <h4 class="pad-top-xs">Get Started!</h4>
+            <h4 class="pad-top-s">Login or Sign Up</h4>
             <div class="pad-top-s">
                 <div class="login-toggle">
                     <form asp-controller="User" asp-action="ExistingUserIndex">
@@ -46,18 +46,20 @@
             <div class="signup-toggle">
                 <form asp-controller="User" asp-action="Create">
                     <table class="center pad-bottom-xs">
-                        <tr class="align-left">
-                            <td>Username: </td>
-                            <td><input type="text" asp-for="Name"></td>
-                        </tr>
-                        <tr class="align-left">
-                            <td>Email: </td>
-                            <td><input type="text" asp-for="Email"></td>
-                        </tr>
-                        <tr class="align-left">
-                            <td class="pad-right-xs">GitHub Username: </td>
-                            <td><input type="text" asp-for="GitHubLink"></td>
-                        </tr>
+                        <tbody>
+                            <tr class="align-left">
+                                <td class="pad-right-s pad-bottom-xs bold">Username: </td>
+                                <td><input type="text" asp-for="Name"></td>
+                            </tr>
+                            <tr class="align-left">
+                                <td class="pad-right-s pad-bottom-xs bold">Email: </td>
+                                <td><input type="text" asp-for="Email"></td>
+                            </tr>
+                            <tr class="align-left">
+                                <td class="pad-right-s pad-bottom-xs bold">GitHub Username: </td>
+                                <td><input type="text" asp-for="GitHubLink"></td>
+                            </tr>
+                        </tbody>
                     </table>
                     <input type="submit" value="Create" class="button">
                 </form>
@@ -68,7 +70,7 @@
         <h1>
             Welcome to GitHired
         </h1>
-        <h4>Helps you stay in the know for your applying process</h4>
+        <h4>Helps keep you on track during your application process</h4>
     </div>
 </body>
 <footer class="center">

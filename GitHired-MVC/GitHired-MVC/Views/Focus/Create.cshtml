@@ -4,39 +4,46 @@
     Layout = "_Layout";
 }
 <body>
-    <form asp-action="Create">
+<div class="green gradient container-l center pad-bottom-s pad-top-s">
+    <form asp-controller="Focus" asp-action="Create">
+        <input type="hidden" asp-for="UserID" />
         <table class="center pad-bottom-xs">
-            <tr class="align-left">
-                <td>Username: </td>
-                @*<td><input type="text" asp-for="Name"></td>*@
-                <label asp-for="UserID" class="control-label"></label>
-                <select type="hidden" asp-for="UserID" asp-items="ViewBag.UserID"></select>
-            </tr>
-            <tr class="align-left">
-                <td>Focus Name: </td>
-                <td><input type="text" asp-for="Name"></td>
-            </tr>
-            <tr class="align-left">
-                <td>Desired Position: </td>
-                <td><input type="text" asp-for="DesiredPosition"></td>
-            </tr>
-            <tr class="align-left">
-                <td class="">Location: </td>
-                <td><input type="text" asp-for="Location"></td>
-            </tr>
-            <tr class="align-left">
-                <td class="">Skill: </td>
-                <td><input type="text" asp-for="Skill"></td>
-            </tr>
-            <tr class="align-left">
-                <td class="">Resume Link: </td>
-                <td><input type="text" asp-for="ResumeLink"></td>
-            </tr>
-            <tr class="align-left">
-                <td class="">Cover Letter Link: </td>
-                <td><input type="text" asp-for="CoverLetter"></td>
-            </tr>
+            <tbody>
+                <h1 class="center pad-bottom-s">Focus Info:</h1>
+                <tr class="align-left">
+                    <td class="pad-right-s pad-bottom-xs bold">Username: </td>
+                    @*<td><input type="text" asp-for="Name" class="wide-input"></td>*@
+                    <label asp-for="UserID" class="control-label"></label>
+                    <select type="hidden" asp-for="UserID" asp-items="ViewBag.UserID"></select>
+                </tr>
+                <tr class="align-left">
+                    <td class="pad-right-s pad-bottom-xs bold">Focus Name: </td>
+                    <td><input type="text" asp-for="Name"></td>
+                </tr>
+                <tr class="align-left">
+                    <td class="pad-right-s pad-bottom-xs bold">Desired Position: </td>
+                    <td><input type="text" asp-for="DesiredPosition"></td>
+                </tr>
+                <tr class="align-left">
+                    <td class="pad-right-s pad-bottom-xs bold">Location: </td>
+                    <td><input type="text" asp-for="Location"></td>
+                </tr>
+                <tr class="align-left">
+                    <td class="pad-right-s pad-bottom-xs bold">Skillset: </td>
+                    <td><input type="text" asp-for="Skill"></td>
+                </tr>
+                <tr class="align-left">
+                    <td class="pad-right-s pad-bottom-xs bold">Resume Link: </td>
+                    <td><input type="text" asp-for="ResumeLink"></td>
+                </tr>
+                <tr class="align-left">
+                    <td class="pad-right-s pad-bottom-xs bold">Cover Letter Link: </td>
+                    <td><input type="text" asp-for="CoverLetter"></td>
+                </tr>
+            </tbody>
         </table>
         <input type="submit" value="Create" class="button">
     </form>
+</div>
+<div class="pad-bottom-m"></div>
 </body>
