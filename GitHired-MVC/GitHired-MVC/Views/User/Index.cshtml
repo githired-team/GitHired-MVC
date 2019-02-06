@@ -3,7 +3,6 @@
 @{
     Layout = "_Layout";
 }
-
 <body>
     <div class="green gradient container-l center pad-bottom-s pad-top-s">
         <table class="center">
@@ -26,5 +25,8 @@
     </div>
     <div class="center pad-top-s pad-bottom-m">
         <a asp-controller="Focus" asp-action="Create" asp-route-id="@Model.ID" class="CRUD link-emphasis">Create A New Focus</a>
+    </div>
+    <div class="center pad-top-s pad-bottom-m">
+        <a asp-controller="Focus" asp-action="Index" asp-route-id="@Model.ID"> View Focus</a>
     </div>
 </body>
