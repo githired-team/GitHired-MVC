@@ -27,21 +27,21 @@
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @item.Name
-                    </td>
-                    <td>
-                        @item.DesiredPosition
-                    </td>
-                    <td>
-                        @item.Location
-                    </td>
-                    <td>
-                        @*this is where the links would go for edit, delete and board*@
-                        <a asp-controller="Board" asp-action="Index" asp-route-id="@item.ID"> View Board</a>
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.DesiredPosition
+                </td>
+                <td>
+                    @item.Location
+                </td>
+                <td>
+                    @*this is where the links would go for edit, delete and board*@
+                    <a asp-controller="Board" asp-action="Index" asp-route-id="@item.ID"> View Board</a>
+                </td>
+            </tr>
             }
         </tbody>
     </table>

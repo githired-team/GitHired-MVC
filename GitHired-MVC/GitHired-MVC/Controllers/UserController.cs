@@ -24,16 +24,16 @@ namespace GitHired_MVC.Controllers
             _focus = focus;
             _user = user;
         }
-
         public IActionResult Index(User user)
         {
             return View(user);
         }
 
         //this was for exisiting user log in also didn't like having 2 indexes even if it had diff params
-        public async Task<IActionResult> ExistingUserIndex(string name)
+        public async Task<IActionResult> Login(string name)
         {
-            return View(await _user.SearchUserName(name));
+            User user = await _user.GetUserByName(name);
+            return RedirectToAction("Index", user);
         }
 
         [HttpGet]
