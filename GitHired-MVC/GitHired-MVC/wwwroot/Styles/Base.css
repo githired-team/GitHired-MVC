@@ -16,18 +16,21 @@ body {
 }
 
 h1 {
-    font-size: 6vw;
+    font-variant-caps: all-petite-caps;
+    font-size: 7vw;
     background: -webkit-linear-gradient(#333, #777);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 h4 {
-    font-size: 3vw;
+    font-variant-caps: all-petite-caps;
+    font-size: 4vw;
 }
 
 h3 {
-    font-size: 4vw;
+    font-variant-caps: all-petite-caps;
+    font-size: 5vw;
 }
 
 a {
@@ -89,8 +92,7 @@ a.link-emphasis:hover {
 }
 
 .black-gradient {
-    font-variant-caps: all-petite-caps;
-    background: -webkit-linear-gradient(#000, #555);
+    background: -webkit-linear-gradient(#333, #777);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
