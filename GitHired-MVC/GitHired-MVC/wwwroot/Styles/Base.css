@@ -52,8 +52,24 @@ footer {
     text-align: center;
 }
 
+a.link-emphasis {
+    display: inline-block;
+    border-bottom: 0px solid transparent;
+    transition: 0.36s ease;
+    background-position: 100% center;
+}
+
+a.link-emphasis:hover {
+    border-bottom: 3px solid #57cc57;
+    font-size: 4.25vw;
+}
+
+.bold {
+    font-weight: bold;
+}
+
 .green {
-    border: 3px solid #57cc57;
+    border: 3px groove #57cc57;
     border-radius: 1vw;
 }
 

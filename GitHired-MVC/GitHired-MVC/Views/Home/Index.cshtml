@@ -45,18 +45,20 @@
             <div class="signup-toggle">
                 <form asp-controller="User" asp-action="Create">
                     <table class="center pad-bottom-xs">
-                        <tr class="align-left">
-                            <td>Username: </td>
-                            <td><input type="text" asp-for="Name"></td>
-                        </tr>
-                        <tr class="align-left">
-                            <td>Email: </td>
-                            <td><input type="text" asp-for="Email"></td>
-                        </tr>
-                        <tr class="align-left">
-                            <td class="pad-right-xs">GitHub Username: </td>
-                            <td><input type="text" asp-for="GitHubLink"></td>
-                        </tr>
+                        <tbody>
+                            <tr class="align-left">
+                                <td>Username: </td>
+                                <td><input type="text" asp-for="Name"></td>
+                            </tr>
+                            <tr class="align-left">
+                                <td>Email: </td>
+                                <td><input type="text" asp-for="Email"></td>
+                            </tr>
+                            <tr class="align-left">
+                                <td class="pad-right-xs">GitHub Username: </td>
+                                <td><input type="text" asp-for="GitHubLink"></td>
+                            </tr>
+                        </tbody>
                     </table>
                     <input type="submit" value="Create" class="button">
                 </form>

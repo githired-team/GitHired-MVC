@@ -5,27 +5,26 @@
 }
 
 <body>
-    <dl>
-        <dt>
-            Name
-        </dt>
-        <dd>
-            @Model.Name
-        </dd>
-        <dt>
-            Email
-        </dt>
-        <dd>
-            @Model.Email
-        </dd>
-        <dt>
-            GitHub Link
-        </dt>
-        <dd>
-            @Model.GitHubLink
-        </dd>
-
-    </dl>
-    <a asp-controller="Focus" asp-action="Create" asp-route-id="@Model.ID"> Create Focus</a>
-
+    <div class="green gradient container-m center pad-bottom-s pad-top-s">
+        <table class="center">
+            <tbody>
+                <h1 class="center pad-bottom-s"> User Info:</h1>
+                <tr class="align-left">
+                    <td class="pad-right-s bold">Username: </td>
+                    <td>@Model.Name</td>
+                </tr>
+                <tr class="align-left">
+                    <td class="pad-right-s bold">Email Address: </td>
+                    <td>@Model.Email</td>
+                </tr>
+                <tr class="align-left">
+                    <td class="pad-right-s bold">GitHub Username: </td>
+                    <td>@Model.GitHubLink</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="center pad-top-s pad-bottom-m">
+        <a asp-controller="Focus" asp-action="Create" asp-route-id="@Model.ID" class="CRUD link-emphasis">Create A New Focus</a>
+    </div>
 </body>
