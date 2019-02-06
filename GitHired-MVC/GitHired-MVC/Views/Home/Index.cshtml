@@ -21,9 +21,9 @@
             <h1 class="pad-top-s">Login or Sign Up</h1>
             <div class="pad-top-s">
                 <div class="login-toggle">
-                    <form asp-controller="User" asp-action="ExistingUserIndex">
+                    <form asp-controller="User" asp-action="Login">
                         Username:
-                        <input type="text" asp-for="Name" name="name">
+                        <input type="text" asp-for="Name" >
                         @*<input type="text" name="CurrUserUsername" asp-for="Name"><br>*@
                         <input type="submit" value="Log In" class="button">
                     </form>
@@ -44,7 +44,7 @@
             </script>
             <button id="signup" class="button container-s">Sign Up Today!</button>
             <div class="signup-toggle">
-                <form asp-controller="User" asp-action="Create">
+                <form asp-controller="User" asp-action="Create" >
                     <table class="center pad-bottom-xs">
                         <tbody>
                             <tr class="align-left">

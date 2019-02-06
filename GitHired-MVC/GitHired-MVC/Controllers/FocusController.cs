@@ -1,6 +1,7 @@
 ﻿using GitHired_MVC.Data;
 using GitHired_MVC.Models;
 using GitHired_MVC.Models.Interfaces;
+using GitHired_MVC.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -40,29 +41,30 @@ namespace GitHired_MVC.Controllers
         public async Task<IActionResult> ExisitingUserIndex(int id)
         {
             //var returnInfo = _context.Focus.Include(fu => fu.UserID);
-            return View(await _focus.GetFocus(id));
+            var focuses = await _focus.GetFocus(id);
+            return RedirectToAction("Index", focuses);
             //return View();
         }
 
         [HttpGet]
-        public IActionResult Create()
+        public IActionResult Create(int id)
         {
             // Possible View Model
-            ViewData["UserID"] = new SelectList(_context.User, "ID", "Name");
-            return View();
+            // ViewData["UserID"] = new SelectList(_context.User, "ID", "Name");
+            FocusViewModel fvm = new FocusViewModel();
+            fvm.UserID = id;
+            return View(fvm);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("ID,UserID, Name, DesiredPosition, Location, Skill, ResumeLink, CoverLetter")] Focus focus)
+        public async Task<IActionResult> Create([Bind("UserID, Name, DesiredPosition, Location, Skill, ResumeLink, CoverLetter")] Focus focus)
         {
-            Board newBoard = new Board();
-            newBoard.FocusID = focus.ID;
-            newBoard.Name = focus.Name;
+           
 
-            Column newDefaultColInterested = new Column();
-            newDefaultColInterested.BoardID = newBoard.ID;
-            newDefaultColInterested.Name = "Interested";
-            newDefaultColInterested.Order = 1;
+            //Column newDefaultColInterested = new Column();
+            //newDefaultColInterested.BoardID = newBoard.ID;
+            //newDefaultColInterested.Name = "Interested";
+            //newDefaultColInterested.Order = 1;
 
             //Column newDefaultColWIP = new Column();
             //newDefaultColWIP.BoardID = newBoard.ID;
@@ -81,7 +83,10 @@ namespace GitHired_MVC.Controllers
             if (ModelState.IsValid)
             {
                 await _focus.CreateFocus(focus);
-                //await _board.CreateBoard(newBoard);
+                Board newBoard = new Board();
+                newBoard.Name = focus.Name;
+                newBoard.FocusID = focus.ID;
+                await _board.CreateBoard(newBoard);
                 //await _column.CreateColumn(newDefaultColInterested);
                 //await _column.CreateColumn(newDefaultColWIP);
                 //await _column.CreateColumn(newDefaultColComplete);
@@ -89,8 +94,8 @@ namespace GitHired_MVC.Controllers
                 //return RedirectToAction(nameof(Index(focus.UserID)));
                 return RedirectToAction(nameof(Index), focus);
             }
-            return View(focus);
-            
+            return RedirectToAction(nameof(Index), focus);
+
         }
 
         //edit

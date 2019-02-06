@@ -42,7 +42,7 @@ namespace GitHired_MVC.Models.Services
 
         public async Task<Board> GetBoardAsync(int id)
         {
-            return await _context.Board.FirstOrDefaultAsync(x => x.ID == id);
+            return await _context.Board.FirstOrDefaultAsync(x => x.FocusID == id);
         }
 
         public async Task UpdateBoard(Board board)

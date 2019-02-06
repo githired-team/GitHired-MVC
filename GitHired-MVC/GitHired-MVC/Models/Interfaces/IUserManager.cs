@@ -11,10 +11,13 @@ namespace GitHired_MVC.Models.Interfaces
 
         Task CreateUser(User user);
 
-        Task<User> GetUser(string userName);
+        Task<User> GetUserById(int id);
 
         Task UpdateUser(User user);
 
         Task DeleteUser(int id);
+
+        Task<User> GetUserByName(string name);
+
     }
 }
