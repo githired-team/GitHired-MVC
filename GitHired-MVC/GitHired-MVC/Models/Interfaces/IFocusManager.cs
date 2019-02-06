@@ -11,6 +11,8 @@ namespace GitHired_MVC.Models.Interfaces
 
         Task<IEnumerable<Focus>> GetFocus(int id);
 
+        Task<Focus> GetSingleFocus(int id);
+
         Task UpdateFocus(Focus focus);
 
         Task<Focus> DeleteFocus(int id);
