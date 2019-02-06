@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GitHired_MVC.Migrations
 {
     [DbContext(typeof(GitHiredDBContext))]
-    [Migration("20190205224950_initial")]
+    [Migration("20190206003523_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,14 +36,6 @@ namespace GitHired_MVC.Migrations
                         .IsUnique();
 
                     b.ToTable("Board");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            FocusID = 1,
-                            Name = "Default Board"
-                        });
                 });
 
             modelBuilder.Entity("GitHired_MVC.Models.Card", b =>
@@ -90,29 +82,6 @@ namespace GitHired_MVC.Migrations
                     b.HasIndex("BoardID");
 
                     b.ToTable("Column");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            BoardID = 1,
-                            Name = "Default Column 1",
-                            Order = 1
-                        },
-                        new
-                        {
-                            ID = 2,
-                            BoardID = 1,
-                            Name = "Default Column 2",
-                            Order = 2
-                        },
-                        new
-                        {
-                            ID = 3,
-                            BoardID = 1,
-                            Name = "Default Column 3",
-                            Order = 3
-                        });
                 });
 
             modelBuilder.Entity("GitHired_MVC.Models.Focus", b =>
@@ -140,19 +109,6 @@ namespace GitHired_MVC.Migrations
                     b.HasIndex("UserID");
 
                     b.ToTable("Focus");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            CoverLetter = "Test Cover Letter",
-                            DesiredPosition = "Test Position",
-                            Location = "Testville, USA",
-                            Name = "Test Focus",
-                            ResumeLink = "Test Resume Link",
-                            Skill = "ASP.NET Core",
-                            UserID = 1
-                        });
                 });
 
             modelBuilder.Entity("GitHired_MVC.Models.User", b =>
@@ -172,16 +128,6 @@ namespace GitHired_MVC.Migrations
                     b.HasKey("ID");
 
                     b.ToTable("User");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            Avatar = "Test Avatar",
-                            Email = "test@test.com",
-                            GitHubLink = "http://www.github.com/testuser",
-                            Name = "Test User"
-                        });
                 });
 
             modelBuilder.Entity("GitHired_MVC.Models.Board", b =>

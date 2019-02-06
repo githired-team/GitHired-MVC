@@ -29,41 +29,47 @@ namespace GitHired_MVC.Controllers
         }
 
         [HttpGet]
-        public IActionResult Create(int specificUserID)
+        public IActionResult Create()
         {
+            // Possible View Model
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("ID, UserID, Name, DesiredPosition, Location, Skill,ResumeLink, CoverLetter")] Focus focus)
+        public async Task<IActionResult> Create(int id, [Bind("UserID, Name, DesiredPosition, Location, Skill, ResumeLink, CoverLetter")] Focus focus)
         {
-            Focus newFocus = focus;
-            Board newBoard = new Board();
-            newBoard.FocusID = newFocus.ID;
-            newBoard.Name = newFocus.Name;
-            Column newDefaultColInterested = new Column();
-            newDefaultColInterested.BoardID = newBoard.ID;
-            newDefaultColInterested.Name = "Interested";
-            newDefaultColInterested.Order = 1;
-            Column newDefaultColWIP = new Column();
-            newDefaultColWIP.BoardID = newBoard.ID;
-            newDefaultColWIP.Name = "In Prcess";
-            newDefaultColWIP.Order = 2;
-            Column newDefaultColComplete = new Column();
-            newDefaultColComplete.BoardID = newBoard.ID;
-            newDefaultColComplete.Name = "Done";
-            newDefaultColComplete.Order = 3;
+            
+            //Board newBoard = new Board();
+            //newBoard.FocusID = newFocus.ID;
+            //newBoard.Name = newFocus.Name;
 
-            if (ModelState.IsValid)
-            {
-                await _focus.CreateFocus(newFocus);
-                await _board.CreateBoard(newBoard);
-                await _column.CreateColumn(newDefaultColInterested);
-                await _column.CreateColumn(newDefaultColWIP);
-                await _column.CreateColumn(newDefaultColComplete);
-                return RedirectToAction(nameof(Index));
-            }
-            return View(focus);
+            //Column newDefaultColInterested = new Column();
+            //newDefaultColInterested.BoardID = newBoard.ID;
+            //newDefaultColInterested.Name = "Interested";
+            //newDefaultColInterested.Order = 1;
+
+            //Column newDefaultColWIP = new Column();
+            //newDefaultColWIP.BoardID = newBoard.ID;
+            //newDefaultColWIP.Name = "In Prcess";
+            //newDefaultColWIP.Order = 2;
+
+            //Column newDefaultColComplete = new Column();
+            //newDefaultColComplete.BoardID = newBoard.ID;
+            //newDefaultColComplete.Name = "Done";
+            //newDefaultColComplete.Order = 3;
+
+            //newBoard.Column.Add(newDefaultColInterested);
+            //newBoard.Column.Add(newDefaultColInterested);
+            //newBoard.Column.Add(newDefaultColInterested);
+
+            
+                await _focus.CreateFocus(focus);
+                //await _board.CreateBoard(newBoard);
+                //await _column.CreateColumn(newDefaultColInterested);
+                //await _column.CreateColumn(newDefaultColWIP);
+                //await _column.CreateColumn(newDefaultColComplete);
+                return RedirectToAction(nameof(Index), focus.UserID);
+            
         }
 
         //edit

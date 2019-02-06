@@ -114,36 +114,6 @@ namespace GitHired_MVC.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.InsertData(
-                table: "User",
-                columns: new[] { "ID", "Avatar", "Email", "GitHubLink", "Name" },
-                values: new object[] { 1, "Test Avatar", "test@test.com", "http://www.github.com/testuser", "Test User" });
-
-            migrationBuilder.InsertData(
-                table: "Focus",
-                columns: new[] { "ID", "CoverLetter", "DesiredPosition", "Location", "Name", "ResumeLink", "Skill", "UserID" },
-                values: new object[] { 1, "Test Cover Letter", "Test Position", "Testville, USA", "Test Focus", "Test Resume Link", "ASP.NET Core", 1 });
-
-            migrationBuilder.InsertData(
-                table: "Board",
-                columns: new[] { "ID", "FocusID", "Name" },
-                values: new object[] { 1, 1, "Default Board" });
-
-            migrationBuilder.InsertData(
-                table: "Column",
-                columns: new[] { "ID", "BoardID", "Name", "Order" },
-                values: new object[] { 1, 1, "Default Column 1", 1 });
-
-            migrationBuilder.InsertData(
-                table: "Column",
-                columns: new[] { "ID", "BoardID", "Name", "Order" },
-                values: new object[] { 2, 1, "Default Column 2", 2 });
-
-            migrationBuilder.InsertData(
-                table: "Column",
-                columns: new[] { "ID", "BoardID", "Name", "Order" },
-                values: new object[] { 3, 1, "Default Column 3", 3 });
-
             migrationBuilder.CreateIndex(
                 name: "IX_Board_FocusID",
                 table: "Board",

@@ -3,5 +3,35 @@
 @{
     Layout = "_Layout";
 }
-
-
+<body>
+    <form asp-controller="Focus" asp-action="Create">
+        <input type="hidden" asp-for="UserID" />
+        <table class="center pad-bottom-xs">
+            <tr class="align-left">
+                <td>Username: </td>
+                <td><input type="text" asp-for="Name"></td>
+            </tr>
+            <tr class="align-left">
+                <td>Desired Position: </td>
+                <td><input type="text" asp-for="DesiredPosition"></td>
+            </tr>
+            <tr class="align-left">
+                <td class="">Location: </td>
+                <td><input type="text" asp-for="Location"></td>
+            </tr>
+            <tr class="align-left">
+                <td class="">Skill: </td>
+                <td><input type="text" asp-for="Skill"></td>
+            </tr>
+            <tr class="align-left">
+                <td class="">Resume Link: </td>
+                <td><input type="text" asp-for="ResumeLink"></td>
+            </tr>
+            <tr class="align-left">
+                <td class="">Cover Letter Link: </td>
+                <td><input type="text" asp-for="CoverLetter"></td>
+            </tr>
+        </table>
+        <input type="submit" value="Create" class="button">
+    </form>
+</body>
