@@ -24,9 +24,9 @@ namespace GitHired_MVC.Controllers
             _focus = focus;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string name)
         {
-            return View();
+            return View(await _board.SearchBoard(name));
         }
 
         [HttpPost]
