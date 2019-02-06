@@ -30,6 +30,11 @@ namespace GitHired_MVC.Controllers
             return View(user);
         }
 
+        public async Task<IActionResult> ExistingUserIndex(string name)
+        {
+            return View(await _user.SearchUserName(name));
+        }
+
         [HttpPost]
         public async Task<IActionResult> Index(string specificUser)
         {
