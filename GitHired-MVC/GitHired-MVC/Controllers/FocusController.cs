@@ -55,9 +55,7 @@ namespace GitHired_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([Bind("ID,UserID, Name, DesiredPosition, Location, Skill, ResumeLink, CoverLetter")] Focus focus)
         {
-            Board newBoard = new Board();
-            newBoard.FocusID = focus.ID;
-            newBoard.Name = focus.Name;
+            //Focus newFocus = focus;
 
             //Column newDefaultColInterested = new Column();
             //newDefaultColInterested.BoardID = newBoard.ID;
@@ -81,6 +79,10 @@ namespace GitHired_MVC.Controllers
             if (ModelState.IsValid)
             {
                 await _focus.CreateFocus(focus);
+                Board newBoard = new Board();
+                newBoard.FocusID = focus.ID;
+                newBoard.Name = focus.Name;
+                await _board.CreateBoard(newBoard);
                 //await _board.CreateBoard(newBoard);
                 //await _column.CreateColumn(newDefaultColInterested);
                 //await _column.CreateColumn(newDefaultColWIP);
