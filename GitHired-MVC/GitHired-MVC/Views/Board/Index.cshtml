@@ -1,4 +1,4 @@
-﻿@model IEnumerable<GitHired_MVC.Models.Board>
+﻿@model GitHired_MVC.Models.Board
 @{
             Layout = "_Layout";
         }
@@ -8,15 +8,6 @@
         <a asp-action="Create" class="CRUD pad-top-xs">Create A New Column</a>
     </p>
     <div class="board-container">
-        @*@foreach (var item in Model.Column)
-        {
-                <div class="column gradient"></div>
-            }*@
         test i am in board
-        
-        @foreach (var item in Model)
-        {
-            @item.Name
-        }
     </div>
 </body>

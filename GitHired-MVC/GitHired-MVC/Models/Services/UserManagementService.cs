@@ -37,9 +37,14 @@ namespace GitHired_MVC.Models.Services
             throw new NotImplementedException();
         }
 
-        public async Task<User> GetUser(string userName)
+        public async Task<User> GetUserById(int id)
         {
-            return await _context.User.FirstOrDefaultAsync(x => x.Name == userName);
+            return await _context.User.FirstOrDefaultAsync(x => x.ID == id);
+        }
+
+        public async Task<User> GetUserByName(string name)
+        {
+            return await _context.User.FirstOrDefaultAsync(x => x.Name == name);
         }
 
         public async Task UpdateUser(User user)
