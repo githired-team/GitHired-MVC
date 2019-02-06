@@ -102,7 +102,7 @@ namespace GitHired_MVC.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var focus = await _focus.GetFocus(id);
+            var focus = await _focus.GetSingleFocus(id);
             if (focus == null)
             {
                 return NotFound();
