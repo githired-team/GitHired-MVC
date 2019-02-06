@@ -160,8 +160,8 @@ a.link-emphasis:hover {
 }
 
 .container-xl {
-    min-width: 800px;
-    max-width: 90vw;
+    width: 90vw;
+    min-width: 500px;
 }
 
 .pad-top-xs {
@@ -258,4 +258,25 @@ a.link-emphasis:hover {
 
 .align-left {
     text-align: left;
+}
+
+/*-----MEDIA-QUERIES-----*/
+@media (max-width: 780px) (min-width: 1000px) {
+    body {
+        overflow: auto;
+    }
+
+    .view-board-link {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 10vw;
+    }
+
+    .view-board-link {
+        font-size: 1.6rem;
+    }
 }

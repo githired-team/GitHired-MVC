@@ -103,11 +103,15 @@ namespace GitHired_MVC.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var focus = await _focus.GetSingleFocus(id);
+
+            FocusViewModel fvm = new FocusViewModel();
+            fvm.Focus = focus;
+            fvm.UserID = id;
             if (focus == null)
             {
                 return NotFound();
             }
-            return View(focus);
+            return View(fvm);
         }
 
         [HttpPost]
