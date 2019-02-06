@@ -26,6 +26,10 @@ h4 {
     font-size: 3vw;
 }
 
+h3 {
+    font-size: 4vw;
+}
+
 a {
     font-variant-caps: all-petite-caps;
     background: -webkit-linear-gradient(#388238, #94de94);
@@ -77,8 +81,19 @@ a.link-emphasis:hover {
     border-radius: 1vw;
 }
 
+.black-gradient {
+    font-variant-caps: all-petite-caps;
+    background: -webkit-linear-gradient(#000, #555);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .gradient {
     background-image: linear-gradient(#94de94, #ffffff);
+}
+
+.light-green {
+    background-color: rgba(87, 204, 87, 0.5);
 }
 
 .button {

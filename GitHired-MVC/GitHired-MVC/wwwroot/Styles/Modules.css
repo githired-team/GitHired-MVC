@@ -88,7 +88,7 @@
 #menu {
     position: absolute;
     min-width: 400px;
-    margin: -83px 0 0 -415px;
+    margin: -80px 0 0 -430px;
     padding: 50px;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
@@ -100,7 +100,7 @@
 #menu li {
   display: inline;
   /*line-height: 6vw;*/
-  padding-right: 1.6rem;
+  padding-right: 1.5rem;
   font-size: 1.6rem;
   font-family: 'Hind Madurai', sans-serif;
 }
