@@ -42,7 +42,11 @@ namespace GitHired_MVC.Models.Services
 
         public async Task<Board> GetBoardAsync(int id)
         {
-            return await _context.Board.FirstOrDefaultAsync(x => x.FocusID == id);
+            Board board = await _context.Board.Where(b => b.FocusID == id)
+                .Include("Column.Card")
+                .FirstOrDefaultAsync();
+
+            return board;
         }
 
         public async Task UpdateBoard(Board board)
