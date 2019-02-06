@@ -79,6 +79,13 @@ a.link-emphasis:hover {
 .green {
     border: 3px groove #57cc57;
     border-radius: 1vw;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    transition: 0.5s ease;
+}
+
+.green:hover {
+    transition: 0.5s ease;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
 }
 
 .black-gradient {
