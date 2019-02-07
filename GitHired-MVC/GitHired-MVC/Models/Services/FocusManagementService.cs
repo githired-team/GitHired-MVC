@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -23,11 +23,13 @@ namespace GitHired_MVC.Models.Services
             await _context.SaveChangesAsync();
         }
 
-        public Task<Focus> DeleteFocus(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public async Task DeleteFocus(int id)
+        {   
+            Focus foucus = _context.Focus.FirstOrDefault(f => f.ID == id);
+            _context.Focus.Remove(foucus);
+            await _context.SaveChangesAsync();
 
+        }
         public async Task<Focus> GetSingleFocus(int id)
         {
             return await _context.Focus.FirstOrDefaultAsync(f => f.ID == id);
@@ -46,10 +48,6 @@ namespace GitHired_MVC.Models.Services
             _context.Focus.Update(focus);
             await _context.SaveChangesAsync();
         }
-
-        Task<Focus> IFocusManager.DeleteFocus(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
+
