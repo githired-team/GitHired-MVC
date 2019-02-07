@@ -7,10 +7,10 @@ namespace GitHired_MVC.Models
 {
     public class Job
     {
-        public int id { get; set; }
-        public string title { get; set; }
-        public int companyID { get; set; }
-        public string description { get; set; }
+        public int Id { get; set; }
+        public string JobTitle { get; set; }
+        public int CompanyID { get; set; }
+        public string Description { get; set; }
         public string location { get; set; }
         public string wageRange { get; set; }
     }

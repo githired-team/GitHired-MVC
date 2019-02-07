@@ -22,3 +22,6 @@ namespace GitHired_MVC.Models
         public Column Column { get; set; }
     }
 }
+
+
+

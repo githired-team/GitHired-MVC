@@ -18,6 +18,7 @@ namespace GitHired_MVC.Controllers
         {
             return View();
         }
+
         [HttpGet]
         public async Task<IActionResult> Api()
         {
@@ -30,6 +31,7 @@ namespace GitHired_MVC.Controllers
 
             return View(result);
         }
+
         static async Task<Object> GetProductAsync(string path)
         {
             Object product = null;
