@@ -96,78 +96,78 @@ namespace GitHiredTesting
         }
 
         //read user
-        [Fact]
-        public async void TestReadUser()
-        {
-            DbContextOptions<GitHiredDBContext> options = new DbContextOptionsBuilder<GitHiredDBContext>().UseInMemoryDatabase("ReadUser").Options;
-            using (GitHiredDBContext context = new GitHiredDBContext(options))
-            {
-                User testUser2 = new User();
-                testUser2.ID = 1;
-                testUser2.Name = "aName";
-                testUser2.Email = "anEmail";
-                testUser2.GitHubLink = "aGitHubLink";
-                testUser2.Avatar = "anAvatar";
+        //[Fact]
+        //public async void TestReadUser()
+        //{
+        //    DbContextOptions<GitHiredDBContext> options = new DbContextOptionsBuilder<GitHiredDBContext>().UseInMemoryDatabase("ReadUser").Options;
+        //    using (GitHiredDBContext context = new GitHiredDBContext(options))
+        //    {
+        //        User testUser2 = new User();
+        //        testUser2.ID = 1;
+        //        testUser2.Name = "aName";
+        //        testUser2.Email = "anEmail";
+        //        testUser2.GitHubLink = "aGitHubLink";
+        //        testUser2.Avatar = "anAvatar";
 
-                UserManagementService userService = new UserManagementService(context);
+        //        UserManagementService userService = new UserManagementService(context);
 
-                await userService.CreateUser(testUser2);
+        //        await userService.CreateUser(testUser2);
 
-                var user2Answer = await userService.GetUser(testUser2.Name);
+        //        var user2Answer = await userService.GetUser(testUser2.Name);
 
-                Assert.Equal(testUser2, user2Answer);
-            }
-        }
+        //        Assert.Equal(testUser2, user2Answer);
+        //    }
+        //}
 
-        //update user
-        [Fact]
-        public async void TestUpdateUser()
-        {
-            DbContextOptions<GitHiredDBContext> options = new DbContextOptionsBuilder<GitHiredDBContext>().UseInMemoryDatabase("UpdateUser").Options;
-            using (GitHiredDBContext context = new GitHiredDBContext(options))
-            {
-                User testUser3 = new User();
-                testUser3.ID = 1;
-                testUser3.Name = "aName";
-                testUser3.Email = "anEmail";
-                testUser3.GitHubLink = "aGitHubLink";
-                testUser3.Avatar = "anAvatar";
-                testUser3.Avatar = "newAvatar";
+        ////update user
+        //[Fact]
+        //public async void TestUpdateUser()
+        //{
+        //    DbContextOptions<GitHiredDBContext> options = new DbContextOptionsBuilder<GitHiredDBContext>().UseInMemoryDatabase("UpdateUser").Options;
+        //    using (GitHiredDBContext context = new GitHiredDBContext(options))
+        //    {
+        //        User testUser3 = new User();
+        //        testUser3.ID = 1;
+        //        testUser3.Name = "aName";
+        //        testUser3.Email = "anEmail";
+        //        testUser3.GitHubLink = "aGitHubLink";
+        //        testUser3.Avatar = "anAvatar";
+        //        testUser3.Avatar = "newAvatar";
 
-                UserManagementService userService = new UserManagementService(context);
+        //        UserManagementService userService = new UserManagementService(context);
 
-                await userService.CreateUser(testUser3);
+        //        await userService.CreateUser(testUser3);
 
-                var user3Answer = await userService.GetUser(testUser3.Name);
+        //        var user3Answer = await userService.GetUser(testUser3.Name);
 
-                Assert.Equal("newAvatar", user3Answer.Avatar);
-            }
-        }
+        //        Assert.Equal("newAvatar", user3Answer.Avatar);
+        //    }
+        //}
 
-        //delete user 
-        [Fact]
-        public async void TestDeleteUser()
-        {
-            DbContextOptions<GitHiredDBContext> options = new DbContextOptionsBuilder<GitHiredDBContext>().UseInMemoryDatabase("DeleteUser").Options;
-            using (GitHiredDBContext context = new GitHiredDBContext(options))
-            {
-                User testUser3 = new User();
-                testUser3.ID = 1;
-                testUser3.Name = "aName";
-                testUser3.Email = "anEmail";
-                testUser3.GitHubLink = "aGitHubLink";
-                testUser3.Avatar = "anAvatar";
-                testUser3.Avatar = "newAvatar";
+        ////delete user 
+        //[Fact]
+        //public async void TestDeleteUser()
+        //{
+        //    DbContextOptions<GitHiredDBContext> options = new DbContextOptionsBuilder<GitHiredDBContext>().UseInMemoryDatabase("DeleteUser").Options;
+        //    using (GitHiredDBContext context = new GitHiredDBContext(options))
+        //    {
+        //        User testUser3 = new User();
+        //        testUser3.ID = 1;
+        //        testUser3.Name = "aName";
+        //        testUser3.Email = "anEmail";
+        //        testUser3.GitHubLink = "aGitHubLink";
+        //        testUser3.Avatar = "anAvatar";
+        //        testUser3.Avatar = "newAvatar";
 
-                UserManagementService userService = new UserManagementService(context);
+        //        UserManagementService userService = new UserManagementService(context);
 
-                await userService.CreateUser(testUser3);
-                await userService.DeleteUser(1);
+        //        await userService.CreateUser(testUser3);
+        //        await userService.DeleteUser(1);
 
-                var user4Answer = await userService.GetUser(testUser3.Name);
+        //        var user4Answer = await userService.GetUser(testUser3.Name);
 
-                Assert.Null(user4Answer);
-            }
-        }
+        //        Assert.Null(user4Answer);
+        //    }
+        //}
     }
 }

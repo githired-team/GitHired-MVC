@@ -14,7 +14,7 @@ namespace GitHired_MVC.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.0-rtm-35687")
+                .HasAnnotation("ProductVersion", "2.2.1-servicing-10028")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -49,6 +49,12 @@ namespace GitHired_MVC.Migrations
                     b.Property<bool>("CoverLetterCheck");
 
                     b.Property<string>("Description");
+
+                    b.Property<string>("GHLink1");
+
+                    b.Property<string>("GHLink2");
+
+                    b.Property<string>("GHLink3");
 
                     b.Property<string>("JobTitle");
 

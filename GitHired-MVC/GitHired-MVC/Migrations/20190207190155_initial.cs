@@ -101,7 +101,10 @@ namespace GitHired_MVC.Migrations
                     JobTitle = table.Column<string>(nullable: true),
                     CompanyName = table.Column<string>(nullable: true),
                     Wage = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true)
+                    Description = table.Column<string>(nullable: true),
+                    GHLink1 = table.Column<string>(nullable: true),
+                    GHLink2 = table.Column<string>(nullable: true),
+                    GHLink3 = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
