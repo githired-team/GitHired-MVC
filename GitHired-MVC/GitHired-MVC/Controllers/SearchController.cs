@@ -24,6 +24,7 @@ namespace GitHired_MVC.Controllers
             _context = context;
         }
 
+
         [HttpGet]
         // TODO: ensure that the user id is sent to this controller endpoint by whatever view. 
         public async Task<IActionResult> SearchResults(string query)
