@@ -19,3 +19,6 @@ namespace GitHired_MVC.Models
         Column Column { get; set; }
     }
 }
+
+
+
