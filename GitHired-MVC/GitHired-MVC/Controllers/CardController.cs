@@ -25,22 +25,21 @@ namespace GitHired_MVC.Controllers
             return View( await _card.GetCard(cardId) );
         }
 
+
         [HttpPost]
         public async Task<IActionResult> Create(Card card)
         {
-            //Response.Cookies.Append("FocusId", card.FocusID);
+            //Request.Cookies.Append("FocusId", card.FocusID);
             await _card.CreateCard(card);
             return RedirectToAction("Index", "Board");
-
         }
 
-        [HttpGet]
+        [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
             await _card.DeleteCard(id);
             return RedirectToAction("Index", "Board");
 
         }
-
     }
 }

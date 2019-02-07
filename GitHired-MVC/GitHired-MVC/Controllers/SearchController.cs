@@ -30,6 +30,8 @@ namespace GitHired_MVC.Controllers
         {
             using (HttpClient client = new HttpClient())
             {
+
+
                 try
                 {
                     string path = $"https://githiredapi.azurewebsites.net/api/GetJobs?={query}";
@@ -40,7 +42,7 @@ namespace GitHired_MVC.Controllers
                         string jobsJSON = await response.Content.ReadAsStringAsync();
                         List<JobPosting> jobs = JsonConvert.DeserializeObject<List<JobPosting>>(jobsJSON);
 
-                        //string userId = Request.Cookies["userId"];
+                        string userId = Request.Cookies["GitHiredCookie"];
                         //Response.Cookies.Append("userId", userId);
 
                         return View(jobs);
