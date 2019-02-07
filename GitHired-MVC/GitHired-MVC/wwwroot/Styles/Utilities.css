@@ -48,6 +48,21 @@
     justify-content: space-around;
 }
 
+.flex-column-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.space-around {
+    justify-content: space-between;
+}
+
 .pad-top-xs {
     padding-top: 1vw;
 }
