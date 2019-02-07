@@ -55,6 +55,14 @@
     align-items: center;
 }
 
+.space-around {
+    justify-content: space-around;
+}
+
+.space-around {
+    justify-content: space-between;
+}
+
 .pad-top-xs {
     padding-top: 1vw;
 }

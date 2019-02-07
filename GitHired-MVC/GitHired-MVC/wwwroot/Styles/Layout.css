@@ -78,6 +78,10 @@ a.link-emphasis:hover {
     font-size: 4vw;
 }
 
+.static-CRUD {
+    font-size: 4vw;
+}
+
 ul li.inline-list {
     display: inline;
 }
