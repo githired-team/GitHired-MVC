@@ -30,7 +30,9 @@ namespace GitHired_MVC.Controllers
         public async Task<IActionResult> Create(Card card)
         {
             //Request.Cookies.Append("FocusId", card.FocusID);
+            
             await _card.CreateCard(card);
+
             return RedirectToAction("Index", "Board");
         }
 
