@@ -41,7 +41,6 @@ namespace GitHired_MVC.Controllers
         {
             await _card.DeleteCard(id);
             return RedirectToAction("Index", "Board");
-
         }
     }
 }

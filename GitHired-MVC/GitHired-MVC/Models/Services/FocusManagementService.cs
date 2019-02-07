@@ -40,7 +40,7 @@ namespace GitHired_MVC.Models.Services
                        select f;
             return await foc.ToListAsync();
         }
-
+        
         public async Task UpdateFocus(Focus focus)
         {
             _context.Focus.Update(focus);

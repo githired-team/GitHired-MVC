@@ -36,6 +36,7 @@ namespace GitHired_MVC.Controllers
             int id = Convert.ToInt32(Request.Cookies["GitHiredCookie"]);
             
             return View(await _focus.GetFocus(id));
+
         }
 
         //this is because the system didn't like two indexes even though they had diff params
