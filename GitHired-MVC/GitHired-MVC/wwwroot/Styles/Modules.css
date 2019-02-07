@@ -109,6 +109,27 @@
   transform: none;
 }
 
+/*-----SCROLLBAR-ATTRIBUTES-----*/
+.scrollable {
+    overflow-y: scroll;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 1em;
+}
+
+/*.scrollable::-webkit-scrollbar-track {
+    background-color: rgba(148, 222, 148, 0.25);
+    border: 2px solid #388238;
+    border-radius: 0.5vw;
+}*/
+
+.scrollable::-webkit-scrollbar-thumb {
+    background-color: rgba(148, 222, 148, 0.5);
+    border: 2px solid #388238;
+    border-radius: 0.5vw;
+}
+
 /*-----MEDIA-QUERIES-----*/
 @media (max-width: 780px) {
     body {
