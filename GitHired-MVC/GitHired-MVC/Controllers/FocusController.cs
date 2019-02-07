@@ -30,19 +30,12 @@ namespace GitHired_MVC.Controllers
             _context = context;
         }
 
-        //public async Task<IActionResult> Index(Focus specificUserObj)
-        //{
-        //    int specificUserID = specificUserObj.UserID;
-        //    //var returnInfo = _context.Focus.Include(fu => fu.UserID);
-        //    return View(await _focus.GetFocus(specificUserID));
-        //    //return View();
-        //}
-        public async Task<IActionResult> Index(Focus focus)
+        
+        public async Task<IActionResult> Index()
         {
-            int specificUserID = focus.UserID;
-            //var returnInfo = _context.Focus.Include(fu => fu.UserID);
-            return View(await _focus.GetFocus(specificUserID));
-            //return View();
+            int userId = Convert.ToInt32(Request.Cookies["GitHiredCookie"]);
+            return View(await _focus.GetFocus(userId));
+            
         }
 
         //this is because the system didn't like two indexes even though they had diff params
@@ -130,20 +123,53 @@ namespace GitHired_MVC.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //delete 
-        //[HttpGet]
-        //public async Task<IActionResult> Delete(int id)
-        //{
-        //    var delHotel = await _focus.GetFocus(id);
-        //    return View(delHotel);
-        //}
+        
 
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
             var focus = await _focus.DeleteFocus(id);
             return RedirectToAction(nameof(Index));
-        }
+        }<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="(@1 Namespace=GitHired_MVC Type=Startup Member=(Name=Configure OverloadingParameters=[(@2 Namespace=Microsoft.AspNetCore.Builder Type=IApplicationBuilder),(@3 Namespace=Microsoft.AspNetCore.Hosting Type=IHostingEnvironment)]))" Category="CodeSchema_Method" CodeSchemaProperty_IsPublic="True" CommonLabel="Configure" Icon="Microsoft.VisualStudio.Method.Public" IsDragSource="True" Label="Configure(IApplicationBuilder, IHostingEnvironment) : void" SourceLocation="(Assembly=file:///C:/Users/agent/codefellows/401/GitHired-MVC/GitHired-MVC/GitHired-MVC/Startup.cs StartLineNumber=38 StartCharacterOffset=20 EndLineNumber=38 EndCharacterOffset=29)" />
+    <Node Id="(@1 Namespace=GitHired_MVC Type=Startup)" Visibility="Hidden" />
+  </Nodes>
+  <Links>
+    <Link Source="(@1 Namespace=GitHired_MVC Type=Startup)" Target="(@1 Namespace=GitHired_MVC Type=Startup Member=(Name=Configure OverloadingParameters=[(@2 Namespace=Microsoft.AspNetCore.Builder Type=IApplicationBuilder),(@3 Namespace=Microsoft.AspNetCore.Hosting Type=IHostingEnvironment)]))" Category="Contains" />
+  </Links>
+  <Categories>
+    <Category Id="CodeSchema_Member" Label="Member" Icon="CodeSchema_Field" />
+    <Category Id="CodeSchema_Method" Label="Method" BasedOn="CodeSchema_Member" Icon="CodeSchema_Method" />
+    <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" IsContainment="True" />
+  </Categories>
+  <Properties>
+    <Property Id="CodeSchemaProperty_IsPublic" Label="Is Public" Description="Flag to indicate the scope is Public" DataType="System.Boolean" />
+    <Property Id="CommonLabel" DataType="System.String" />
+    <Property Id="Icon" Label="Icon" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsDragSource" Label="IsDragSource" Description="IsDragSource" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="SourceLocation" Label="Start Line Number" DataType="Microsoft.VisualStudio.GraphModel.CodeSchema.SourceLocation" />
+    <Property Id="Visibility" Label="Visibility" Description="Defines whether a node in the graph is visible or not" DataType="System.Windows.Visibility" />
+  </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="Assembly" ValueType="Uri" />
+    <Name Id="Member" Label="Member" ValueType="System.Object" />
+    <Name Id="Name" Label="Name" ValueType="System.String" />
+    <Name Id="Namespace" Label="Namespace" ValueType="System.String" />
+    <Name Id="OverloadingParameters" Label="Parameter" ValueType="Microsoft.VisualStudio.GraphModel.GraphNodeIdCollection" Formatter="NameValueNoEscape" />
+    <Name Id="Type" Label="Type" ValueType="System.Object" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(51df8742-b446-486f-b70e-d10abc8ae9c3.OutputPathUri)" />
+    <Alias n="2" Uri="Assembly=file:///C:/Program Files/dotnet/sdk/NuGetFallbackFolder/microsoft.aspnetcore.http.abstractions/2.2.0/lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll" />
+    <Alias n="3" Uri="Assembly=file:///C:/Program Files/dotnet/sdk/NuGetFallbackFolder/microsoft.aspnetcore.hosting.abstractions/2.2.0/lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Abstractions.dll" />
+  </IdentifierAliases>
+  <Paths>
+    <Path Id="51df8742-b446-486f-b70e-d10abc8ae9c3.OutputPathUri" Value="file:///C:/Users/agent/codefellows/401/GitHired-MVC/GitHired-MVC/GitHired-MVC/bin/Debug/netcoreapp2.2/GitHired-MVC.dll" />
+  </Paths>
+</DirectedGraph>
 
         //detail may come later
     }

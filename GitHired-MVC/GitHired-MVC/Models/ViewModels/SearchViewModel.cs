@@ -8,12 +8,11 @@ namespace GitHired_MVC.Models.ViewModels
     public class SearchViewModel
     {
         public List<JobPosting> JobPostings { get; set; }
-        public FocusViewModel FocusView { get; set; }
+        public Card Card { get; set; }
 
-        public SearchViewModel(List<JobPosting> jobPostings, FocusViewModel focusView)
+        public SearchViewModel(List<JobPosting> jobPostings)
         {
             JobPostings = jobPostings;
-            FocusView = focusView;
         }
     }
 }
