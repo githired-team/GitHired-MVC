@@ -35,16 +35,10 @@ namespace GitHired_MVC.Models.Services
 
         public async Task<IEnumerable<Focus>> GetFocus(int id)
         {
-            //return await _context.Focus.FirstOrDefaultAsync(x => x.ID == id);
             var foc = from f in _context.Focus
                       .Where(ui => ui.UserID == id)
                        select f;
             return await foc.ToListAsync();
-        }
-
-        public async Task<Focus> GetSingleFocus(int id)
-        {
-            return await _context.Focus.FirstOrDefaultAsync(f => f.ID == id);
         }
 
         public async Task UpdateFocus(Focus focus)

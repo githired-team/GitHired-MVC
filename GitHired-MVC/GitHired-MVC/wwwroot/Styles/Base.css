@@ -60,8 +60,10 @@ footer {
 }
 
 /*-----MEDIA-QUERIES-----*/
-@media (max-width: 780px){
-    body {
+@media (max-width: 780px)
+{
+    body 
+    {
         overflow: auto;
     }
 }
