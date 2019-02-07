@@ -27,10 +27,9 @@ namespace GitHired_MVC.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Create(Card card)
+        public async Task<IActionResult> Create([Bind("ID,ColumnID,ResumeCheck,CoverLetterCheck,JobTitle,CompanyName,Wage,Description,GHLink1,GHLink2,GHLink3")] Card card)
         {
-            //Request.Cookies.Append("FocusId", card.FocusID);
-            //need to add info from Job and from user for info of the card then can create
+
             card.ColumnID = 1;//by default it will go in the first column
             if (card.Focus.ResumeLink != null)
             {
@@ -49,11 +48,6 @@ namespace GitHired_MVC.Controllers
             {
                 card.CoverLetterCheck = false;
             }
-            //card.JobTitle = card.JobPosting.JobTitle;
-            //card.CompanyName = card.JobPosting.CompanyName;
-            //card.Wage = card.JobPosting.WageRange;
-            //card.Description = card.JobPosting.Description;
-
 
             await _card.CreateCard(card);
             return RedirectToAction("Index", "Board");
@@ -65,6 +59,20 @@ namespace GitHired_MVC.Controllers
             await _card.DeleteCard(id);
             return RedirectToAction("Index", "Board");
 
+        }
+        [HttpPost]
+        public async Task<IActionResult> MoveCardLeft(int id, [Bind("ID,ColumnID,ResumeCheck,CoverLetterCheck,JobTitle,CompanyName,Wage,Description,GHLink1,GHLink2,GHLink3")] Card card)
+        {
+            card.ColumnID = card.ColumnID - 1;
+            await _card.UpdateCard(card);
+            return RedirectToAction("Index", "Board");
+        }
+        [HttpPost]
+        public async Task<IActionResult> MoveCardRight(int id, [Bind("ID,ColumnID,ResumeCheck,CoverLetterCheck,JobTitle,CompanyName,Wage,Description,GHLink1,GHLink2,GHLink3")] Card card)
+        {
+            card.ColumnID = card.ColumnID + 1;
+            await _card.UpdateCard(card);
+            return RedirectToAction("Index", "Board");
         }
     }
 }
