@@ -30,26 +30,32 @@ namespace GitHired_MVC.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(Focus focus)
+        public async Task<IActionResult> Index()
         {
-            int specificUserID = focus.UserID;
-            return View(await _focus.GetFocus(specificUserID));
+            Response.Cookies.Delete("FocusCookie");
+            int id = Convert.ToInt32(Request.Cookies["GitHiredCookie"]);
+            
+            return View(await _focus.GetFocus(id));
+
         }
 
         //this is because the system didn't like two indexes even though they had diff params
-        public async Task<IActionResult> ExisitingUserIndex(int id)
+        public async Task<IActionResult> ExisitingUserIndex()
         {
+            int id = Convert.ToInt32(Request.Cookies["GitHiredCookie"]);
+
             var focuses = await _focus.GetFocus(id);
             var focObj = from o in focuses
                          .Where(i => i.UserID == id)
                          select o;
             return RedirectToAction("Index", focObj.FirstOrDefault());
-            //return View();
         }
 
         [HttpGet]
-        public IActionResult Create(int id)
+        public IActionResult Create()
         {
+            int id = Convert.ToInt32(Request.Cookies["GitHiredCookie"]);
+
             FocusViewModel fvm = new FocusViewModel();
             fvm.UserID = id;
             return View(fvm);
@@ -97,8 +103,10 @@ namespace GitHired_MVC.Controllers
 
         //edit
         [HttpGet]
-        public async Task<IActionResult> Edit(int id)
+        public async Task<IActionResult> Edit()
         {
+            int id = Convert.ToInt32(Request.Cookies["GitHiredCookie"]);
+
             var focus = await _focus.GetSingleFocus(id);
 
             FocusViewModel fvm = new FocusViewModel();
@@ -108,24 +116,15 @@ namespace GitHired_MVC.Controllers
             {
                 return NotFound();
             }
-
             return View(fvm);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("UserID, Name, DesiredPosition, Location, Skill,ResumeLink, CoverLetter")] Focus focus)
+        public async Task<IActionResult> Edit(int id, [Bind("ID, UserID, Name, DesiredPosition, Location, Skill,ResumeLink, CoverLetter")] Focus focus)
         {
             await _focus.UpdateFocus(focus);
-            return RedirectToAction(nameof(Index), focus);
+            return RedirectToAction(nameof(Index));
         }
-
-        //delete 
-        //[HttpGet]
-        //public async Task<IActionResult> Delete(int id)
-        //{
-        //    var delHotel = await _focus.GetFocus(id);
-        //    return View(delHotel);
-        //}
 
         [HttpPost]
         public async Task<IActionResult> Delete(int id)
@@ -133,7 +132,6 @@ namespace GitHired_MVC.Controllers
             var focus = await _focus.DeleteFocus(id);
             return RedirectToAction(nameof(Index));
         }
-
-        //detail may come later
+        
     }
 }
