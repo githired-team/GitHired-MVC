@@ -113,7 +113,7 @@ namespace GitHiredTesting
 
                 await userService.CreateUser(testUser2);
 
-                var user2Answer = await userService.GetUser(testUser2.Name);
+                var user2Answer = await userService.GetUserById(testUser2.ID);
 
                 Assert.Equal(testUser2, user2Answer);
             }
@@ -138,7 +138,7 @@ namespace GitHiredTesting
 
                 await userService.CreateUser(testUser3);
 
-                var user3Answer = await userService.GetUser(testUser3.Name);
+                var user3Answer = await userService.GetUserById(testUser3.ID);
 
                 Assert.Equal("newAvatar", user3Answer.Avatar);
             }
@@ -164,7 +164,7 @@ namespace GitHiredTesting
                 await userService.CreateUser(testUser3);
                 await userService.DeleteUser(1);
 
-                var user4Answer = await userService.GetUser(testUser3.Name);
+                var user4Answer = await userService.GetUserById(testUser3.ID);
 
                 Assert.Null(user4Answer);
             }
