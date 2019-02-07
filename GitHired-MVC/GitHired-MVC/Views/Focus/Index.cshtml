@@ -1,49 +1,55 @@
 ﻿@model IEnumerable<GitHired_MVC.Models.Focus>
-
 @{
     Layout = "_Layout";
 }
-
 <body>
-    <h1>Your Focuses</h1>
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
-    <table>
-        <thead>
-            <tr>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Desired Position
-                </th>
-                <th>
-                    Location
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-            <tr>
-                <td>
-                    @item.Name
-                </td>
-                <td>
-                    @item.DesiredPosition
-                </td>
-                <td>
-                    @item.Location
-                </td>
-                <td>
-                    @*this is where the links would go for edit, delete and board*@
-                    <a asp-controller="Board" asp-action="Index" asp-route-id="@item.ID"> View Board</a>
-                </td>
-            </tr>
-            }
-        </tbody>
-    </table>
+<div class="green gradient container-xl center pad-bottom-s pad-top-s">
+    <div class="overlayer pad-bottom-s">
+        <table class="center pad-bottom-xs">
+            <h1 class="pad-bottom-xs">Your Focuses</h1>
+            <thead>
+                <tr>
+                    <th class="bold">
+                        Name
+                    </th>
+                    <th class="bold pad-left-m pad-right-m pad-bottom-xs">
+                        Desired Position
+                    </th>
+                    <th class="bold">
+                        Location
+                    </th>
+                    <th class="pad-left-s pad-right-s"></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="">
+                            @item.Name
+                        </td>
+                        <td class="pad-left-m pad-right-m pad-bottom-xs">
+                            @item.DesiredPosition
+                        </td>
+                        <td class="">
+                            @item.Location
+                        </td>
+                        <td class="pad-left-m pad-right-s">
+                            <a asp-controller="Focus" asp-action="Edit" asp-route-id="@item.ID" class="view-board-link">Edit Focus</a>
+                        </td>
+                        <td>
+                            @*this is where the links would go for edit, delete and board*@
+                            <a asp-controller="Board" asp-action="Index" asp-route-id="@item.ID" class="view-board-link"> View Board</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<p class="center CRUD link-emphasis pad-bottom-l">
+    <a asp-action="Create">Create A New Focus</a>
+</p>
 </body>
 

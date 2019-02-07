@@ -91,6 +91,19 @@ a.link-emphasis:hover {
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
 }
 
+.overlayer {
+    border: 2px ridge #777;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 1vw;
+    margin: auto;
+    width: 80%;
+}
+
+.view-board-link {
+    font-size: 2rem;
+}
+
+
 .black-gradient {
     background: -webkit-linear-gradient(#333, #777);
     -webkit-background-clip: text;
@@ -148,8 +161,8 @@ a.link-emphasis:hover {
 }
 
 .container-xl {
-    min-width: 800px;
-    max-width: 90vw;
+    width: 90vw;
+    min-width: 500px;
 }
 
 .pad-top-xs {
@@ -247,3 +260,23 @@ a.link-emphasis:hover {
 .align-left {
     text-align: left;
 }
+
+@media (max-width: 780px) (min-width: 1000px) {
+    body {
+        overflow: auto;
+    }
+
+    .view-board-link {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 10vw;
+    }
+
+    .view-board-link {
+        font-size: 1.6rem;
+    }
+} 
