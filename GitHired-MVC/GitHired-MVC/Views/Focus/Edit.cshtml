@@ -4,7 +4,7 @@
 }
 <body>
     <div class="green gradient container-l center pad-bottom-s pad-top-s">
-        <form asp-controller="Focus" asp-action="Edit">
+        <form asp-controller="Focus" asp-action="Edit" asp-for="ID">
             <input type="hidden" asp-for="Focus.UserID" value="@Model.UserID" />
             <table class="center pad-bottom-xs">
                 <tbody>
