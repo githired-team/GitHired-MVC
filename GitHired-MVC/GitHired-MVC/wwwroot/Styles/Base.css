@@ -183,6 +183,12 @@ a.link-emphasis:hover {
     max-height: 30vw;
 }
 
+.flex-row-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 ul li.inline-list {
     display: inline;
 }
