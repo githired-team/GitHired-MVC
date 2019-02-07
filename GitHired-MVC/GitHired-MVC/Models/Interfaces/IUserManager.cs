@@ -18,6 +18,5 @@ namespace GitHired_MVC.Models.Interfaces
         Task DeleteUser(int id);
 
         Task<User> GetUserByName(string name);
-
     }
 }

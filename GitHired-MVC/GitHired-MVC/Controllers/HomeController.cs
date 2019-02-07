@@ -16,6 +16,7 @@ namespace GitHired_MVC.Controllers
 
         public IActionResult Index()
         {
+            Response.Cookies.Delete("GitHiredCookie");
             return View();
         }
 
