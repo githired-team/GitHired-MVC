@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace GitHired_MVC.Controllers
@@ -35,9 +37,11 @@ namespace GitHired_MVC.Controllers
         {
             User user = await _user.GetUserByName(name);
 
+
             CookieOptions cookie = new CookieOptions();
             cookie.Expires = DateTime.Now.AddHours(1);
             Response.Cookies.Append("GitHiredCookie", user.ID.ToString());
+
 
             return RedirectToAction("Index", user);
         }

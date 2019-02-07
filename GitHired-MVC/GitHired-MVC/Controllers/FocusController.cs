@@ -126,12 +126,24 @@ namespace GitHired_MVC.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Delete(int id)
+        [HttpGet]
+        public async Task<IActionResult> Delete(int? id)
         {
-            var focus = await _focus.DeleteFocus(id);
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var focus = await _focus.GetFocus((int)id);
+            await _focus.DeleteFocus((int)id);
             return RedirectToAction(nameof(Index));
         }
         
+        [HttpPost]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+
+            await _focus.DeleteFocus(id);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
