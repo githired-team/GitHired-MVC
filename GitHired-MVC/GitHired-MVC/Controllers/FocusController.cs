@@ -1,3 +1,4 @@
+
 ﻿using GitHired_MVC.Data;
 using GitHired_MVC.Models;
 using GitHired_MVC.Models.Interfaces;

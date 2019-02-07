@@ -5,6 +5,9 @@ using Xunit;
 //using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using GitHired_MVC.Models;
+using GitHired_MVC.Data;
+using Microsoft.EntityFrameworkCore;
+using GitHired_MVC.Models.Services;
 
 namespace GitHiredTesting
 {
@@ -144,12 +147,112 @@ namespace GitHiredTesting
         }
 
         //create focus
+        [Fact]
+        public async void TestCreateFocus()
+        {
+            DbContextOptions<GitHiredDBContext> options = new DbContextOptionsBuilder<GitHiredDBContext>().UseInMemoryDatabase("CreateFocus").Options;
+            using (GitHiredDBContext context = new GitHiredDBContext(options))
+            {
+                Focus testFoc1 = new Focus();
+                testFoc1.ID = 1;
+                testFoc1.UserID = 1;
+                testFoc1.Name = "aName";
+                testFoc1.DesiredPosition = "aPositionOfInterest";
+                testFoc1.Location = "Seattle";
+                testFoc1.Skill = "aSkill";
+                testFoc1.ResumeLink = "aResumeLink";
+                testFoc1.CoverLetter = "aCoverLetterLink";
+
+                FocusManagementService focService = new FocusManagementService(context);
+
+                await focService.CreateFocus(testFoc1);
+
+                var foc1Answer = context.Focus.FirstOrDefault(a => a.ID == testFoc1.ID);
+
+                Assert.Equal(testFoc1, foc1Answer);
+            }
+        }
 
         //read focus
+        [Fact]
+        public async void TestReadFocus()
+        {
+            DbContextOptions<GitHiredDBContext> options = new DbContextOptionsBuilder<GitHiredDBContext>().UseInMemoryDatabase("ReadFocus").Options;
+            using (GitHiredDBContext context = new GitHiredDBContext(options))
+            {
+                Focus testFoc2 = new Focus();
+                testFoc2.ID = 1;
+                testFoc2.UserID = 1;
+                testFoc2.Name = "aName";
+                testFoc2.DesiredPosition = "aPositionOfInterest";
+                testFoc2.Location = "Seattle";
+                testFoc2.Skill = "aSkill";
+                testFoc2.ResumeLink = "aResumeLink";
+                testFoc2.CoverLetter = "aCoverLetterLink";
+
+                FocusManagementService focService = new FocusManagementService(context);
+
+                await focService.CreateFocus(testFoc2);
+
+                var foc2Answer = await focService.GetFocus(1);
+                var foc2AnswerA = foc2Answer.FirstOrDefault();
+
+                Assert.Equal(testFoc2, foc2AnswerA);
+            }
+        }
 
         //update focus
+        [Fact]
+        public async void TestUpdateFocus()
+        {
+            DbContextOptions<GitHiredDBContext> options = new DbContextOptionsBuilder<GitHiredDBContext>().UseInMemoryDatabase("UpdateFocus").Options;
+            using (GitHiredDBContext context = new GitHiredDBContext(options))
+            {
+                Focus testFoc3 = new Focus();
+                testFoc3.ID = 1;
+                testFoc3.UserID = 1;
+                testFoc3.Name = "aName";
+                testFoc3.DesiredPosition = "aPositionOfInterest";
+                testFoc3.Location = "Seattle";
+                testFoc3.Skill = "aSkill";
+                testFoc3.ResumeLink = "aResumeLink";
+                testFoc3.CoverLetter = "aCoverLetterLink";
+                testFoc3.CoverLetter = "NewCoverLetterLink";
 
+                FocusManagementService focService = new FocusManagementService(context);
+
+                await focService.CreateFocus(testFoc3);
+
+                var foc3Answer = context.Focus.FirstOrDefault(a => a.ID == testFoc3.ID);
+
+                Assert.Equal("NewCoverLetterLink", foc3Answer.CoverLetter);
+            }
+        }
         //delete focus
+        [Fact]
+        public async void TestDeleteFocus()
+        {
+            DbContextOptions<GitHiredDBContext> options = new DbContextOptionsBuilder<GitHiredDBContext>().UseInMemoryDatabase("DeleteFocus").Options;
+            using (GitHiredDBContext context = new GitHiredDBContext(options))
+            {
+                Focus testFoc4 = new Focus();
+                testFoc4.ID = 1;
+                testFoc4.UserID = 1;
+                testFoc4.Name = "aName";
+                testFoc4.DesiredPosition = "aPositionOfInterest";
+                testFoc4.Location = "Seattle";
+                testFoc4.Skill = "aSkill";
+                testFoc4.ResumeLink = "aResumeLink";
+                testFoc4.CoverLetter = "aCoverLetterLink";
 
+                FocusManagementService focService = new FocusManagementService(context);
+
+                await focService.CreateFocus(testFoc4);
+                await focService.DeleteFocus(1);
+                var foc4Answer = context.Focus.FirstOrDefault(a => a.ID == testFoc4.ID);
+
+                Assert.Null(foc4Answer);
+            }
+        }
     }
 }
