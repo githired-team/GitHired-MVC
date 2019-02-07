@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GitHired_MVC.Migrations
 {
     [DbContext(typeof(GitHiredDBContext))]
-    [Migration("20190207060607_redo")]
-    partial class redo
+    [Migration("20190207191009_dbchanged")]
+    partial class dbchanged
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,6 +51,12 @@ namespace GitHired_MVC.Migrations
                     b.Property<bool>("CoverLetterCheck");
 
                     b.Property<string>("Description");
+
+                    b.Property<string>("GHLink1");
+
+                    b.Property<string>("GHLink2");
+
+                    b.Property<string>("GHLink3");
 
                     b.Property<string>("JobTitle");
 
