@@ -71,23 +71,32 @@ namespace GitHired_MVC.Controllers
                 newBoard.Name = focus.Name;
                 newBoard.FocusID = focus.ID;
                 await _board.CreateBoard(newBoard);
+                int newBoardID = await _context.Board.Where(b => b.FocusID == focus.ID)
+                                         .Select(b => b.ID)
+                                         .FirstOrDefaultAsync();
+
+                Response.Cookies.Append("FocusCookie", $"{focus.ID}");
+
+
+
+
                 Column newDefaultColInterested = new Column();
-                newDefaultColInterested.BoardID = newBoard.ID;
+                newDefaultColInterested.BoardID = newBoardID;
                 newDefaultColInterested.Name = "Interested";
                 newDefaultColInterested.Order = 1;
 
                 Column newDefaultColWIP = new Column();
-                newDefaultColWIP.BoardID = newBoard.ID;
+                newDefaultColWIP.BoardID = newBoardID;
                 newDefaultColWIP.Name = "Application";
                 newDefaultColWIP.Order = 2;
 
                 Column newDefaultColComplete = new Column();
-                newDefaultColComplete.BoardID = newBoard.ID;
+                newDefaultColComplete.BoardID = newBoardID;
                 newDefaultColComplete.Name = "Submitted";
                 newDefaultColComplete.Order = 3;
 
                 Column newDefaultColInterview = new Column();
-                newDefaultColInterview.BoardID = newBoard.ID;
+                newDefaultColInterview.BoardID = newBoardID;
                 newDefaultColInterview.Name = "Interview";
                 newDefaultColInterview.Order = 4;
 
@@ -95,9 +104,9 @@ namespace GitHired_MVC.Controllers
                 await _column.CreateColumn(newDefaultColWIP);
                 await _column.CreateColumn(newDefaultColComplete);
                 await _column.CreateColumn(newDefaultColInterview);
-                return RedirectToAction(nameof(Index), focus);
+                return RedirectToAction(nameof(Index));
             }
-            return RedirectToAction(nameof(Index), focus);
+            return RedirectToAction(nameof(Index));
 
         }
 
