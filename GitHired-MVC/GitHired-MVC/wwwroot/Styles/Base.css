@@ -114,7 +114,9 @@ a.link-emphasis:hover {
 
 .view-board-link {
     font-size: 2rem;
+
 }
+
 
 .black-gradient {
     background: -webkit-linear-gradient(#333, #777);
@@ -309,8 +311,10 @@ ul li.inline-list {
     text-align: left;
 }
 
+
 /*-----MEDIA-QUERIES-----*/
 @media (max-width: 780px){
+
     body {
         overflow: auto;
     }

@@ -1,3 +1,4 @@
+
 ﻿using GitHired_MVC.Data;
 using GitHired_MVC.Models;
 using GitHired_MVC.Models.Interfaces;
@@ -66,7 +67,6 @@ namespace GitHired_MVC.Controllers
                 newBoard.Name = focus.Name;
                 newBoard.FocusID = focus.ID;
                 await _board.CreateBoard(newBoard);
-
                 Column newDefaultColInterested = new Column();
                 newDefaultColInterested.BoardID = newBoard.ID;
                 newDefaultColInterested.Name = "Interested";
@@ -91,7 +91,6 @@ namespace GitHired_MVC.Controllers
                 await _column.CreateColumn(newDefaultColWIP);
                 await _column.CreateColumn(newDefaultColComplete);
                 await _column.CreateColumn(newDefaultColInterview);
-
                 return RedirectToAction(nameof(Index), focus);
             }
             return RedirectToAction(nameof(Index), focus);
