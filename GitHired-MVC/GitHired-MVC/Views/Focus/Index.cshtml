@@ -7,6 +7,7 @@
 <body>
     <h1>Your Focuses</h1>
     <p>
+        @*short story I couldn't get to userID without the for each, and can't do viewmodel because this is an enumeration which is why I couldn't do @Model.UserID because model is more than one item*@
         @foreach (var item in Model)
         {
             <a asp-controller="Focus" asp-action="Create" asp-route-id="@item.UserID"> Create New </a>
