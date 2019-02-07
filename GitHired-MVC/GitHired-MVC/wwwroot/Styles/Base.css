@@ -71,6 +71,19 @@ a.link-emphasis:hover {
     font-size: 4.25vw;
 }
 
+.link-emphasis-s {
+    display: inline-block;
+    border-bottom: 0px solid transparent;
+    transition: 0.3s ease;
+    background-position: 100% center;
+    font-size: 1.4rem;
+}
+
+.link-emphasis-s:hover {
+    border-bottom: 3px solid #57cc57;
+    font-size: 1.6rem;
+}
+
 .bold {
     font-weight: bold;
 }
@@ -162,6 +175,32 @@ a.link-emphasis:hover {
 .container-xl {
     width: 90vw;
     min-width: 500px;
+}
+
+.text-container {
+    width: 30vw;
+    height: auto;
+    max-height: 30vw;
+}
+
+.scrollable {
+    overflow-y: scroll;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 1em;
+}
+
+/*.scrollable::-webkit-scrollbar-track {
+    background-color: rgba(148, 222, 148, 0.25);
+    border: 2px solid #388238;
+    border-radius: 0.5vw;
+}*/
+
+.scrollable::-webkit-scrollbar-thumb {
+    background-color: rgba(148, 222, 148, 0.5);
+    border: 2px solid #388238;
+    border-radius: 0.5vw;
 }
 
 .pad-top-xs {

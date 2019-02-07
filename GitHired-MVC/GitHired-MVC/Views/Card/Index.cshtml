@@ -1,38 +1,72 @@
 ﻿@model GitHired_MVC.Models.Card;
 @{
     ViewData["Title"] = "Index";
+    Layout = "_Layout";
 }
 <body>
     <div class="green gradient container-l center pad-bottom-s pad-top-s">
-        <table class="center">
-            <tbody>
-                <h1 class="center pad-bottom-s">User Info:</h1>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Job Title: </td>
-                    <td>@Model.JobTitle</td>
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Company Name: </td>
-                    <td>@Model.CompanyName</td>
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Wage: </td>
-                    <td>@Model.Wage</td>
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Description: </td>
-                    <td>@Model.Description</td>
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Resume?: </td>
-                    <td>@Model.ResumeCheck</td>
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Cover Letter?: </td>
-                    <td>@Model.CoverLetterCheck</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="overlayer pad-bottom-s">
+            <table class="center">
+                <tbody>
+                    <h1 class="center pad-bottom-s">Card Info:</h1>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Job Title: </td>
+                        <td>UI/UX Designer@*@Model.JobTitle*@</td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Company Name: </td>
+                        <td>Software Co.@*@Model.CompanyName*@</td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Wage: </td>
+                        <td>$75,000-90,000 DOE@*@Model.Wage*@</td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Description: </td>
+                        <td class="pad-bottom-s">
+                            <div class="text-container scrollable">
+                                <p>
+                                    @* Build out logic to break up description into paragraphs *@
+                                    User Interface and User Experience Designer. Lorem ipsum dolor sit amet, quo amet alterum te, eos assentior definiebas definitionem in. Sit vidit invenire ad, eu prima verterem duo. Quis prodesset persequeris vel cu. Pro ea zril delenit debitis, alterum laoreet adversarium at vis. No habeo singulis argumentum mei, quo admodum appareat vituperata at. Vis ea graeco tacimates molestiae, vis at mucius laboramus, recteque argumentum ex per.
+                                </p>
+                                <br />
+                                <p>
+                                    Fugit inermis no nec, ei fugit maluisset assentior qui. Eu solum suscipiantur est. Illum exerci alienum eu vel. Vidit assueverit ius an, et usu saperet adversarium, ei nam modus ocurreret omittantur.
+                                </p>
+                                <br />
+                                <p>
+                                    Pri brute eruditi mandamus at. Mei putent oblique abhorreant et. Vel sonet propriae laboramus ne. Sapientem mnesarchum ne nec, modo novum veniam no pro. Nam probo saperet reprehendunt no, sea ne offendit nominati adversarium. Quot vitae latine at duo, ea aeque doctus reformidans has.
+                                </p>
+                                <br />
+                                <p>
+                                    Sea ut magna appareat, ad eum viris principes. Sit ea decore omittam perfecto. Cu abhorreant reprehendunt sea. Dicta prompta an mea, ullum nihil suscipiantur ius ei, quo postulant maluisset iracundia an. Vide erat doctus at usu, cum an laudem minimum perfecto, vix te pertinax interesset.
+                                </p>
+                                <br />
+                                <p>
+                                    Quo ne mundi repudiare, nibh tempor invidunt in pro. Eam lorem error sensibus no, est et adipisci reprehendunt. Sale graeco option cu pri, mei te ferri copiosae laboramus, pro ut admodum volumus. Ea perfecto maiestatis duo. Nostrud platonem et cum.@*@Model.Description*@
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s bold">Resume?: </td>
+                        <td class="center">
+                            <a href="https://docs.google.com/document/d/1Vu2h1WgeXMkp22--L9KVHi0oLV_45i4T5IanRIQjPcs/edit?usp=sharing" target="_blank" class="link-emphasis-s">AVAILABLE</a>
+                            @* Build out logic to display resume link if present/or string otherwise
+                            @Model.ResumeCheck*@
+                        </td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-top-xs pad-right-s pad-bottom-xs bold">Cover Letter?: </td>
+                        <td class="pad-top-xs pad-bottom-xs center">
+                            UNAVAILABLE
+                            @* Build out logic to display cover letter link if present/or string otherwise
+                            @Model.CoverLetterCheck*@
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="pad-bottom-m"></div>
+        <div class="pad-bottom-m"></div>
 </body>
