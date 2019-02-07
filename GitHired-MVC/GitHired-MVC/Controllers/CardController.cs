@@ -31,7 +31,7 @@ namespace GitHired_MVC.Controllers
             return View();
         }
 
-        [HttpGet]
+        [HttpPost]
         public async Task<IActionResult> Create()
         {
             Card newCard = new Card();
