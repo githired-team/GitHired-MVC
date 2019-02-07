@@ -24,25 +24,11 @@ namespace GitHired_MVC.Controllers
             _focus = focus;
         }
 
-        public async Task<IActionResult> Index(int id)
+        public async Task<IActionResult> Index()
         {
+            int id = Convert.ToInt32(Request.Cookies["FocusCookie"]);
             Board board = await _board.GetBoardAsync(id);
             return View(board);
         }
-
-        //[HttpPost]
-        //public async Task<IActionResult> Index(int specificFocusID )
-        //{
-        //    return View(await _board.GetBoardAsync(specificFocusID));
-        //}
-       
-        //[HttpGet]
-        //public async Task Create(int specificFocusID)
-        //{
-        //    Board newBoard = new Board();
-        //    newBoard.FocusID
-
-        //}
-
     }
 }
