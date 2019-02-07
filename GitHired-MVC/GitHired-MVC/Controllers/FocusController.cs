@@ -30,9 +30,16 @@ namespace GitHired_MVC.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index(Focus specificUserObj)
+        //public async Task<IActionResult> Index(Focus specificUserObj)
+        //{
+        //    int specificUserID = specificUserObj.UserID;
+        //    //var returnInfo = _context.Focus.Include(fu => fu.UserID);
+        //    return View(await _focus.GetFocus(specificUserID));
+        //    //return View();
+        //}
+        public async Task<IActionResult> Index(Focus focus)
         {
-            int specificUserID = specificUserObj.UserID;
+            int specificUserID = focus.UserID;
             //var returnInfo = _context.Focus.Include(fu => fu.UserID);
             return View(await _focus.GetFocus(specificUserID));
             //return View();
@@ -43,7 +50,10 @@ namespace GitHired_MVC.Controllers
         {
             //var returnInfo = _context.Focus.Include(fu => fu.UserID);
             var focuses = await _focus.GetFocus(id);
-            return RedirectToAction("Index", focuses);
+            var focObj = from o in focuses
+                         .Where(i => i.UserID == id)
+                         select o;
+            return RedirectToAction("Index", focObj.FirstOrDefault());
             //return View();
         }
 
