@@ -32,6 +32,11 @@ namespace GitHired_MVC.Models.Services
         {
             return await _context.Focus.FirstOrDefaultAsync(f => f.ID == id);
         }
+        //looks like just duplicate
+        //public async Task<Focus> GetSingleFocus(int id)
+        //{
+        //    return await _context.Focus.FirstOrDefaultAsync(f => f.ID == id);
+        //}
 
         public async Task<IEnumerable<Focus>> GetFocus(int id)
         {
@@ -42,10 +47,6 @@ namespace GitHired_MVC.Models.Services
             return await foc.ToListAsync();
         }
 
-        public async Task<Focus> GetSingleFocus(int id)
-        {
-            return await _context.Focus.FirstOrDefaultAsync(f => f.ID == id);
-        }
 
         public async Task UpdateFocus(Focus focus)
         {
