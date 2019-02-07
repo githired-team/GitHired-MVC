@@ -1,4 +1,30 @@
-﻿
+﻿@model GitHired_MVC.Models.ViewModels.SearchViewModel
+@using GitHired_MVC.Models;
+
 @{
     Layout = "_Layout";
 }
+
+@foreach(JobPosting result in Model.JobPostings)
+ {
+    <div>
+        <div>
+            <h3>@result.JobTitle</h3>
+            <h4>@result.CompanyName</h4>
+            <h4>@result.Location</h4>
+            <h4>@result.ApplicationUrl</h4>
+            <h4>@result.WageRange</h4>
+            <h4>@String.Join(", ", result.Skillset)</h4>
+        </div>
+        <div>
+            <p>@result.Description</p>
+        </div>
+        <form asp-controller="Card" asp-action="Create">
+            <input asp-for="Card.JobTitle" type="hidden" value="@result.JobTitle" />
+            <input asp-for="Card.CompanyName" type="hidden" value="@result.CompanyName" />
+            <input asp-for="Card.Wage" type="hidden" value="@result.WageRange" />
+            <input asp-for="Card.Description" type="hidden" value="@result.Description" />
+            <input type="submit" value="Create" class="button">
+        </form>
+    </div>
+ }

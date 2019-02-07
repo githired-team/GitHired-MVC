@@ -20,5 +20,10 @@ namespace GitHired_MVC.Models
         public string GHLink3 { get; set; }
 
         public Column Column { get; set; }
+        //public JobPosting JobPosting { get; set; } //i don't know if adding this really helps me get access to it's data
+        public Focus Focus { get; set; } //i don't know if adding this really helps me get access to it's data
     }
 }
+
+
+

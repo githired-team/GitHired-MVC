@@ -1,10 +1,13 @@
 ﻿using GitHired_MVC.Data;
 using GitHired_MVC.Models;
 using GitHired_MVC.Models.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace GitHired_MVC.Controllers
@@ -33,6 +36,13 @@ namespace GitHired_MVC.Controllers
         public async Task<IActionResult> Login(string name)
         {
             User user = await _user.GetUserByName(name);
+
+
+            CookieOptions cookie = new CookieOptions();
+            cookie.Expires = DateTime.Now.AddHours(1);
+            Response.Cookies.Append("GitHiredCookie", user.ID.ToString());
+
+
             return RedirectToAction("Index", user);
         }
 
@@ -49,6 +59,11 @@ namespace GitHired_MVC.Controllers
         if (ModelState.IsValid)
         {
             await _user.CreateUser(user);
+
+            CookieOptions cookie = new CookieOptions();
+            cookie.Expires = DateTime.Now.AddHours(1);
+            Response.Cookies.Append("GitHiredCookie", user.ID.ToString());
+
             return RedirectToAction(nameof(Index), user);
         }
         return View(user);

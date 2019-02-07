@@ -11,43 +11,68 @@ namespace GitHired_MVC.Controllers
 {
     public class CardController : Controller
     {
-        private readonly IBoardManager _board;
-        private readonly IColumnManager _column;
-        private readonly IFocusManager _focus;
         private readonly ICardManager _card;
-        private GitHiredDBContext _context { get; set; }
+        private GitHiredDBContext _context;
 
-
-        public CardController(ICardManager card,IBoardManager board, IColumnManager column, IFocusManager focus)
+        public CardController(ICardManager card, GitHiredDBContext context)
         {
-            _board = board;
-            _column = column;
-            _focus = focus;
+            _context = context;
             _card = card;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int cardId)
         {
-            return View();
+            return View( await _card.GetCard(cardId) );
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Create()
-        {
-            Card newCard = new Card();
 
-            await _card.CreateCard(newCard);
+        [HttpPost]
+        public async Task<IActionResult> Create([Bind("ID,ColumnID,ResumeCheck,CoverLetterCheck,JobTitle,CompanyName,Wage,Description,GHLink1,GHLink2,GHLink3")] Card card)
+        {
+
+            card.ColumnID = 1;//by default it will go in the first column
+            if (card.Focus.ResumeLink != null)
+            {
+                card.ResumeCheck = true;
+            }
+            else
+            {
+                card.ResumeCheck = false;
+            }
+
+            if (card.Focus.CoverLetter != null)
+            {
+                card.CoverLetterCheck = true;
+            }
+            else
+            {
+                card.CoverLetterCheck = false;
+            }
+
+            await _card.CreateCard(card);
             return RedirectToAction("Index", "Board");
-
         }
 
-        [HttpGet]
+        [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
             await _card.DeleteCard(id);
             return RedirectToAction("Index", "Board");
 
         }
-
+        [HttpPost]
+        public async Task<IActionResult> MoveCardLeft(int id, [Bind("ID,ColumnID,ResumeCheck,CoverLetterCheck,JobTitle,CompanyName,Wage,Description,GHLink1,GHLink2,GHLink3")] Card card)
+        {
+            card.ColumnID = card.ColumnID - 1;
+            await _card.UpdateCard(card);
+            return RedirectToAction("Index", "Board");
+        }
+        [HttpPost]
+        public async Task<IActionResult> MoveCardRight(int id, [Bind("ID,ColumnID,ResumeCheck,CoverLetterCheck,JobTitle,CompanyName,Wage,Description,GHLink1,GHLink2,GHLink3")] Card card)
+        {
+            card.ColumnID = card.ColumnID + 1;
+            await _card.UpdateCard(card);
+            return RedirectToAction("Index", "Board");
+        }
     }
 }

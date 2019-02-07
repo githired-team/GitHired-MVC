@@ -1,10 +1,18 @@
-﻿@model IEnumerable<GitHired_MVC.Models.Focus>
+@model IEnumerable<GitHired_MVC.Models.Focus>
+
 @{
     Layout = "_Layout";
 }
 <body>
 <div class="green gradient container-xl center pad-bottom-s pad-top-s">
     <div class="overlayer pad-bottom-s">
+      <p>
+        @*short story I couldn't get to userID without the for each, and can't do viewmodel because this is an enumeration which is why I couldn't do @Model.UserID because model is more than one item*@
+        @foreach (var item in Model)
+        {
+            <a asp-controller="Focus" asp-action="Create" asp-route-id="@item.UserID"> Create New </a>
+        }
+    </p>
         <table class="center pad-bottom-xs">
             <h1 class="pad-bottom-xs">Your Focuses</h1>
             <thead>
@@ -25,24 +33,27 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td class="">
-                            @item.Name
-                        </td>
-                        <td class="pad-left-m pad-right-m pad-bottom-xs">
-                            @item.DesiredPosition
-                        </td>
-                        <td class="">
-                            @item.Location
-                        </td>
-                        <td class="pad-left-m pad-right-s">
-                            <a asp-controller="Focus" asp-action="Edit" asp-route-id="@item.ID" class="view-board-link">Edit Focus</a>
-                        </td>
-                        <td>
-                            @*this is where the links would go for edit, delete and board*@
-                            <a asp-controller="Board" asp-action="Index" asp-route-id="@item.ID" class="view-board-link"> View Board</a>
-                        </td>
-                    </tr>
+                <tr>
+                    <td class="">
+                        @item.Name
+                    </td>
+                    <td class="pad-left-m pad-right-m pad-bottom-xs">
+                        @item.DesiredPosition
+                    </td>
+                    <td class="">
+                        @item.Location
+                    </td>
+                    <td class="pad-left-m pad-right-s">
+                        <a asp-controller="Focus" asp-action="Edit" asp-route-id="@item.ID" class="view-board-link">Edit Focus</a>
+                    </td>
+                    <td class="pad-left-m pad-right-s">
+                        <a asp-controller="Focus" asp-action="Delete" asp-route-id="@item.ID" class="view-board-link">Delete Focus</a>
+                    </td>
+                    <td>
+                        @*this is where the links would go for edit, delete and board*@
+                        <a asp-controller="Board" asp-action="Index" asp-route-id="@item.ID" class="view-board-link"> View Board</a>
+                    </td>
+                </tr>
                 }
             </tbody>
         </table>
