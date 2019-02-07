@@ -23,9 +23,13 @@ namespace GitHired_MVC.Models.Services
             await _context.SaveChangesAsync();
         }
 
-        public Task<Focus> DeleteFocus(int id)
+        //delete single foucus by Id
+        public async Task DeleteFocus(int id)
         {
-            throw new NotImplementedException();
+            Focus foucus = _context.Focus.FirstOrDefault(f => f.ID == id);
+            _context.Focus.Remove(foucus);
+            await _context.SaveChangesAsync();
+
         }
 
         public async Task<Focus> GetSingleFocus(int id)
@@ -42,10 +46,7 @@ namespace GitHired_MVC.Models.Services
             return await foc.ToListAsync();
         }
 
-        public async Task<Focus> GetSingleFocus(int id)
-        {
-            return await _context.Focus.FirstOrDefaultAsync(f => f.ID == id);
-        }
+      
 
         public async Task UpdateFocus(Focus focus)
         {
@@ -53,9 +54,9 @@ namespace GitHired_MVC.Models.Services
             await _context.SaveChangesAsync();
         }
 
-        Task<Focus> IFocusManager.DeleteFocus(int id)
-        {
-            throw new NotImplementedException();
-        }
+        //Task<Focus> IFocusManager.DeleteFocus(int id)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

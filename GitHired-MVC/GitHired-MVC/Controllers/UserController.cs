@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace GitHired_MVC.Controllers
@@ -33,6 +35,7 @@ namespace GitHired_MVC.Controllers
         public async Task<IActionResult> Login(string name)
         {
             User user = await _user.GetUserByName(name);
+               
             return RedirectToAction("Index", user);
         }
 
