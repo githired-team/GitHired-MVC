@@ -30,25 +30,15 @@ namespace GitHired_MVC.Controllers
             _context = context;
         }
 
-        //public async Task<IActionResult> Index(Focus specificUserObj)
-        //{
-        //    int specificUserID = specificUserObj.UserID;
-        //    //var returnInfo = _context.Focus.Include(fu => fu.UserID);
-        //    return View(await _focus.GetFocus(specificUserID));
-        //    //return View();
-        //}
         public async Task<IActionResult> Index(Focus focus)
         {
             int specificUserID = focus.UserID;
-            //var returnInfo = _context.Focus.Include(fu => fu.UserID);
             return View(await _focus.GetFocus(specificUserID));
-            //return View();
         }
 
         //this is because the system didn't like two indexes even though they had diff params
         public async Task<IActionResult> ExisitingUserIndex(int id)
         {
-            //var returnInfo = _context.Focus.Include(fu => fu.UserID);
             var focuses = await _focus.GetFocus(id);
             var focObj = from o in focuses
                          .Where(i => i.UserID == id)
@@ -60,8 +50,6 @@ namespace GitHired_MVC.Controllers
         [HttpGet]
         public IActionResult Create(int id)
         {
-            // Possible View Model
-            // ViewData["UserID"] = new SelectList(_context.User, "ID", "Name");
             FocusViewModel fvm = new FocusViewModel();
             fvm.UserID = id;
             return View(fvm);
@@ -120,14 +108,15 @@ namespace GitHired_MVC.Controllers
             {
                 return NotFound();
             }
+
             return View(fvm);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("ID, UserID, Name, DesiredPosition, Location, Skill,ResumeLink, CoverLetter")] Focus focus)
+        public async Task<IActionResult> Edit(int id, [Bind("UserID, Name, DesiredPosition, Location, Skill,ResumeLink, CoverLetter")] Focus focus)
         {
             await _focus.UpdateFocus(focus);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), focus);
         }
 
         //delete 
