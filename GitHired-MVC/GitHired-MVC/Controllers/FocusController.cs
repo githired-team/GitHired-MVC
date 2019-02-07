@@ -59,10 +59,6 @@ namespace GitHired_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([Bind("UserID, Name, DesiredPosition, Location, Skill, ResumeLink, CoverLetter")] Focus focus)
         {
-
-
-            
-
             if (ModelState.IsValid)
             {
                 await _focus.CreateFocus(focus);

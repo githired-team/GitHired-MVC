@@ -183,6 +183,10 @@ a.link-emphasis:hover {
     max-height: 30vw;
 }
 
+ul li.inline-list {
+    display: inline;
+}
+
 .scrollable {
     overflow-y: scroll;
 }
@@ -300,13 +304,18 @@ a.link-emphasis:hover {
 }
 
 /*-----MEDIA-QUERIES-----*/
-@media (max-width: 780px) (min-width: 1000px) {
+@media (max-width: 780px){
     body {
         overflow: auto;
     }
 
     .view-board-link {
         font-size: 1rem;
+    }
+
+    .text-container {
+        width: 50vw;
+        min-width: 300px;
     }
 }
 
@@ -317,5 +326,9 @@ a.link-emphasis:hover {
 
     .view-board-link {
         font-size: 1.6rem;
+    }
+
+    .text-container {
+        width: 36vw;
     }
 }
