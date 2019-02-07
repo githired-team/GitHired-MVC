@@ -1,5 +1,6 @@
 ﻿using GitHired_MVC.Data;
 using GitHired_MVC.Models.Interfaces;
+using GitHired_MVC.Models.Services;
 //using GitHired_MVC.Models.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -7,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AsyncInn
+namespace GitHired_MVC
 {
     public class Startup
     {
@@ -25,11 +26,13 @@ namespace AsyncInn
         {
             services.AddDbContext<GitHiredDBContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:AzureDeployment"]));
             services.AddMvc();
-
-            // register dependancy injection
+            
             // Example:
-            //      services.AddScoped<IBoardManeger, BoardManageService>();
-
+            services.AddScoped<IBoardManager, BoardManagementService>();
+            services.AddScoped<ICardManager, CardManagementService>();
+            services.AddScoped<IColumnManager, ColumnManagementService>();
+            services.AddScoped<IFocusManager, FocusManagementService>();
+            services.AddScoped<IUserManager, UserManagementService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

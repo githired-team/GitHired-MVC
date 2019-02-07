@@ -1,0 +1,42 @@
+﻿@model GitHired_MVC.Models.ViewModels.FocusViewModel;
+@{
+    Layout = "_Layout";
+}
+<body>
+    <div class="green gradient container-l center pad-bottom-s pad-top-s">
+        <form asp-controller="Focus" asp-action="Edit">
+            <input type="hidden" asp-for="Focus.UserID" value="@Model.UserID" />
+            <table class="center pad-bottom-xs">
+                <tbody>
+                    <h1 class="center pad-bottom-s">Focus Info:</h1>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Focus Name: </td>
+                        <td><input placeholder="Focus Name" type="text" asp-for="Focus.Name"></td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Desired Position: </td>
+                        <td><input placeholder="Focus DesiredPosition" type="text" asp-for="Focus.DesiredPosition"></td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Location: </td>
+                        <td><input placeholder="Focus Location" type="text" asp-for="Focus.Location"></td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Skillset: </td>
+                        <td><input placeholder="Focus Skill" type="text" asp-for="Focus.Skill"></td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Resume Link: </td>
+                        <td><input placeholder="Focus ResumeLink" type="text" asp-for="Focus.ResumeLink"></td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Cover Letter: </td>
+                        <td><input placeholder="Focus CoverLetter" type="text" asp-for="Focus.CoverLetter"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="Submit" class="button">
+        </form>
+    </div>
+    <div class="pad-bottom-m"></div>
+</body>

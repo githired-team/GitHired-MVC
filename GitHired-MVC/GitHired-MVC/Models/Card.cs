@@ -13,10 +13,10 @@ namespace GitHired_MVC.Models
         public bool CoverLetterCheck { get; set; }
         public string JobTitle { get; set; }
         public string CompanyName { get; set; }
-        public int Wage { get; set; }
+        public string Wage { get; set; }
         public string Description { get; set; }
 
-        Column Column { get; set; }
+        public Column Column { get; set; }
     }
 }
 

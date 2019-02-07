@@ -1,0 +1,32 @@
+﻿@model GitHired_MVC.Models.User;
+@{
+    Layout = "_Layout";
+
+}
+<body>
+    <div class="green gradient container-l center pad-bottom-s pad-top-s">
+        <table class="center">
+            <tbody>
+                <h1 class="center pad-bottom-s">User Info:</h1>
+                <tr class="align-left">
+                    <td class="pad-right-s pad-bottom-xs bold">Username: </td>
+                    <td>@Model.Name</td>
+                </tr>
+                <tr class="align-left">
+                    <td class="pad-right-s pad-bottom-xs bold">Email Address: </td>
+                    <td>@Model.Email</td>
+                </tr>
+                <tr class="align-left">
+                    <td class="pad-right-s pad-bottom-xs bold">GitHub Username: </td>
+                    <td>@Model.GitHubLink</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="center pad-top-s pad-bottom-xs">
+        <a asp-controller="Focus" asp-action="Create" asp-route-id="@Model.ID" class="CRUD link-emphasis">Create A New Focus</a>
+    </div>
+    <div class="center pad-bottom-m">
+        <a asp-controller="Focus" asp-action="Index" asp-route-id="@Model.ID" class="CRUD link-emphasis"> View Your Focuses</a>
+    </div>
+</body>

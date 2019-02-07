@@ -1,0 +1,282 @@
+﻿/*Import fonts from Google Fonts API*/
+@import url('https://fonts.googleapis.com/css?family=Dosis|Hind+Madurai|Neucha');
+@import url('https://fonts.googleapis.com/css?family=Hind+Madurai');
+
+body {
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 1rem;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*background-color: #c4c4c4;*/
+    min-width: 680px;
+    width: 100%;
+    min-height: 480px;
+    height: 100%;
+    overflow: auto;
+}
+
+h1 {
+    font-variant-caps: all-petite-caps;
+    font-size: 7vw;
+    background: -webkit-linear-gradient(#333, #777);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h4 {
+    font-variant-caps: all-petite-caps;
+    font-size: 4vw;
+}
+
+h3 {
+    font-variant-caps: all-petite-caps;
+    font-size: 5vw;
+}
+
+a {
+    font-variant-caps: all-petite-caps;
+    background: -webkit-linear-gradient(#388238, #94de94);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    background: -webkit-linear-gradient(#999, #444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+
+footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: 3vw;
+    padding: 1rem;
+    background-color: rgba(194, 194, 194, 0.5);
+    text-align: center;
+}
+
+a.link-emphasis {
+    display: inline-block;
+    border-bottom: 0px solid transparent;
+    transition: 0.3s ease;
+    background-position: 100% center;
+}
+
+a.link-emphasis:hover {
+    border-bottom: 3px solid #57cc57;
+    font-size: 4.25vw;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.wide-input {
+    width: 20vw;
+}
+
+.green {
+    border: 3px groove #57cc57;
+    border-radius: 1vw;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+    transition: 0.5s ease;
+}
+
+.green:hover {
+    transition: 0.5s ease;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
+}
+
+.overlayer {
+    border: 2px ridge #777;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 1vw;
+    margin: auto;
+    width: 80%;
+}
+
+.view-board-link {
+    font-size: 2rem;
+}
+
+.black-gradient {
+    background: -webkit-linear-gradient(#333, #777);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient {
+    background-image: linear-gradient(#94de94, #ffffff);
+}
+
+.light-green {
+    background-color: rgba(87, 204, 87, 0.5);
+}
+
+.button {
+    font-size: 1.4rem;
+    margin: 1vw;
+    padding: 0.25vw 1vw 0.25vw 1vw;
+    border: 1px solid white;
+    border-radius: 0.5vw;
+    background-image: linear-gradient(#57cc57, #388238);
+    font-family: 'Hind Madurai', sans-serif;
+    font-variant-caps: all-petite-caps;
+    color: white;
+    text-align: center;
+}
+
+.CRUD {
+    font-size: 4vw;
+}
+
+.center {
+    margin: auto;
+    text-align: center;
+}
+
+.container-xs {
+    min-width: 100px;
+    max-width: 8vw;
+}
+
+.container-s {
+    min-width: 200px;
+    max-width: 20vw;
+}
+
+.container-m {
+    min-width: 400px;
+    max-width: 30vw;
+}
+
+.container-l {
+    min-width: 600px;
+    max-width: 60vw;
+}
+
+.container-xl {
+    width: 90vw;
+    min-width: 500px;
+}
+
+.pad-top-xs {
+    padding-top: 1vw;
+}
+
+.pad-top-s {
+    padding-top: 2.5vw;
+}
+
+.pad-top-m {
+    padding-top: 5vw;
+}
+
+.pad-top-l {
+    padding-top: 10vw;
+}
+
+.pad-top-xl {
+    padding-top: 15vw;
+}
+
+.pad-bottom-xs {
+    padding-bottom: 1vw;
+}
+
+.pad-bottom-s {
+    padding-bottom: 2.5vw;
+}
+
+.pad-bottom-m {
+    padding-bottom: 5vw;
+}
+
+.pad-bottom-l {
+    padding-bottom: 10vw;
+}
+
+.pad-bottom-xl {
+    padding-bottom: 15vw;
+}
+
+.pad-left-xs {
+    padding-left: 1vw;
+}
+
+.pad-left-s {
+    padding-left: 2.5vw;
+}
+
+.pad-left-m {
+    padding-left: 5vw;
+}
+
+.pad-left-l {
+    padding-left: 10vw;
+}
+
+.pad-left-xl {
+    padding-left: 15vw;
+}
+
+.pad-right-xs {
+    padding-right: 1vw;
+}
+
+.pad-right-s {
+    padding-right: 2.5vw;
+}
+
+.pad-right-m {
+    padding-right: 5vw;
+}
+
+.pad-right-l {
+    padding-right: 10vw;
+}
+
+.pad-right-xl {
+    padding-right: 15vw;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+/*-----MEDIA-QUERIES-----*/
+@media (max-width: 780px) (min-width: 1000px) {
+    body {
+        overflow: auto;
+    }
+
+    .view-board-link {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 10vw;
+    }
+
+    .view-board-link {
+        font-size: 1.6rem;
+    }
+}

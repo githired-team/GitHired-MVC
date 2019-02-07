@@ -24,10 +24,25 @@ namespace GitHired_MVC.Controllers
             _focus = focus;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int id)
         {
-            return View();
+            Board board = await _board.GetBoardAsync(id);
+            return View(board);
         }
+
+        //[HttpPost]
+        //public async Task<IActionResult> Index(int specificFocusID )
+        //{
+        //    return View(await _board.GetBoardAsync(specificFocusID));
+        //}
+       
+        //[HttpGet]
+        //public async Task Create(int specificFocusID)
+        //{
+        //    Board newBoard = new Board();
+        //    newBoard.FocusID
+
+        //}
 
     }
 }

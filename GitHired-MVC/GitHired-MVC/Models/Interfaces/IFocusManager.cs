@@ -7,12 +7,14 @@ namespace GitHired_MVC.Models.Interfaces
 {
     public interface IFocusManager
     {
-        Task CreateFocus(Focus amenities);
+        Task CreateFocus(Focus focus);
 
-        Task<Focus> GetFocus(int id);
+        Task<IEnumerable<Focus>> GetFocus(int id);
 
-        Task UpdateFocus(Focus amenities);
+        Task<Focus> GetSingleFocus(int id);
 
-        Task DeleteFocus(int id);
+        Task UpdateFocus(Focus focus);
+
+        Task<Focus> DeleteFocus(int id);
     }
 }
