@@ -7,7 +7,10 @@
 <body>
     <h1>Your Focuses</h1>
     <p>
-        <a asp-action="Create">Create New</a>
+        @foreach (var item in Model)
+        {
+            <a asp-controller="Focus" asp-action="Create" asp-route-id="@item.UserID"> Create New </a>
+        }
     </p>
     <table>
         <thead>
