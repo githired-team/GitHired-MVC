@@ -21,14 +21,17 @@
     <div class="board-container">
         @foreach (Column column in Model.Column)
         {
-            <div class="column green ">
-                @if (column.Card.Count > 0) {
-                    foreach (Card card in column.Card)
-                    {
-                    <div class="green"></div>
-                    }
-                }
-            </div>
+        <div class="column green scrollable">
+            @*@if (column.Card.Count > 0) {
+            foreach (Card card in column.Card)
+            {
+            <div class="green card gradient"></div>
+            }
+        }*@
+            <div class="green card gradient"></div>
+            <div class="green card gradient"></div>
+            <div class="green card gradient"></div>
+        </div>
         }
     </div>
 </body>
