@@ -71,6 +71,19 @@ a.link-emphasis:hover {
     font-size: 4.25vw;
 }
 
+.link-emphasis-s {
+    display: inline-block;
+    border-bottom: 0px solid transparent;
+    transition: 0.3s ease;
+    background-position: 100% center;
+    font-size: 1.4rem;
+}
+
+.link-emphasis-s:hover {
+    border-bottom: 3px solid #57cc57;
+    font-size: 1.6rem;
+}
+
 .bold {
     font-weight: bold;
 }
@@ -90,6 +103,20 @@ a.link-emphasis:hover {
     transition: 0.5s ease;
     box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.4);
 }
+
+.overlayer {
+    border: 2px ridge #777;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 1vw;
+    margin: auto;
+    width: 80%;
+}
+
+.view-board-link {
+    font-size: 2rem;
+
+}
+
 
 .black-gradient {
     background: -webkit-linear-gradient(#333, #777);
@@ -148,8 +175,44 @@ a.link-emphasis:hover {
 }
 
 .container-xl {
-    min-width: 800px;
-    max-width: 90vw;
+    width: 90vw;
+    min-width: 500px;
+}
+
+.text-container {
+    width: 30vw;
+    height: auto;
+    max-height: 30vw;
+}
+
+.flex-row-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+ul li.inline-list {
+    display: inline;
+}
+
+.scrollable {
+    overflow-y: scroll;
+}
+
+.scrollable::-webkit-scrollbar {
+    width: 1em;
+}
+
+/*.scrollable::-webkit-scrollbar-track {
+    background-color: rgba(148, 222, 148, 0.25);
+    border: 2px solid #388238;
+    border-radius: 0.5vw;
+}*/
+
+.scrollable::-webkit-scrollbar-thumb {
+    background-color: rgba(148, 222, 148, 0.5);
+    border: 2px solid #388238;
+    border-radius: 0.5vw;
 }
 
 .pad-top-xs {
@@ -246,4 +309,36 @@ a.link-emphasis:hover {
 
 .align-left {
     text-align: left;
+}
+
+
+/*-----MEDIA-QUERIES-----*/
+@media (max-width: 780px){
+
+    body {
+        overflow: auto;
+    }
+
+    .view-board-link {
+        font-size: 1rem;
+    }
+
+    .text-container {
+        width: 50vw;
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 10vw;
+    }
+
+    .view-board-link {
+        font-size: 1.6rem;
+    }
+
+    .text-container {
+        width: 36vw;
+    }
 }

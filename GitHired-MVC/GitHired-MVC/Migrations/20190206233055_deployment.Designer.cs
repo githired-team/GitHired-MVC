@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GitHired_MVC.Migrations
 {
     [DbContext(typeof(GitHiredDBContext))]
-    [Migration("20190206181455_inital")]
-    partial class inital
+    [Migration("20190206233055_deployment")]
+    partial class deployment
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
