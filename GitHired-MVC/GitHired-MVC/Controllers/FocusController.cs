@@ -71,6 +71,7 @@ namespace GitHired_MVC.Controllers
                 newBoard.Name = focus.Name;
                 newBoard.FocusID = focus.ID;
                 await _board.CreateBoard(newBoard);
+
                 Column newDefaultColInterested = new Column();
                 newDefaultColInterested.BoardID = newBoard.ID;
                 newDefaultColInterested.Name = "Interested";
@@ -103,15 +104,20 @@ namespace GitHired_MVC.Controllers
 
         //edit
         [HttpGet]
-        public async Task<IActionResult> Edit()
+        public async Task<IActionResult> Edit(int id)
         {
-            int id = Convert.ToInt32(Request.Cookies["GitHiredCookie"]);
+            //if (focusID == null)
+            //    return NotFound();
 
-            var focus = await _focus.GetSingleFocus(id);
+            int uid = Convert.ToInt32(Request.Cookies["GitHiredCookie"]);
+
+            Response.Cookies.Append("FocusCookie", id.ToString());
+
+            var focus = await _focus.GetSingleFocus((int)id);
 
             FocusViewModel fvm = new FocusViewModel();
             fvm.Focus = focus;
-            fvm.UserID = id;
+            fvm.UserID = uid;
             if (focus == null)
             {
                 return NotFound();
@@ -122,6 +128,7 @@ namespace GitHired_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(int id, [Bind("ID, UserID, Name, DesiredPosition, Location, Skill,ResumeLink, CoverLetter")] Focus focus)
         {
+            focus.ID = id;
             await _focus.UpdateFocus(focus);
             return RedirectToAction(nameof(Index));
         }
