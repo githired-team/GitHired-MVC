@@ -6,15 +6,15 @@
 <body>
     <p class="flex-row-container">
         <form asp-controller="Search" asp-action="Index" method="post" class="center">
-            <label class="search-text">Find and Add Jobs: </label>
-            <input name="searchString" class="search-input" placeholder="Search by Title, Wage, Location, etc."/>
+            <label class="search-text">Find and Add <span class="jobs bold">Jobs</span>: </label>
+            <input name="searchString" class="search-input" placeholder="Search by Title, Company, Wage, etc."/>
             <button type="submit" class="search-button button">SEARCH</button>
         </form>
     </p>
     <div class="board-container center">
         @foreach (var item in Model.Column)
         {
-            <div class="board-label pad-bottom-xs green light-green">
+            <div class="board-label">
                 <h3 class="black-gradient">@item.Name</h3>
             </div>
         }
@@ -22,12 +22,12 @@
     <div class="board-container">
         @foreach (Column column in Model.Column)
         {
-        <div class="column green scrollable">
+        <div class="column grey-thick scrollable hover-shadow pad-top-xs">
             @if (column.Card.Count > 0) {
             foreach (Card card in column.Card)
             {
-            <div class="green card gradient center">
-                <table class="center pad-left-xs pad-right-xs auto-margin">
+            <div class="grey card center">
+                <table class="center pad-left-xs pad-right-xs auto-margin pad">
                     <tr class="align-left card-text">
                         <td class="pad-top-s pad-bottom-xs bold pad-left-xs">Job Title: </td>
                         <td class="pad-left-xs">@card.JobTitle</td>
@@ -45,7 +45,7 @@
                         <td class="pad-left-xs card-text">
                             @if (card.ResumeCheck == true)
                             {
-                                <p>Resume Added</p>
+                                <p>Added</p>
                             }
                             else
                             {
@@ -58,7 +58,7 @@
                         <td class="pad-left-xs card-text">
                             @if (card.CoverLetterCheck == true)
                             {
-                                <p>Resume Added</p>
+                                <p>Added</p>
                             }
                             else
                             {
