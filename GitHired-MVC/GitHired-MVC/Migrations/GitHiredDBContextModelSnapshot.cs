@@ -27,7 +27,8 @@ namespace GitHired_MVC.Migrations
 
                     b.Property<int>("FocusID");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("ID");
 
@@ -52,12 +53,6 @@ namespace GitHired_MVC.Migrations
                     b.Property<string>("Description");
 
                     b.Property<int?>("FocusID");
-
-                    b.Property<string>("GHLink1");
-
-                    b.Property<string>("GHLink2");
-
-                    b.Property<string>("GHLink3");
 
                     b.Property<string>("JobTitle");
 
@@ -103,9 +98,16 @@ namespace GitHired_MVC.Migrations
 
                     b.Property<string>("DesiredPosition");
 
+                    b.Property<string>("GHLink1");
+
+                    b.Property<string>("GHLink2");
+
+                    b.Property<string>("GHLink3");
+
                     b.Property<string>("Location");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<string>("ResumeLink");
 

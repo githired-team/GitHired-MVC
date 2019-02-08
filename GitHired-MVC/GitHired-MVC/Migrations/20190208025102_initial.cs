@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GitHired_MVC.Migrations
 {
-    public partial class demo : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -30,12 +30,15 @@ namespace GitHired_MVC.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     UserID = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(nullable: true),
+                    Name = table.Column<string>(nullable: false),
                     DesiredPosition = table.Column<string>(nullable: true),
                     Location = table.Column<string>(nullable: true),
                     Skill = table.Column<string>(nullable: true),
                     ResumeLink = table.Column<string>(nullable: true),
-                    CoverLetter = table.Column<string>(nullable: true)
+                    CoverLetter = table.Column<string>(nullable: true),
+                    GHLink1 = table.Column<string>(nullable: true),
+                    GHLink2 = table.Column<string>(nullable: true),
+                    GHLink3 = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -55,7 +58,7 @@ namespace GitHired_MVC.Migrations
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     FocusID = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -102,9 +105,6 @@ namespace GitHired_MVC.Migrations
                     CompanyName = table.Column<string>(nullable: true),
                     Wage = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    GHLink1 = table.Column<string>(nullable: true),
-                    GHLink2 = table.Column<string>(nullable: true),
-                    GHLink3 = table.Column<string>(nullable: true),
                     FocusID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
