@@ -4,14 +4,16 @@ using GitHired_MVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GitHired_MVC.Migrations
 {
     [DbContext(typeof(GitHiredDBContext))]
-    partial class GitHiredDBContextModelSnapshot : ModelSnapshot
+    [Migration("20190208024402_day4rebuilddb")]
+    partial class day4rebuilddb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

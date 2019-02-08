@@ -15,6 +15,9 @@ namespace GitHired_MVC.Models
         public string Skill { get; set; }
         public string ResumeLink { get; set; }
         public string CoverLetter { get; set; }
+        public string GHLink1 { get; set; }
+        public string GHLink2 { get; set; }
+        public string GHLink3 { get; set; }
 
         public User User { get; set; }
         public Board Board { get; set; }

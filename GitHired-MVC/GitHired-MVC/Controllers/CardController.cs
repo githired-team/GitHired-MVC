@@ -62,7 +62,8 @@ namespace GitHired_MVC.Controllers
             return RedirectToAction("Index", "Board");
         }
 
-        [HttpDelete]
+        //[HttpDelete]
+        [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
             await _card.DeleteCard(id);
