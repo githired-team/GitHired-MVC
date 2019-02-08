@@ -50,17 +50,31 @@
                             <td class="pad-left-xs card-text">UNAVAILABLE</td>
                         </tr>
                         <tr>
-                            <td>
-                                <form asp-controller="Card" asp-action="MoveCardLeft" asp-route-id="@card.ID">
-                                    
-                                    <input type="submit" value="<<" class="back-button">
-                                </form>
-                            </td>
-                            <td>
-                                <form asp-controller="Card" asp-action="MoveCardRight" asp-route-id="@card.ID">
-                                    <input type="submit" value=">>" class="advance-button">
-                                </form>
-                            </td>
+                            @if (column.Order == 1)
+                            {
+                                <td></td>
+                            }
+                            else
+                            {
+                                <td>
+                                    <form asp-controller="Card" asp-action="MoveCardLeft" asp-route-id="@card.ID">
+
+                                        <input type="submit" value="<<" class="back-button">
+                                    </form>
+                                </td>
+                            }
+                            @if (column.Order == 4)
+                            {
+                                <td></td>
+                            }
+                            else
+                            {
+                                <td>
+                                    <form asp-controller="Card" asp-action="MoveCardRight" asp-route-id="@card.ID">
+                                        <input type="submit" value=">>" class="advance-button">
+                                    </form>
+                                </td>
+                            }
                         </tr>
                     </table>
                     <div class="center">

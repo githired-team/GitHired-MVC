@@ -27,6 +27,10 @@ namespace GitHired_MVC.Controllers
             _focus = focus;
             _user = user;
         }
+        /// <summary>
+        /// GET Task Action to find the user
+        /// </summary>
+        /// <returns>User page or Home page on error</returns>
         public async Task<IActionResult> Index()
         {
             if(Request.Cookies["GitHiredCookie"] == null)
@@ -38,8 +42,11 @@ namespace GitHired_MVC.Controllers
             User user = await _user.GetUserById(id);
             return View(user);
         }
-
-        //this was for exisiting user log in also didn't like having 2 indexes even if it had diff params
+        /// <summary>
+        /// GET Task Action to find the user and create cookie
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns>User page</returns>
         public async Task<IActionResult> Login(string name)
         {
             User user = await _user.GetUserByName(name);
@@ -52,13 +59,20 @@ namespace GitHired_MVC.Controllers
 
             return RedirectToAction("Index");
         }
-
+        /// <summary>
+        /// GET Action to navigate to create form
+        /// </summary>
+        /// <returns>Create view</returns>
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
-
+        /// <summary>
+        /// POST Task Action to create a user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>User page</returns>
         [HttpPost]
         public async Task<IActionResult> Create([Bind("Name,Email,GitHubLink")] User user)
         {
