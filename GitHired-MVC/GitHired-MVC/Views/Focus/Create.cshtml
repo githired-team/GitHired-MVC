@@ -5,57 +5,59 @@
 }
 <body>
 <div class="green gradient container-l center pad-bottom-s pad-top-s">
-    <form asp-controller="Focus" asp-action="Create">
-        <input type="hidden" asp-for="Focus.UserID" value="@Model.UserID"/>
-        <table class="center pad-bottom-xs">
-            <tbody>
-                <h1 class="center pad-bottom-s">Focus Info:</h1>
-                <tr class="align-left">
-                    @*<td class="pad-right-s pad-bottom-xs bold">Username: </td>
-                        <td><input type="text" asp-for="Name" class="wide-input"></td>
-            <label asp-for="Focus.UserID" class="control-label"></label>
-            <select type="hidden" asp-for="Focus.UserID" asp-items="ViewBag.UserID"></select>*@
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Focus Name: </td>
-                    <td><input type="text" asp-for="Focus.Name"></td>
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Desired Position: </td>
-                    <td><input type="text" asp-for="Focus.DesiredPosition"></td>
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Location: </td>
-                    <td><input type="text" asp-for="Focus.Location"></td>
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Skillset: </td>
-                    <td><input type="text" asp-for="Focus.Skill"></td>
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Resume Link: </td>
-                    <td><input type="text" asp-for="Focus.ResumeLink"></td>
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Cover Letter Link: </td>
-                    <td><input type="text" asp-for="Focus.CoverLetter"></td>
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Relevant GitHub Link (optional): </td>
-                    <td><input type="text" asp-for="Focus.GHLink1"></td>
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Relevant GitHub Link (optional): </td>
-                    <td><input type="text" asp-for="Focus.GHLink2"></td>
-                </tr>
-                <tr class="align-left">
-                    <td class="pad-right-s pad-bottom-xs bold">Relevant GitHub Link (optional): </td>
-                    <td><input type="text" asp-for="Focus.GHLink3"></td>
-                </tr>
-            </tbody>
-        </table>
-        <input type="submit" value="Create" class="button">
-    </form>
+    <div class="overlayer">
+        <form asp-controller="Focus" asp-action="Create">
+            <input type="hidden" asp-for="Focus.UserID" value="@Model.UserID" />
+            <table class="center pad-bottom-xs">
+                <tbody>
+                    <h1 class="center pad-bottom-s">Focus Info:</h1>
+                    <tr class="align-left">
+                        @*<td class="pad-right-s pad-bottom-xs bold">Username: </td>
+                                    <td><input type="text" asp-for="Name" class="wide-input"></td>
+                        <label asp-for="Focus.UserID" class="control-label"></label>
+                        <select type="hidden" asp-for="Focus.UserID" asp-items="ViewBag.UserID"></select>*@
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Focus Name: </td>
+                        <td><input type="text" asp-for="Focus.Name"></td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Desired Position: </td>
+                        <td><input type="text" asp-for="Focus.DesiredPosition"></td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Location: </td>
+                        <td><input type="text" asp-for="Focus.Location"></td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Skillset: </td>
+                        <td><input type="text" asp-for="Focus.Skill"></td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Resume Link: </td>
+                        <td><input type="text" asp-for="Focus.ResumeLink"></td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Cover Letter Link: </td>
+                        <td><input type="text" asp-for="Focus.CoverLetter"></td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Relevant GitHub Link (optional): </td>
+                        <td><input type="text" asp-for="Focus.GHLink1"></td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Relevant GitHub Link (optional): </td>
+                        <td><input type="text" asp-for="Focus.GHLink2"></td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Relevant GitHub Link (optional): </td>
+                        <td><input type="text" asp-for="Focus.GHLink3"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="Create" class="button">
+        </form>
+    </div>
 </div>
 <div class="pad-bottom-m"></div>
 
