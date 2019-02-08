@@ -1,6 +1,82 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model GitHired_MVC.Models.User;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHired</title>
+    <link href="~/Styles/Reset.css" rel="stylesheet" />
+    <link href="~/Styles/Base.css" rel="stylesheet" />
+    <link href="~/Styles/Layout.css" rel="stylesheet" />
+    <link href="~/Styles/Modules.css" rel="stylesheet" />
+    <link href="~/Styles/Utilities.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="~/"><img class="logo-img" src="~/Assets/GitHired_vector_logo.png"></a>
+        </div>
+    </header>
+    <div class="">
+        <div class="green gradient container-l center">
+            <h1 class="pad-top-s">Login or Sign Up</h1>
+            <div class="pad-top-s">
+                <div class="login-toggle">
+                    <form asp-controller="User" asp-action="Login">
+                        Username:
+                        <input type="text" asp-for="Name">
+                        <input type="submit" value="Log In" class="button">
+                    </form>
+                </div>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $("#signup").ready(function () {
+                        $(".signup-toggle").hide();
+                    });
+                    $("#signup").click(function () {
+                        $("#signup").hide();
+                        $(".login-toggle").hide();
+                        $(".signup-toggle").show();
+                    });
+                });
+            </script>
+            <button id="signup" class="button container-s">Sign Up Today!</button>
+            <div class="signup-toggle">
+                <form asp-controller="User" asp-action="Create">
+                    <table class="center pad-bottom-xs">
+                        <tbody>
+                            <tr class="align-left">
+                                <td class="pad-right-s pad-bottom-xs bold">Username: </td>
+                                <td><input type="text" asp-for="Name"></td>
+                            </tr>
+                            <tr class="align-left">
+                                <td class="pad-right-s pad-bottom-xs bold">Email: </td>
+                                <td><input type="text" asp-for="Email"></td>
+                            </tr>
+                            <tr class="align-left">
+                                <td class="pad-right-s pad-bottom-xs bold">GitHub Username: </td>
+                                <td><input type="text" asp-for="GitHubLink"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="submit" value="Create" class="button">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="center pad-top-m pad-bottom-m">
+        <h1>
+            Welcome to GitHired
+        </h1>
+        <h4>Helps keep you on track during your application process</h4>
+    </div>
+</body>
+<footer class="center">
+    <p>&#169; GitHired 2019</p>
+</footer>
+@section scripts {
 }
-Hello!
+</html>

@@ -1,0 +1,75 @@
+﻿/*Import fonts from Google Fonts API*/
+@import url('https://fonts.googleapis.com/css?family=Dosis|Hind+Madurai|Neucha');
+@import url('https://fonts.googleapis.com/css?family=Hind+Madurai');
+
+body {
+    font-family: 'Hind Madurai', sans-serif;
+    font-size: 1rem;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*background-color: #c4c4c4;*/
+    min-width: 680px;
+    width: 100%;
+    min-height: 480px;
+    height: 100%;
+    overflow: auto;
+}
+
+h1 {
+    font-variant-caps: all-petite-caps;
+    font-size: 7vw;
+    background: -webkit-linear-gradient(#333, #777);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h4 {
+    font-variant-caps: all-petite-caps;
+    font-size: 4vw;
+}
+
+h3 {
+    font-variant-caps: all-petite-caps;
+    font-size: 5vw;
+}
+
+a {
+    font-variant-caps: all-petite-caps;
+    background: -webkit-linear-gradient(#388238, #94de94);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    background: -webkit-linear-gradient(#999, #444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+}
+
+footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: 3vw;
+    padding: 1rem;
+    background-color: rgba(194, 194, 194, 0.5);
+    text-align: center;
+}
+
+/*-----MEDIA-QUERIES-----*/
+@media (max-width: 780px)
+{
+    body 
+    {
+        overflow: auto;
+    }
+}
+
+@media (max-width: 1000px) {
+    h1 {
+        font-size: 10vw;
+    }
+}

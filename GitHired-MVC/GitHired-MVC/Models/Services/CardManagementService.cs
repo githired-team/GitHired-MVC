@@ -25,12 +25,14 @@ namespace GitHired_MVC.Models.Services
 
         public async Task DeleteCard(int id)
         {
-            Card card = _context.Card.FirstOrDefault(x => x.ID == id);
-            Column col = _context.Column.FirstOrDefault(x => x.ID == card.ColumnID);
+            //Card card = _context.Card.FirstOrDefault(x => x.ID == id);
+            //Column col = _context.Column.FirstOrDefault(x => x.ID == card.ColumnID);
 
-            col.Card.Remove(card);
+            //col.Card.Remove(card);
+            //_context.Card.Remove(card);
+            Card card = _context.Card.FirstOrDefault(c => c.ID == id);
             _context.Card.Remove(card);
-            
+
             await _context.SaveChangesAsync();
         }
 

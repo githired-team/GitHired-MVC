@@ -1,0 +1,63 @@
+﻿@model GitHired_MVC.Models.ViewModels.SearchViewModel
+@using GitHired_MVC.Models;
+
+@{
+    Layout = "_Layout";
+}
+<h1 class="center pad-bottom-s">RESULTS:</h1>
+@foreach(JobPosting result in Model.JobPostings)
+ {
+    <div class="green gradient container-l center pad-bottom-s pad-top-s">
+        <div class="overlayer">
+            <h3 class="pad-bottom-s">@result.JobTitle</h3>
+            <table class="container-m center">
+                <tbody>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Company: </td>
+                        <td>@result.CompanyName</td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Location: </td>
+                        <td>@result.Location</td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Apply Here: </td>
+                        <td class="text-container">
+                            <div class="text-container">
+                                <p>
+                                    <a href="https://@result.ApplicationUrl" class="link-emphasis-s">Apply Here</a>
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Wage Range: </td>
+                        <td>@result.WageRange</td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Skillset: </td>
+                        <td>@String.Join(", ", result.Skillset)</td>
+                    </tr>
+                    <tr class="align-left">
+                        <td class="pad-right-s pad-bottom-xs bold">Description: </td>
+                        <td class="">
+                            <div class="text-container pad-bottom-xs">
+                                <p>
+                                    @result.Description
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <form asp-controller="Card" asp-action="Create">
+                <input asp-for="Card.JobTitle" type="hidden" value="@result.JobTitle" />
+                <input asp-for="Card.CompanyName" type="hidden" value="@result.CompanyName" />
+                <input asp-for="Card.Wage" type="hidden" value="@result.WageRange" />
+                <input asp-for="Card.Description" type="hidden" value="@result.Description" />
+                <input type="submit" value="Add this Position" class="button">
+            </form>
+        </div>
+    </div>
+    <div class="pad-bottom-s"></div>
+ }

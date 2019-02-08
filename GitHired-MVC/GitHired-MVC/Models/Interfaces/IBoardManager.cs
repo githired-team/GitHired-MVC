@@ -7,6 +7,8 @@ namespace GitHired_MVC.Models.Interfaces
 {
     public interface IBoardManager
     {
+        Task<IEnumerable<Board>> SearchBoard(string name);
+
         Task CreateBoard(Board board);
 
         Task<Board> GetBoardAsync(int id);

@@ -17,5 +17,9 @@ namespace GitHired_MVC.Models
         public string Description { get; set; }
 
         public Column Column { get; set; }
+        public Focus Focus { get; set; } 
     }
 }
+
+
+

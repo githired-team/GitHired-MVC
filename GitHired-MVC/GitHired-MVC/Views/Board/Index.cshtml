@@ -1,0 +1,91 @@
+﻿@model GitHired_MVC.Models.Board;
+@using GitHired_MVC.Models;
+@{
+            Layout = "_Layout";
+        }
+<body>
+    <p class="flex-row-container">
+        @*<a asp-action="Index" asp-controller="Search" class="static-CRUD pad-top-xs">Find and Add Jobs</a>*@
+        <form asp-controller="Search" asp-action="Index" method="post" class="center">
+            <label class="search-text">Find and Add Jobs: </label>
+            <input name="searchString" class="search-input" placeholder="Search by Title, Wage, Location, etc."/>
+            <button type="submit" class="search-button button">SEARCH</button>
+        </form>
+    </p>
+    <div class="board-container center">
+        @foreach (var item in Model.Column)
+        {
+            <div class="board-label pad-bottom-xs green light-green">
+                <h3 class="black-gradient">@item.Name</h3>
+            </div>
+        }
+    </div>
+    <div class="board-container">
+        @foreach (Column column in Model.Column)
+        {
+        <div class="column green scrollable">
+            @if (column.Card.Count > 0) {
+            foreach (Card card in column.Card)
+            {
+                <div class="green card gradient">
+                    <table class="center pad-left-xs pad-right-xs">
+                        <tr class="align-left card-text">
+                            <td class="pad-top-s pad-bottom-xs bold">Job Title: </td>
+                            <td class="pad-left-xs">@card.JobTitle</td>
+                        </tr>
+                        <tr class="align-left">
+                            <td class="pad-bottom-xs bold card-text">Company: </td>
+                            <td class="pad-left-xs card-text">@card.CompanyName</td>
+                        </tr>
+                        <tr class="align-left">
+                            <td class="pad-bottom-xs bold card-text">Wage: </td>
+                            <td class="pad-left-xs card-text">@card.Wage</td>
+                        </tr>
+                        <tr class="align-left">
+                            <td class="pad-bottom-xs bold card-text">Resume?: </td>
+                            <td class="pad-left-xs card-text">@card.ResumeCheck </td>
+                        </tr>
+                        <tr class="align-left">
+                            <td class="pad-bottom-xs bold card-text">Cover Letter?: </td>
+                            <td class="pad-left-xs card-text">@card.CoverLetterCheck</td>
+                        </tr>
+                        <tr>
+                            @if (column.Order == 1)
+                            {
+                                <td></td>
+                            }
+                            else
+                            {
+                                <td>
+                                    <form asp-controller="Card" asp-action="MoveCardLeft" asp-route-id="@card.ID">
+
+                                        <input type="submit" value="<<" class="back-button">
+                                    </form>
+                                </td>
+                            }
+                            @if (column.Order == 4)
+                            {
+                                <td></td>
+                            }
+                            else
+                            {
+                                <td>
+                                    <form asp-controller="Card" asp-action="MoveCardRight" asp-route-id="@card.ID">
+                                        <input type="submit" value=">>" class="advance-button">
+                                    </form>
+                                </td>
+                            }
+                        </tr>
+                    </table>
+                    <div class="center">
+                        <form asp-controller="Card" asp-action="Delete" asp-route-id="@card.ID">
+                            <input type="submit" value="REMOVE" class="delete-button">
+                        </form>
+                    </div>
+                </div>
+            }
+        }
+        </div>
+        }
+    </div>
+</body>

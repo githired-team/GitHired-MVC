@@ -23,14 +23,28 @@ namespace GitHired_MVC.Models.Services
             await _context.SaveChangesAsync();
         }
 
+        public async Task<IEnumerable<User>> SearchUserName(string name)
+        {
+            var users = from u in _context.User
+                        .Where(n => n.Name.Equals(name))
+                       select u;
+
+            return await users.ToListAsync();
+        }
+
         public Task DeleteUser(int id)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<User> GetUser(int id)
+        public async Task<User> GetUserById(int id)
         {
             return await _context.User.FirstOrDefaultAsync(x => x.ID == id);
+        }
+
+        public async Task<User> GetUserByName(string name)
+        {
+            return await _context.User.FirstOrDefaultAsync(x => x.Name == name);
         }
 
         public async Task UpdateUser(User user)

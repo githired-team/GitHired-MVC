@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,22 +17,32 @@ namespace GitHired_MVC.Models.Services
             _context = context;
         }
 
-        public async Task CreateFocus(Focus foucs)
+        public async Task CreateFocus(Focus focus)
         {
-            _context.Focus.Add(foucs);
+            _context.Focus.Add(focus);
             await _context.SaveChangesAsync();
         }
 
-        public Task DeleteFocus(int id)
+        public async Task DeleteFocus(int id)
+        {   
+            Focus foucus = _context.Focus.FirstOrDefault(f => f.ID == id);
+            _context.Focus.Remove(foucus);
+            await _context.SaveChangesAsync();
+
+        }
+        public async Task<Focus> GetSingleFocus(int id)
         {
-            throw new NotImplementedException();
+            return await _context.Focus.FirstOrDefaultAsync(f => f.ID == id);
         }
 
-        public async Task<Focus> GetFocus(int id)
+        public async Task<IEnumerable<Focus>> GetFocus(int id)
         {
-            return await _context.Focus.FirstOrDefaultAsync(x => x.ID == id);
+            var foc = from f in _context.Focus
+                      .Where(ui => ui.UserID == id)
+                       select f;
+            return await foc.ToListAsync();
         }
-
+        
         public async Task UpdateFocus(Focus focus)
         {
             _context.Focus.Update(focus);
@@ -40,3 +50,4 @@ namespace GitHired_MVC.Models.Services
         }
     }
 }
+
