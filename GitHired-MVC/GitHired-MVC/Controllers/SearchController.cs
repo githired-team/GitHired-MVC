@@ -24,10 +24,9 @@ namespace GitHired_MVC.Controllers
             _context = context;
         }
 
-
-        [HttpGet]
+        [HttpPost]
         // TODO: ensure that the user id is sent to this controller endpoint by whatever view. 
-        public async Task<IActionResult> SearchResults(string query)
+        public async Task<IActionResult> Index(string query)
         {
             using (HttpClient client = new HttpClient())
             {
@@ -39,8 +38,8 @@ namespace GitHired_MVC.Controllers
                     if (response.IsSuccessStatusCode)
                     {
                         string jobsJSON = await response.Content.ReadAsStringAsync();
-                        List<JobPosting> jobs = JsonConvert.DeserializeObject<List<JobPosting>>(jobsJSON);
-                        SearchViewModel model = new SearchViewModel(jobs);
+                        RootObject results = JsonConvert.DeserializeObject<RootObject>(jobsJSON);
+                        SearchViewModel model = new SearchViewModel(results.jobs);
                         return View(model);
 
                     } else
