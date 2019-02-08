@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GitHired_MVC.Migrations
 {
     [DbContext(typeof(GitHiredDBContext))]
-    [Migration("20190208024402_day4rebuilddb")]
-    partial class day4rebuilddb
+    [Migration("20190208035621_rebuilddbtry2")]
+    partial class rebuilddbtry2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -54,12 +54,6 @@ namespace GitHired_MVC.Migrations
                     b.Property<string>("Description");
 
                     b.Property<int?>("FocusID");
-
-                    b.Property<string>("GHLink1");
-
-                    b.Property<string>("GHLink2");
-
-                    b.Property<string>("GHLink3");
 
                     b.Property<string>("JobTitle");
 

@@ -53,12 +53,6 @@ namespace GitHired_MVC.Migrations
 
                     b.Property<int?>("FocusID");
 
-                    b.Property<string>("GHLink1");
-
-                    b.Property<string>("GHLink2");
-
-                    b.Property<string>("GHLink3");
-
                     b.Property<string>("JobTitle");
 
                     b.Property<bool>("ResumeCheck");

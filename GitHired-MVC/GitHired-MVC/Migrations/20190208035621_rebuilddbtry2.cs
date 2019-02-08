@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GitHired_MVC.Migrations
 {
-    public partial class demo : Migration
+    public partial class rebuilddbtry2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -35,7 +35,10 @@ namespace GitHired_MVC.Migrations
                     Location = table.Column<string>(nullable: true),
                     Skill = table.Column<string>(nullable: true),
                     ResumeLink = table.Column<string>(nullable: true),
-                    CoverLetter = table.Column<string>(nullable: true)
+                    CoverLetter = table.Column<string>(nullable: true),
+                    GHLink1 = table.Column<string>(nullable: true),
+                    GHLink2 = table.Column<string>(nullable: true),
+                    GHLink3 = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -102,9 +105,6 @@ namespace GitHired_MVC.Migrations
                     CompanyName = table.Column<string>(nullable: true),
                     Wage = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
-                    GHLink1 = table.Column<string>(nullable: true),
-                    GHLink2 = table.Column<string>(nullable: true),
-                    GHLink3 = table.Column<string>(nullable: true),
                     FocusID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
