@@ -25,9 +25,9 @@ namespace GitHired_MVC.Controllers
         /// </summary>
         /// <param name="cardId"></param>
         /// <returns>Card detail view</returns>
-        public async Task<IActionResult> Index(int cardId)
+        public async Task<IActionResult> Index(int id)
         {
-            return View( await _card.GetCard(cardId) );
+            return View( await _card.GetCard(id) );
         }
 
         /// <summary>
