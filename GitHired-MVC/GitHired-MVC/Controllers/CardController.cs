@@ -2,7 +2,6 @@
 using GitHired_MVC.Models;
 using GitHired_MVC.Models.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,23 +29,8 @@ namespace GitHired_MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([Bind("ID,ColumnID,ResumeCheck,CoverLetterCheck,JobTitle,CompanyName,Wage,Description,GHLink1,GHLink2,GHLink3")] Card card)
         {
-            int focusID;
-            if (!int.TryParse(Request.Cookies["FocusCookie"], out focusID))
-            {
-                
-                return RedirectToAction("Home", "Index");
-            }
 
-            int boardID = await _context.Board.Where(b => b.FocusID == focusID)
-                                               .Select(b => b.ID)
-                                               .FirstOrDefaultAsync();
-            
-            card.ColumnID = await _context.Column.Where(c => c.BoardID == boardID)
-                                                  .Where(c => c.Order == 1)
-                                                  .Select(c => c.ID)
-                                                  .FirstOrDefaultAsync();//by default it will go in the first column
-
-
+            card.ColumnID = 1;//by default it will go in the first column
             if (card.Focus.ResumeLink != null)
             {
                 card.ResumeCheck = true;

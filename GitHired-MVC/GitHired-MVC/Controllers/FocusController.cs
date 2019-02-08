@@ -75,10 +75,11 @@ namespace GitHired_MVC.Controllers
                                          .Select(b => b.ID)
                                          .FirstOrDefaultAsync();
 
-                
                 Response.Cookies.Append("FocusCookie", $"{focus.ID}");
 
-                
+
+
+
                 Column newDefaultColInterested = new Column();
                 newDefaultColInterested.BoardID = newBoardID;
                 newDefaultColInterested.Name = "Interested";
