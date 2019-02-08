@@ -13,35 +13,14 @@ namespace GitHired_MVC.Controllers
     public class HomeController: Controller
     {
         static HttpClient client = new HttpClient();
-
+        /// <summary>
+        /// GET Action for homepage
+        /// </summary>
+        /// <returns>Homepage view</returns>
         public IActionResult Index()
         {
             Response.Cookies.Delete("GitHiredCookie");
             return View();
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> Api()
-        {
-            // hit api
-            string path = "https://githiredapi.azurewebsites.net/api/GetJobs";
-
-            var json = await GetProductAsync(path);
-            
-            RootObject result = JsonConvert.DeserializeObject<RootObject>(json.ToString());
-
-            return View(result);
-        }
-
-        static async Task<Object> GetProductAsync(string path)
-        {
-            Object product = null;
-            HttpResponseMessage response = await client.GetAsync(path);
-            if (response.IsSuccessStatusCode)
-            {
-                product = await response.Content.ReadAsAsync<Object>();
-            }
-            return product;
         }
     }
 }
