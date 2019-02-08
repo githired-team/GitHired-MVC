@@ -39,6 +39,7 @@ namespace GitHired_MVC.Controllers
         public async Task<IActionResult> Create([Bind("ID,ColumnID,ResumeCheck,CoverLetterCheck,JobTitle,CompanyName,Wage,Description,GHLink1,GHLink2,GHLink3")] Card card)
         {
             int focusID = Convert.ToInt32(Request.Cookies["FocusCookie"]);
+            
             int boardID = await _context.Board.Where(b => b.FocusID == focusID)
                                               .Select(b => b.ID)
                                               .FirstOrDefaultAsync();
@@ -48,6 +49,28 @@ namespace GitHired_MVC.Controllers
                                                   .Select(c => c.ID)
                                                   .FirstOrDefaultAsync();
 
+
+            card.Focus = await _context.Focus.Where(f => f.ID == focusID).FirstOrDefaultAsync();
+
+            
+            if (card.Focus.ResumeLink != null)
+            {
+                card.ResumeCheck = true;
+            }
+            else
+            {
+                card.ResumeCheck = false;
+            }
+
+            if (card.Focus.CoverLetter != null)
+            {
+                card.CoverLetterCheck = true;
+            }
+            else
+            {
+                card.CoverLetterCheck = false;
+            }
+
             await _card.CreateCard(card);
             return RedirectToAction("Index", "Board");
         }
@@ -56,7 +79,7 @@ namespace GitHired_MVC.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns>Board view</returns>
-        [HttpDelete]
+        [HttpPost]
         public async Task<IActionResult> Delete(int id)
         {
             await _card.DeleteCard(id);
