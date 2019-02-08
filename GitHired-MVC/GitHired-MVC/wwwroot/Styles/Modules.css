@@ -136,7 +136,7 @@
     min-width: 200px;
     height: 2rem;
     line-height: 2rem;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
 }
 
 .search-text {
@@ -144,7 +144,8 @@
 }
 
 .search-button {
-    height: 2rem;
+    line-height: 1.8rem;
+    padding: 0.2rem 1.4rem 0.2rem 1.4rem;
 }
 
 /*-----MEDIA-QUERIES-----*/
