@@ -20,13 +20,21 @@ namespace GitHired_MVC.Controllers
             _context = context;
             _card = card;
         }
-
+        /// <summary>
+        /// GET Task Action to find a card
+        /// </summary>
+        /// <param name="cardId"></param>
+        /// <returns>Card detail view</returns>
         public async Task<IActionResult> Index(int cardId)
         {
             return View( await _card.GetCard(cardId) );
         }
 
-
+        /// <summary>
+        /// POST Teask Action to create a card
+        /// </summary>
+        /// <param name="card"></param>
+        /// <returns>Board view</returns>
         [HttpPost]
         public async Task<IActionResult> Create([Bind("ID,ColumnID,ResumeCheck,CoverLetterCheck,JobTitle,CompanyName,Wage,Description,GHLink1,GHLink2,GHLink3")] Card card)
         {
@@ -39,29 +47,15 @@ namespace GitHired_MVC.Controllers
                                                   .Where(c => c.Order == 1)
                                                   .Select(c => c.ID)
                                                   .FirstOrDefaultAsync();
-            //by default it will go in the first column
-            //if (card.Focus.ResumeLink != null)
-            //{
-            //    card.ResumeCheck = true;
-            //}
-            //else
-            //{
-            //    card.ResumeCheck = false;
-            //}
-
-            //if (card.Focus.CoverLetter != null)
-            //{
-            //    card.CoverLetterCheck = true;
-            //}
-            //else
-            //{
-            //    card.CoverLetterCheck = false;
-            //}
 
             await _card.CreateCard(card);
             return RedirectToAction("Index", "Board");
         }
-
+        /// <summary>
+        /// DELETE Task Action to remove a card
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Board view</returns>
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
@@ -69,6 +63,11 @@ namespace GitHired_MVC.Controllers
             return RedirectToAction("Index", "Board");
 
         }
+        /// <summary>
+        /// POST Task Action to move a card to the column on the left
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Board view</returns>
         [HttpPost]
         public async Task<IActionResult> MoveCardLeft(int id)
         {
@@ -95,6 +94,11 @@ namespace GitHired_MVC.Controllers
             }
             return RedirectToAction("Index", "Board");
         }
+        /// <summary>
+        /// POST Task Action to move a card to the column on the right
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Board view</returns>
         [HttpPost]
         public async Task<IActionResult> MoveCardRight(int id)
         {
