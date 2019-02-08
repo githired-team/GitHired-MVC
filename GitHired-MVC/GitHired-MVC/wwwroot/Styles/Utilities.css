@@ -159,6 +159,10 @@
     text-align: left;
 }
 
+.auto-margin {
+    margin: auto;
+}
+
 /*-----MEDIA-QUERIES-----*/
 @media (max-width: 780px) {
     .text-container {
