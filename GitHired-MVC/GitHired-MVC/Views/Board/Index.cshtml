@@ -11,8 +11,6 @@
             <input name="searchString" class="input" />
             <button type="submit" class="button">SEARCH</button>
         </form>
-        <a asp-action="Create" class="static-CRUD pad-top-xs">Create A New Column</a>
-        <a asp-action="Delete" class="static-CRUD pad-top-xs">Delete A Column</a>
     </p>
     <div class="board-container center">
         @foreach (var item in Model.Column)
@@ -33,19 +31,19 @@
                     <table class="center pad-left-xs pad-right-xs">
                         <tr class="align-left card-text">
                             <td class="pad-top-s pad-bottom-xs bold">Job Title: </td>
-                            <td class="pad-left-xs">UI/UX Designer</td>
+                            <td class="pad-left-xs">@card.JobTitle</td>
                         </tr>
                         <tr class="align-left">
                             <td class="pad-bottom-xs bold card-text">Company: </td>
-                            <td class="pad-left-xs card-text">Software Co.</td>
+                            <td class="pad-left-xs card-text">@card.CompanyName</td>
                         </tr>
                         <tr class="align-left">
-                            <td class="pad-bottom-xs bold card-text">Location: </td>
-                            <td class="pad-left-xs card-text">Seattle, WA</td>
+                            <td class="pad-bottom-xs bold card-text">Wage: </td>
+                            <td class="pad-left-xs card-text">@card.Wage</td>
                         </tr>
                         <tr class="align-left">
                             <td class="pad-bottom-xs bold card-text">Resume?: </td>
-                            <td class="pad-left-xs card-text">AVAILABLE</td>
+                            <td class="pad-left-xs card-text">@card.ResumeCheck </td>
                         </tr>
                         <tr class="align-left">
                             <td class="pad-bottom-xs bold card-text">Cover Letter?: </td>
@@ -53,20 +51,20 @@
                         </tr>
                         <tr>
                             <td>
-                                <form asp-controller="Card" asp-action="MoveCardLeft" asp-route-id="card.ID">
+                                <form asp-controller="Card" asp-action="MoveCardLeft" asp-route-id="@card.ID">
                                     
                                     <input type="submit" value="<<" class="back-button">
                                 </form>
                             </td>
                             <td>
-                                <form asp-controller="Card" asp-action="MoveCardRight" asp-route-id="card.ID">
+                                <form asp-controller="Card" asp-action="MoveCardRight" asp-route-id="@card.ID">
                                     <input type="submit" value=">>" class="advance-button">
                                 </form>
                             </td>
                         </tr>
                     </table>
                     <div class="center">
-                        <form asp-controller="Card" asp-action="Delete" asp-route-id="card.ID">
+                        <form asp-controller="Card" asp-action="Delete" asp-route-id="@card.ID">
                             <input type="submit" value="REMOVE" class="delete-button">
                         </form>
                     </div>

@@ -27,8 +27,15 @@ namespace GitHired_MVC.Controllers
             _focus = focus;
             _user = user;
         }
-        public IActionResult Index(User user)
+        public async Task<IActionResult> Index()
         {
+            if(Request.Cookies["GitHiredCookie"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            int id = Convert.ToInt32(Request.Cookies["GitHiredCookie"]);
+            User user = await _user.GetUserById(id);
             return View(user);
         }
 
@@ -43,7 +50,7 @@ namespace GitHired_MVC.Controllers
             Response.Cookies.Append("GitHiredCookie", user.ID.ToString());
 
 
-            return RedirectToAction("Index", user);
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -64,10 +71,9 @@ namespace GitHired_MVC.Controllers
             cookie.Expires = DateTime.Now.AddHours(1);
             Response.Cookies.Append("GitHiredCookie", user.ID.ToString());
 
-            return RedirectToAction(nameof(Index), user);
+            return RedirectToAction(nameof(Index));
         }
         return View(user);
         }
-
     }
 }
