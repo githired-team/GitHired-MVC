@@ -7,6 +7,7 @@ namespace GitHired_MVC.Models
 {
     public class RootObject
     {
-        public List<JobPosting> jobPostings { get; set; }
+        public List<JobPosting> jobs { get; set; }
+        public string query { get; set; }
     }
 }
