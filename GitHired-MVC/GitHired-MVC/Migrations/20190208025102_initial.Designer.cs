@@ -4,14 +4,16 @@ using GitHired_MVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GitHired_MVC.Migrations
 {
     [DbContext(typeof(GitHiredDBContext))]
-    partial class GitHiredDBContextModelSnapshot : ModelSnapshot
+    [Migration("20190208025102_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,7 +29,8 @@ namespace GitHired_MVC.Migrations
 
                     b.Property<int>("FocusID");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("ID");
 
@@ -52,12 +55,6 @@ namespace GitHired_MVC.Migrations
                     b.Property<string>("Description");
 
                     b.Property<int?>("FocusID");
-
-                    b.Property<string>("GHLink1");
-
-                    b.Property<string>("GHLink2");
-
-                    b.Property<string>("GHLink3");
 
                     b.Property<string>("JobTitle");
 
@@ -103,9 +100,16 @@ namespace GitHired_MVC.Migrations
 
                     b.Property<string>("DesiredPosition");
 
+                    b.Property<string>("GHLink1");
+
+                    b.Property<string>("GHLink2");
+
+                    b.Property<string>("GHLink3");
+
                     b.Property<string>("Location");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<string>("ResumeLink");
 

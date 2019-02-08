@@ -130,6 +130,23 @@
     border-radius: 0.5vw;
 }
 
+/*-----SEARCH-BAR-----*/
+.search-input {
+    width: 33%;
+    min-width: 200px;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 1.6rem;
+}
+
+.search-text {
+    font-size: 2rem;
+}
+
+.search-button {
+    height: 2rem;
+}
+
 /*-----MEDIA-QUERIES-----*/
 @media (max-width: 780px) {
     body {

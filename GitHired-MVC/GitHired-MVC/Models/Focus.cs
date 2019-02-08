@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,6 +10,9 @@ namespace GitHired_MVC.Models
     {
         public int ID { get; set; }
         public int UserID { get; set; }
+
+        [Required(ErrorMessage = "Please provide a name for this focus")]
+        [Display(Name = "Focus Name")]
         public string Name { get; set; }
         public string DesiredPosition { get; set; }
         public string Location { get; set; }
