@@ -14,13 +14,14 @@
                     <th class="bold">
                         Name
                     </th>
-                    <th class="bold pad-left-m pad-right-m pad-bottom-xs">
+                    <th class="bold pad-left-s pad-right-s pad-bottom-xs">
                         Desired Position
                     </th>
                     <th class="bold">
                         Location
                     </th>
                     <th class="pad-left-s pad-right-s"></th>
+                    <th class="bold pad-left-s pad-right-s">FOCUS ACTIONS</th>
                     <th></th>
                 </tr>
             </thead>
@@ -31,21 +32,21 @@
                     <td class="">
                         @item.Name
                     </td>
-                    <td class="pad-left-m pad-right-m pad-bottom-xs">
+                    <td class="pad-left-s pad-right-s pad-bottom-xs">
                         @item.DesiredPosition
                     </td>
                     <td class="">
                         @item.Location
                     </td>
-                    <td class="pad-left-m pad-right-s">
-                        <a asp-controller="Focus" asp-action="Edit" asp-route-id="@item.ID" class="view-board-link">Edit Focus</a>
+                    <td class="pad-left-s">
+                        <a asp-controller="Focus" asp-action="Edit" asp-route-id="@item.ID" class="link-emphasis-s">Edit Focus</a>
                     </td>
-                    <td class="pad-left-m pad-right-s">
-                        <a asp-controller="Focus" asp-action="Delete" asp-route-id="@item.ID" class="view-board-link">Delete Focus</a>
+                    <td class="pad-left-s pad-right-s">
+                        <a asp-controller="Focus" asp-action="Delete" asp-route-id="@item.ID" class="link-emphasis-s">Delete Focus</a>
                     </td>
                     <td>
                         @*this is where the links would go for edit, delete and board*@
-                        <a asp-controller="Board" asp-action="Index" asp-route-id="@item.ID" class="view-board-link"> View Board</a>
+                        <a asp-controller="Board" asp-action="Index" asp-route-id="@item.ID" class="link-emphasis-s"> View Board</a>
                     </td>
                 </tr>
                 }
