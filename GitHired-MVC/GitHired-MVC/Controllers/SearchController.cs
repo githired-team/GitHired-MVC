@@ -23,9 +23,12 @@ namespace GitHired_MVC.Controllers
             _cards = cards;
             _context = context;
         }
-
-        [HttpPost]
-        // TODO: ensure that the user id is sent to this controller endpoint by whatever view. 
+        /// <summary>
+        /// POST Task Action to call the API and create RootObject
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns>Search results view</returns>
+        [HttpPost] 
         public async Task<IActionResult> Index(string query)
         {
             using (HttpClient client = new HttpClient())

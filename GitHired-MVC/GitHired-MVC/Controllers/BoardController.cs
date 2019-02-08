@@ -23,7 +23,11 @@ namespace GitHired_MVC.Controllers
             _column = column;
             _focus = focus;
         }
-
+        /// <summary>
+        /// GET Task Action to find the board
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>Board view</returns>
         public async Task<IActionResult> Index(int? id)
         {
             if (Request.Cookies["FocusCookie"] != null)
