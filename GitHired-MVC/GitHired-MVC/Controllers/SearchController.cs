@@ -3,6 +3,7 @@ using GitHired_MVC.Models;
 using GitHired_MVC.Models.Interfaces;
 using GitHired_MVC.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
@@ -35,7 +36,7 @@ namespace GitHired_MVC.Controllers
             {
                 try
                 {
-                    string path = $"https://githiredapi.azurewebsites.net/api/GetJobs?={query}";
+                    string path = QueryHelpers.AddQueryString("https://githiredapi.azurewebsites.net/api/GetJobs", "query", query);
                     HttpResponseMessage response = await client.GetAsync(path);
 
                     if (response.IsSuccessStatusCode)
