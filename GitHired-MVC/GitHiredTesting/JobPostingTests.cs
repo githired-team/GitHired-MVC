@@ -164,7 +164,7 @@ namespace GitHiredTesting
             List<string> testJP16List = new List<string>();
             testJP16List.AddRange(new[] { "a", "b", "c" });
             testJP16.Skillset = testJP16List;
-            testJP16.Skillset[0] = "newA";
+            testJP16List[0] = "newA";
             Assert.Equal("newA", testJP16.Skillset[0]);
         }
     }
