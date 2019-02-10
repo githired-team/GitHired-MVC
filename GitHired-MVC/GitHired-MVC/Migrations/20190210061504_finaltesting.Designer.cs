@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GitHired_MVC.Migrations
 {
     [DbContext(typeof(GitHiredDBContext))]
-    [Migration("20190208025102_initial")]
-    partial class initial
+    [Migration("20190210061504_finaltesting")]
+    partial class finaltesting
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

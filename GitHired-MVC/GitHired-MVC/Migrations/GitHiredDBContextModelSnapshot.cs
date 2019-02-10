@@ -27,7 +27,8 @@ namespace GitHired_MVC.Migrations
 
                     b.Property<int>("FocusID");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("ID");
 
@@ -105,7 +106,8 @@ namespace GitHired_MVC.Migrations
 
                     b.Property<string>("Location");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<string>("ResumeLink");
 
