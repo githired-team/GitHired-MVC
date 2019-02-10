@@ -71,6 +71,25 @@ namespace GitHiredTesting
             Assert.Equal("NewGLink", testUser6.GitHubLink);
         }
 
+        //getter avatar
+        [Fact]
+        public void TestGetUserAvatar()
+        {
+            User testUser7 = new User();
+            testUser7.Avatar = "anAvatar";
+            Assert.Equal("anAvatar", testUser7.Avatar);
+        }
+
+        //setter avatar
+        [Fact]
+        public void TestSetUserAvatar()
+        {
+            User testUser8 = new User();
+            testUser8.Avatar = "anAvatar";
+            testUser8.Avatar = "NEWAvatar";
+            Assert.Equal("NEWAvatar", testUser8.Avatar);
+        }
+
         //create user
         [Fact]
         public async void TestCreateUser()

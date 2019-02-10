@@ -26,21 +26,8 @@ namespace GitHired_MVC.Models.Services
         public async Task DeleteColumn(int id)
         {
             Column col = _context.Column.FirstOrDefault(x => x.ID == id);
-            Board board = _context.Board.FirstOrDefault(x => x.ID == col.BoardID);
-            
-            // Remove the Column from the Board
-            board.Column.Remove(col);
-
-            // Remove all the cards from the Column
-            foreach(Card item in col.Card)
-            {
-                Card card = _context.Card.FirstOrDefault(x => x.ID == item.ID);
-                col.Card.Remove(card);
-            }
-            
             // Remove the Column from the DB
             _context.Column.Remove(col);
-
             await _context.SaveChangesAsync();
         }
 

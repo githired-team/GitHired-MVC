@@ -146,6 +146,63 @@ namespace GitHiredTesting
             Assert.Equal("NewCoverL", testFocus14.CoverLetter);
         }
 
+        //getter gh1
+        [Fact]
+        public void TestGetFocusGH1()
+        {
+            Focus testFocus15 = new Focus();
+            testFocus15.GHLink1 = "aGHLink1";
+            Assert.Equal("aGHLink1", testFocus15.GHLink1);
+        }
+
+        //setter gh1
+        [Fact]
+        public void TestSetFocusGH1()
+        {
+            Focus testFocus16 = new Focus();
+            testFocus16.GHLink1 = "aGHLink1";
+            testFocus16.GHLink1 = "NEWGHLink1";
+            Assert.Equal("NEWGHLink1", testFocus16.GHLink1);
+        }
+
+        //getter gh2
+        [Fact]
+        public void TestGetFocusGH2()
+        {
+            Focus testFocus17 = new Focus();
+            testFocus17.GHLink2 = "aGHLink2";
+            Assert.Equal("aGHLink2", testFocus17.GHLink2);
+        }
+
+        //setter gh2
+        [Fact]
+        public void TestSetFocusGH2()
+        {
+            Focus testFocus18 = new Focus();
+            testFocus18.GHLink2 = "aGHLink2";
+            testFocus18.GHLink2 = "NEWGHLink2";
+            Assert.Equal("NEWGHLink2", testFocus18.GHLink2);
+        }
+
+        //getter gh3
+        [Fact]
+        public void TestGetFocusGH3()
+        {
+            Focus testFocus19 = new Focus();
+            testFocus19.GHLink3 = "aGHLink3";
+            Assert.Equal("aGHLink3", testFocus19.GHLink3);
+        }
+
+        //setter gh3
+        [Fact]
+        public void TestSetFocusGH3()
+        {
+            Focus testFocus20 = new Focus();
+            testFocus20.GHLink3 = "aGHLink3";
+            testFocus20.GHLink3 = "NEWGHLink3";
+            Assert.Equal("NEWGHLink3", testFocus20.GHLink3);
+        }
+
         //create focus
         [Fact]
         public async void TestCreateFocus()
