@@ -1,7 +1,7 @@
 # GitHired-MVC
 C# MVC web application that allows users to manage the job search process using a can-ban board
 
-## GitHired Team Members: Richard Flinn Mike Filicetti, Xia Liu, Julie Ly, Sean Miller
+### GitHired Team Members: Richard Flinn Mike Filicetti, Xia Liu, Julie Ly, Sean Miller
 
 ### Group KanBan: https://waffle.io/githired-team/GitHired-API
 
@@ -363,3 +363,10 @@ These were the concepts we began this process with:
 
 #### Example Modals
 ![Modals](assets/modal_wire_frames.png)
+
+## Final Product
+![LogInPage](assets/LogInPage.JPG)
+![LoggedIn](assets/LoggedIn.JPG)
+![FocusMainPage](assets/FocusMain.JPG)
+![BoardMainPage](assets/BoardPage.JPG)
+

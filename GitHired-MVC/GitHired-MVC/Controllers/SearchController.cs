@@ -39,7 +39,7 @@ namespace GitHired_MVC.Controllers
                     string path = $"https://githiredapi.azurewebsites.net/api/GetJobs?={query}";
                     HttpResponseMessage response = await client.GetAsync(path);
 
-                    if (response.IsSuccessStatusCode)"
+                    if (response.IsSuccessStatusCode)
                     {
                         string jobsJSON = await response.Content.ReadAsStringAsync();
                         RootObject results = JsonConvert.DeserializeObject<RootObject>(jobsJSON);
