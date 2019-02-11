@@ -62,7 +62,7 @@ footer {
 }
 
 /*-----MEDIA-QUERIES-----*/
-@media (max-width: 780px)
+@media (min-width: 780px)
 {
     body 
     {

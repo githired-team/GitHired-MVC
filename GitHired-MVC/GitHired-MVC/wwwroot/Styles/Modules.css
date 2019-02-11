@@ -4,6 +4,7 @@
     flex-direction: row;
     height: 12vw;
     min-height: 100px;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .logo {
@@ -88,7 +89,7 @@
 #menu {
     position: absolute;
     min-width: 400px;
-    margin: -82px 0 0 -320px;
+    margin: -82px 0 0 -430px;
     padding: 50px;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
@@ -167,8 +168,15 @@
     }
 }
 
-@media (max-width: 1000px) {
+@media (min-width: 1000px) {
     #menu {
         min-height: 100px;
+        margin: -82px 0 0 -450px;
+    }
+}
+
+@media (min-width: 1800px) {
+    #menu {
+        margin: -82px 0 0 -500px;
     }
 }
