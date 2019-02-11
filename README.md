@@ -3,8 +3,6 @@ C# MVC web application that allows users to manage the job search process using 
 
 ## GitHired Team Members: Richard Flinn Mike Filicetti, Xia Liu, Julie Ly, Sean Miller
 
-### Group KanBan: https://waffle.io/githired-team/GitHired-API
-
 ## Models
 We wanted our can-ban board to be comprised of several objects rather than a single object with predefined boundries. In doing so we allowed ourselves the structure for growth, in the sense that if the user wanted to add columns to their board or to give us the ability to add more components to the board later on. We have models based on a root object for the API call for job postings. The API for our site is [API/GetJobs](https://githiredapi.azurewebsites.net/api/GetJobs). With the following models we can make a board.
 
@@ -363,3 +361,14 @@ These were the concepts we began this process with:
 
 #### Example Modals
 ![Modals](assets/modal_wire_frames.png)
+
+#### Project Management
+We utilized Waffle as our Kanban board to keep our team organized: 
+https://waffle.io/githired-team/GitHired-API
+
+## Final Product
+![LogInPage](assets/LogInPage.JPG)
+![LoggedIn](assets/LoggedIn.JPG)
+![FocusMainPage](assets/FocusMain.JPG)
+![BoardMainPage](assets/BoardPage.JPG)
+

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GitHired_MVC.Migrations
 {
-    public partial class finaltesting : Migration
+    public partial class rebuild021019b : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
