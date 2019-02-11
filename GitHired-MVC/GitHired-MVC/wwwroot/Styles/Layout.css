@@ -112,6 +112,13 @@ a.link-emphasis:hover {
     background-size: cover;
 }
 
+.container-img-4-fade {
+    background-image: url("../Assets/Images/container-photo4.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
 .light-green {
     background-color: rgba(87, 204, 87, 0.3);
 }
