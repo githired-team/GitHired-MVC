@@ -23,6 +23,34 @@ a.link-emphasis:hover {
         font-size: 1.6rem;
 }
 
+.red-bk {
+    background-color: red;
+    z-index: -1000;
+}
+
+.btn {
+    color: #57cc57;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s ease;
+}
+
+.btn-2 {
+    letter-spacing: 0;
+}
+
+.btn-2:hover,
+.btn-2:active {
+  letter-spacing: 0.175rem;
+}
+
+.lower-layer {
+    z-index: -1000;
+}
+
 .welcome {
     font-size: 10vw;
 }
@@ -64,10 +92,15 @@ a.link-emphasis:hover {
 
 .overlayer {
     border: 2px ridge #777;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 1vw;
     margin: auto;
     width: 80%;
+}
+
+.overlayer:hover {
+    transition: 0.5s ease;
+    background-color: rgba(255, 255, 255, 0.75);
 }
 
 .view-board-link {
