@@ -1,10 +1,10 @@
 # GitHired-MVC
-C# MVC web application that allows users to manage the job search process using a can-ban board
+C# MVC web application that allows users to manage the job search process using a kanban board
 
 ## GitHired Team Members: Richard Flinn Mike Filicetti, Xia Liu, Julie Ly, Sean Miller
 
 ## Models
-We wanted our can-ban board to be comprised of several objects rather than a single object with predefined boundries. In doing so we allowed ourselves the structure for growth, in the sense that if the user wanted to add columns to their board or to give us the ability to add more components to the board later on. We have models based on a root object for the API call for job postings. The API for our site is [API/GetJobs](https://githiredapi.azurewebsites.net/api/GetJobs). With the following models we can make a board.
+We wanted our kanban board to be comprised of several objects rather than a single object with predefined boundries. In doing so we allowed ourselves the structure for growth, in the sense that if the user wanted to add columns to their board or to give us the ability to add more components to the board later on. We have models based on a root object for the API call for job postings. The API for our site is [API/GetJobs](https://githiredapi.azurewebsites.net/api/GetJobs). With the following models we can make a board.
 
 ## Database Schema
 ![Database Schema](assets/db_schema.png)
