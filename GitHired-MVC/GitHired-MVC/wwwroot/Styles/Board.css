@@ -76,7 +76,7 @@
     font-size: 1.4rem;
     margin: auto;
     padding: 0.25vw 1vw 0.25vw 1vw;
-    border: 1px solid white;
+    border: 1px outset #666;
     border-radius: 0.5vw;
     background-image: linear-gradient(#999, #666);
     font-family: 'Hind Madurai', sans-serif;
@@ -95,7 +95,7 @@
     font-size: 1.4rem;
     margin: auto;
     padding: 0.25vw 1vw 0.25vw 1vw;
-    border: 1px solid white;
+    border: 2px outset #999;
     border-radius: 0.5vw;
     background-image: linear-gradient(#999, #666);
     font-family: 'Hind Madurai', sans-serif;
@@ -114,7 +114,7 @@
     font-size: 1.4rem;
     margin: auto;
     padding: 0.25vw 1vw 0.25vw 1vw;
-    border: 1px ridge white;
+    border: 2px outset #999;
     border-radius: 0.5vw;
     background-image: linear-gradient(#cc5757, #dd7c7c);
     font-family: 'Hind Madurai', sans-serif;
