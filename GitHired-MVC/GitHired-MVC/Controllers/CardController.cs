@@ -25,9 +25,9 @@ namespace GitHired_MVC.Controllers
         /// </summary>
         /// <param name="cardId"></param>
         /// <returns>Card detail view</returns>
-        public async Task<IActionResult> Index(int cardId)
+        public async Task<IActionResult> Index(int id)
         {
-            return View( await _card.GetCard(cardId) );
+            return View( await _card.GetCard(id) );
         }
 
         /// <summary>
@@ -39,6 +39,7 @@ namespace GitHired_MVC.Controllers
         public async Task<IActionResult> Create([Bind("ID,ColumnID,ResumeCheck,CoverLetterCheck,JobTitle,CompanyName,Wage,Description,GHLink1,GHLink2,GHLink3")] Card card)
         {
             int focusID = Convert.ToInt32(Request.Cookies["FocusCookie"]);
+            
             int boardID = await _context.Board.Where(b => b.FocusID == focusID)
                                               .Select(b => b.ID)
                                               .FirstOrDefaultAsync();

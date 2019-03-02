@@ -27,7 +27,7 @@ namespace GitHired_MVC.Models.Services
         {
             var boards = from b in _context.Board
                         .Where(n => n.Name.Equals(name))
-                        select b;
+                         select b;
 
             return await boards.ToListAsync();
         }
@@ -36,7 +36,6 @@ namespace GitHired_MVC.Models.Services
         {
             Board board = _context.Board.FirstOrDefault(x => x.ID == id);
             _context.Board.Remove(board);
-            // Remove from neighbors
             await _context.SaveChangesAsync();
         }
 

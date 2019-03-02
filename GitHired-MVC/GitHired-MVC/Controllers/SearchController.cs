@@ -3,6 +3,7 @@ using GitHired_MVC.Models;
 using GitHired_MVC.Models.Interfaces;
 using GitHired_MVC.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;

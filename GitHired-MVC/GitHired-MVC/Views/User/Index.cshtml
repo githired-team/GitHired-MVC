@@ -3,11 +3,11 @@
     Layout = "_Layout";
 
 }
-<body>
-    <div class="green gradient container-l center pad-bottom-s pad-top-s">
+<div class="container-img-2 pad-top-s">
+    <div class="grey overlayer hover-shadow container-l center pad-bottom-s pad-top-s">
         <table class="center">
             <tbody>
-                <h1 class="center pad-bottom-s">User Info:</h1>
+                <h1 class="center pad-bottom-s bold">User Info:</h1>
                 <tr class="align-left">
                     <td class="pad-right-s pad-bottom-xs bold">Username: </td>
                     <td>@Model.Name</td>
@@ -24,9 +24,9 @@
         </table>
     </div>
     <div class="center pad-top-s pad-bottom-xs">
-        <a asp-controller="Focus" asp-action="Create" class="CRUD link-emphasis">Create A New Focus</a>
+        <a asp-controller="Focus" asp-action="Create" class="CRUD btn btn-2">Create A New Focus</a>
     </div>
     <div class="center pad-bottom-m">
-        <a asp-controller="Focus" asp-action="ExisitingUserIndex" class="CRUD link-emphasis"> View Your Focuses</a>
+        <a asp-controller="Focus" asp-action="ExisitingUserIndex" class="CRUD btn btn-2">View Your Focuses</a>
     </div>
-</body>
+</div>

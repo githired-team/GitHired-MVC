@@ -3,57 +3,66 @@
     Layout = "_Layout";
 }
 <body>
-    <div class="green gradient container-l center pad-bottom-s pad-top-s">
-        <div class="overlayer pad-bottom-s">
-            <table class="center">
-                <tbody>
-                    <h1 class="center pad-bottom-s">Card Info:</h1>
-                    <tr class="align-left">
-                        <td class="pad-left-xs pad-right-s pad-bottom-xs bold">Job Title: </td>
-                        <td>@Model.JobTitle</td>
-                    </tr>
-                    <tr class="align-left">
-                        <td class="pad-left-xs pad-right-s pad-bottom-xs bold">Company Name: </td>
-                        <td>@Model.CompanyName</td>
-                    </tr>
-                    <tr class="align-left">
-                        <td class="pad-left-xs pad-right-s pad-bottom-xs bold">Wage: </td>
-                        <td>$@Model.Wage</td>
-                    </tr>
-                    <tr class="align-left">
-                        <td class="pad-left-xs pad-right-s pad-bottom-xs bold">Description: </td>
-                        <td class="pad-bottom-s pad-right-xs">
-                            <div class="text-container scrollable">
-                                <p>
-                                    @Model.Description
-                                </p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="align-left">
-                        <td class=" pad-left-xs pad-right-s bold">Resume?: </td>
-                        <td class="center">
-                            @if (Model.ResumeCheck == true)
-	                        {
-                                <span class="link-emphasis-s">Added!</span>
-                            }
-                            else
-                            {
-                                <span class="link-emphasis-s">Not Added</span>
-                            }
-                        </td>
-                    </tr>
-                    <tr class="align-left">
-                        <td class="pad-left-xs pad-top-xs pad-right-s pad-bottom-xs bold">Cover Letter?: </td>
-                        <td class="pad-top-xs pad-bottom-xs center">
-                            UNAVAILABLE
-                            @* Build out logic to display cover letter link if present/or string otherwise
-                            @Model.CoverLetterCheck*@
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+    <div class="container-img-4-fade pad-top-s">
+        <div class="grey overlayer container-l center pad-bottom-s pad-top-s">
+            <div class="pad-bottom-s grey overlayer">
+                <table class="center">
+                    <tbody>
+                        <h1 class="center pad-bottom-s">Card Info:</h1>
+                        <tr class="align-left">
+                            <td class="pad-left-xs pad-right-s pad-bottom-xs bold">Job Title: </td>
+                            <td>@Model.JobTitle</td>
+                        </tr>
+                        <tr class="align-left">
+                            <td class="pad-left-xs pad-right-s pad-bottom-xs bold">Company Name: </td>
+                            <td>@Model.CompanyName</td>
+                        </tr>
+                        <tr class="align-left">
+                            <td class="pad-left-xs pad-right-s pad-bottom-xs bold">Wage: </td>
+                            <td>$@Model.Wage</td>
+                        </tr>
+                        <tr class="align-left">
+                            <td class="pad-left-xs pad-right-s pad-bottom-xs bold">Description: </td>
+                            <td class="pad-bottom-s pad-right-xs">
+                                <div class="text-container scrollable">
+                                    <p>
+                                        @Model.Description
+                                    </p>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="align-left">
+                            <td class=" pad-left-xs pad-right-s bold">Resume?: </td>
+                            <td class="center">
+                                @if (Model.ResumeCheck == true)
+                                {
+                                    <span class="link-emphasis-s">Added!</span>
+                                }
+                                else
+                                {
+                                    <span class="link-emphasis-s">Not Added</span>
+                                }
+                            </td>
+                        </tr>
+                        <tr class="align-left">
+                            <td class="pad-left-xs pad-top-xs pad-right-s pad-bottom-xs bold">Cover Letter?: </td>
+                            <td class="pad-top-xs pad-bottom-xs center">
+                                @if (Model.CoverLetterCheck == true)
+                                {
+                                    <span class="link-emphasis-s">Added!</span>
+                                }
+                                else
+                                {
+                                    <span class="link-emphasis-s">Not Added</span>
+                                }
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="pad-bottom-m center">
+            <a href="javascript:void(0);" onclick="history.go(-1);" class="CRUD">Back to Board</a>
         </div>
     </div>
-        <div class="pad-bottom-m"></div>
 </body>

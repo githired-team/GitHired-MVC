@@ -11,16 +11,25 @@
     <link href="~/Styles/Layout.css" rel="stylesheet" />
     <link href="~/Styles/Modules.css" rel="stylesheet" />
     <link href="~/Styles/Utilities.css" rel="stylesheet" />
+    <link href="~/Styles/Board.css" rel="stylesheet" />
 </head>
-<body>
+<body class="container-img">
     <header class="header">
         <div class="logo">
-            <a href="~/"><img class="logo-img" src="~/Assets/GitHired_vector_logo.png"></a>
+            <a href="~/"><img class="logo-img" src="~/Assets/Logos/GitHired_vector_logo3.png"></a>
         </div>
     </header>
-    <div class="">
-        <div class="green gradient container-l center">
-            <h1 class="pad-top-s">Login or Sign Up</h1>
+    <div class="center pad-top-m pad-bottom-m">
+        <div class="overlayer grey container-xl pad-bottom-s hover-shadow">
+            <h1 class="green-text welcome bold">
+                Welcome to <span class="black-gradient">Git</span>Hired
+            </h1>
+            <h4 class="black-gradient">Manage your job hunt just like you manage your solutions</h4>
+        </div>
+    </div>
+    <div class="pad-top-s pad-bottom-m">
+        <div class="grey container-l overlayer center hover-shadow">
+            <h1 class="pad-top-xs bold">Login or Sign Up</h1>
             <div class="pad-top-s">
                 <div class="login-toggle">
                     <form asp-controller="User" asp-action="Login">
@@ -66,12 +75,6 @@
                 </form>
             </div>
         </div>
-    </div>
-    <div class="center pad-top-m pad-bottom-m">
-        <h1>
-            Welcome to GitHired
-        </h1>
-        <h4>Helps keep you on track during your application process</h4>
     </div>
 </body>
 <footer class="center">

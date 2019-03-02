@@ -59,7 +59,7 @@
     justify-content: space-around;
 }
 
-.space-around {
+.space-between {
     justify-content: space-between;
 }
 
@@ -157,6 +157,10 @@
 
 .align-left {
     text-align: left;
+}
+
+.auto-margin {
+    margin: auto;
 }
 
 /*-----MEDIA-QUERIES-----*/

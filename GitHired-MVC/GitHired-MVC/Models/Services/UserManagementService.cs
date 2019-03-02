@@ -32,9 +32,11 @@ namespace GitHired_MVC.Models.Services
             return await users.ToListAsync();
         }
 
-        public Task DeleteUser(int id)
+        public async Task DeleteUser(int id)
         {
-            throw new NotImplementedException();
+            User user = _context.User.FirstOrDefault(x => x.ID == id);
+            _context.User.Remove(user);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<User> GetUserById(int id)

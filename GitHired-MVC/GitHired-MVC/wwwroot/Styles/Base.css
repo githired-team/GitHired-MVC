@@ -39,6 +39,7 @@ a {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;
+    cursor: pointer;
 }
 
 a:hover {
@@ -46,6 +47,7 @@ a:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;
+    cursor: pointer;
 }
 
 footer {
@@ -60,7 +62,7 @@ footer {
 }
 
 /*-----MEDIA-QUERIES-----*/
-@media (max-width: 780px)
+@media (min-width: 780px)
 {
     body 
     {
